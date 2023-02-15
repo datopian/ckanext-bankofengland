@@ -74,11 +74,11 @@ dataset_fields:
   label: Market Value By
   preset: select
   choices:
-    - value: counterparty
+    - value: Counterparty
       label: Counterparty
-    - value: product
+    - value: Product
       label: Product
-    - value: risk
+    - value: Risk
       label: Risk
   validators: ignore_missing
 
