@@ -27,6 +27,9 @@ jobs:
       CKAN_DATASTORE_READ_URL: postgresql://datastore_read:pass@postgres/datastore_test
       CKAN_SOLR_URL: http://solr:8983/solr/ckan
       CKAN_REDIS_URL: redis://redis:6379/1
+      CKANEXT__BANKOFENGLAND__HASURA_URL: ''
+      CKANEXT__BANKOFENGLAND__HASURA_DB: ''
+      CKANEXT__BANKOFENGLAND__HASURA_ADMIN_KEY: ''
 
     steps:
     - uses: actions/checkout@v2
