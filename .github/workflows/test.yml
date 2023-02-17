@@ -34,15 +34,9 @@ jobs:
       # Install any extra requirements your extension has here (dev requirements, other extensions etc)
       run: |
         # Add extension env variables for tests
-        ls
-        ls /srv/app
-        cat /srv/app/ckan.ini
-
-        ckan config-tool /srv/app/ckan.ini ckanext.bankofengland.hasura_url=true
-        ckan config-tool /srv/app/ckan.ini ckanext.bankofengland.hasura_admin_key=true
-        ckan config-tool /srv/app/ckan.ini ckanext.bankofengland.hasura_db=true
-
-        cat /srv/app/ckan.ini
+        ckan config-tool /srv/app/ckan.ini "ckanext.bankofengland.hasura_url = true"
+        ckan config-tool /srv/app/ckan.ini "ckanext.bankofengland.hasura_admin_key = true"
+        ckan config-tool /srv/app/ckan.ini "ckanext.bankofengland.hasura_db = true"
 
         pip install -r requirements.txt
         pip install -r dev-requirements.txt
