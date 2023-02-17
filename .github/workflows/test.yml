@@ -46,6 +46,6 @@ jobs:
     - name: Run tests
       run: |
         pip install pytest-ckan
-        export CKAN_INI=/srv/app/test.ini
+        export CKAN_INI=test.ini
         pytest --cov=ckanext.bankofengland --disable-warnings ckanext/bankofengland/tests
 
