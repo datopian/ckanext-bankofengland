@@ -44,5 +44,8 @@ jobs:
 
         ckan -c test.ini db init
     - name: Run tests
-      run: pytest --ckan-ini=test.ini --cov=ckanext.bankofengland --disable-warnings ckanext/bankofengland
+      run: |
+        pip install pytest-ckan
+        export CKAN_INI=/srv/app/test.ini
+        pytest --cov=ckanext.bankofengland --disable-warnings ckanext/bankofengland/tests
 
