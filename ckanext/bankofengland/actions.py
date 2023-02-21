@@ -4,7 +4,7 @@ from ckan.common import config
 
 
 def build_id(input):
-    return "".join(input)
+    return "_".join(input.sort())
 
 
 def build_joins(input):
