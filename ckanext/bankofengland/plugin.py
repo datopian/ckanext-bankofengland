@@ -3,7 +3,7 @@ import logging
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
-from ckanext.bankofengland import actions
+from ckanext.bankofengland import actions, validators
 
 log = logging.getLogger(__name__)
 
@@ -13,6 +13,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.IValidators)
 
     # IConfigurer
 
@@ -45,6 +46,12 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         for option in config_options:
             if not config.get(option, None):
                 raise RuntimeError(missing_config.format(option))
+
+    def get_validators(self):
+        return {
+            "tag_length_validator": validators.tag_length_validator,
+            "tag_name_validator": validators.tag_name_validator
+        }
 
     #IActions
     def get_actions(self):
