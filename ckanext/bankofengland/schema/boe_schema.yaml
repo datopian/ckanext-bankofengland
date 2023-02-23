@@ -82,6 +82,54 @@ dataset_fields:
       label: Risk
   validators: ignore_missing
 
+- field_name: granularity
+  label: Granularity
+  preset: select
+  choices:
+    - value: Irregular
+      label: Irregular
+    - value: Decennial
+      label: Decennial
+    - value: Quadrennial
+      label: Quadrennial
+    - value: Annual
+      label: Annual
+    - value: Bimonthly (every two months)
+      label: Bimonthly (every two months)
+    - value: Semiweekly
+      label: Semiweekly
+    - value: Daily
+      label: Daily
+    - value: Biweekly (every two weeks)
+      label: Biweekly (every two weeks)
+    - value: Biweekly (twice a week)
+      label: Biweekly (twice a week)
+    - value: Semiannual
+      label: Semiannual
+    - value: Biennial
+      label: Biennial
+    - value: Triennial
+      label: Triennial
+    - value: Three times a week
+      label: Three times a week
+    - value: Three times a month
+      label: Three times a month
+    - value: Continuously updated
+      label: Continuously updated
+    - value: Monthly
+      label: Monthly
+    - value: Quarterly
+      label: Quarterly
+    - value: Semimonthly (or bimonthly)
+      label: Semimonthly (or bimonthly)
+    - value: Three times a year
+      label: Three times a year
+    - value: Weekly
+      label: Weekly
+    - value: Hourly
+      label: Hourly
+  validators: ignore_missing
+
 
 resource_fields:
 

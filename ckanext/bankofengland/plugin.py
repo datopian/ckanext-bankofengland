@@ -24,12 +24,17 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
 
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
+        facets_dict['granularity'] = plugins.toolkit._('Granularity')
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
+        facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
+        facets_dict['granularity'] = plugins.toolkit._('Granularity')
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
+        facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
+        facets_dict['granularity'] = plugins.toolkit._('Granularity')
         return facets_dict
 
     # IConfigurable
