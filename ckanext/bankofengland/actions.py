@@ -78,6 +78,12 @@ def create_view(context, data_dict):
     track_view(build_id(data_dict["tables"]))
     return add_permissions(build_id(data_dict["tables"]))
 
+@toolkit.side_effect_free
+def search_package_list(context, data_dict):
+    packages = toolkit.get_action('package_search')(None, { 'q': data_dict['q']})
+    print(packages, flush=True)
+    return [package['name'] for package in packages['results']]
+
 def get_related_tags(tag):
     thesauros = toolkit.get_action('package_show')(None, { 'id': 'thesauros' })
     thesauros_base_terms_resource = list(filter(lambda x: x['name'] == 'base_term_thesauros', thesauros['resources']))[0]

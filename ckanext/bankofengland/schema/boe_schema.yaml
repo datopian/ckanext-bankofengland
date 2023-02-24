@@ -214,6 +214,10 @@ dataset_fields:
       label: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
   validators: ignore_missing
 
+- field_name: child
+  label: Child
+  preset: dataset_string_autocomplete
+
 resource_fields:
 
 - field_name: url

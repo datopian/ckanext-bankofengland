@@ -84,5 +84,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         return {
             'create_view': actions.create_view,
             'package_create': actions.package_create,
-            'package_update': actions.package_update
+            'package_update': actions.package_update,
+            'search_package_list': actions.search_package_list
         }
+
