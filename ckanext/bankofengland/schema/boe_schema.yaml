@@ -258,11 +258,6 @@ dataset_fields:
       label: eba_GA:x0
   validators: ignore_missing
 
-- field_name: eba_dim_mce_main_category_that_generates_income_or_expenses
-  label: eba_dim:MCE (Main category that generates income or expenses)
-  preset: select
-  validators: ignore_missing
-
 resource_fields:
 
 - field_name: url
