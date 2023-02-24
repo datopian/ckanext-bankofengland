@@ -214,6 +214,55 @@ dataset_fields:
       label: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
   validators: ignore_missing
 
+- field_name: child
+  label: Child
+  preset: dataset_string_autocomplete
+
+- field_name: eba_dim_cps_counterparty_sector
+  label: eba_dim:CPS (Counterparty sector)
+  preset: select
+  choices:
+    - value: eba_CT:x9234 
+      label: eba_CT:x9234
+    - value: eba_CT:x9023 (Public sector)
+      label: eba_CT:x9023 (Public sector)
+    - value: eba_CT:x9235
+      label: eba_CT:x9235
+    - value: eba_CT:x9082 (Non-financial Corporations other than Public sector entities, Individual households and individual trusts, Unincorporated businesses other than unlimited liability partnerships, non-profit institutions serving households (NPISHs))
+      label: eba_CT:x9082 (Non-financial Corporations other than Public sector entities, Individual households and individual trusts, Unincorporated businesses other than unlimited liability partnerships, non-profit institutions serving households (NPISHs))
+    - value: eba_CT:x9163 (Deposit-taking corporations and Central Monetary Institutions [counterparty's home country definition])
+      label: eba_CT:x9163 (Deposit-taking corporations and Central Monetary Institutions [counterparty's home country definition])
+    - value: boe_eba_CT:x9165 
+      label: boe_eba_CT:x9165
+    - value: eba_CT:x9236
+      label: eba_CT:x9236
+    - value: eba_CT:x9234 (new - monetary financial institutions)
+      label: eba_CT:x9234 (new - monetary financial institutions)
+    - value: eba_CT:x9235 (new - other financial corporations)
+      label: eba_CT:x9235 (new - other financial corporations)
+    - value: boe_eba_CT:x9165 (new - other counterparties)
+      label: boe_eba_CT:x9165 (new - other counterparties)
+    - value: eba_CT:x9236 (new - all counterparties)
+      label: eba_CT:x9236 (new - all counterparties)
+  validators: ignore_missing
+
+- field_name: eba_dim_rcp_residence_of_counterparty
+  label: eba_dim:RCP (Residence of counterparty)
+  preset: select
+  choices:
+    - value: eba_GA:GB (United Kingdom)
+      label: eba_GA:GB (United Kingdom)
+    - value: boe_eba_GA:x9001 (Non UK resident)
+      label: boe_eba_GA:x9001 (Non UK resident)
+    - value: eba_GA:x0
+      label: eba_GA:x0
+  validators: ignore_missing
+
+- field_name: eba_dim_mce_main_category_that_generates_income_or_expenses
+  label: eba_dim:MCE (Main category that generates income or expenses)
+  preset: select
+  validators: ignore_missing
+
 resource_fields:
 
 - field_name: url
