@@ -3,7 +3,7 @@ import logging
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
-from ckanext.bankofengland import actions
+from ckanext.bankofengland import actions, validators
 
 log = logging.getLogger(__name__)
 
@@ -13,6 +13,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.IValidators)
 
     # IConfigurer
 
@@ -24,16 +25,37 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
         facets_dict['granularity'] = plugins.toolkit._('Granularity')
+        facets_dict['metrics'] = plugins.toolkit._('Metrics')
+        facets_dict['eba_dim_bas_base'] = plugins.toolkit._('eba_dim:BAS (Base)')
+        facets_dict['eba_dim_tri_type_of_risk'] = plugins.toolkit._('eba_dim:TRI (Type of risk)')
+        facets_dict['eba_dim_cud_currency_of_denomination_of_the_reported_position'] = plugins.toolkit._('boe_dim:CUD (Currency of denomination of the reported position )')
+        facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
+        facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
+        facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
         facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
         facets_dict['granularity'] = plugins.toolkit._('Granularity')
+        facets_dict['metrics'] = plugins.toolkit._('Metrics')
+        facets_dict['eba_dim_bas_base'] = plugins.toolkit._('eba_dim:BAS (Base)')
+        facets_dict['eba_dim_tri_type_of_risk'] = plugins.toolkit._('eba_dim:TRI (Type of risk)')
+        facets_dict['eba_dim_cud_currency_of_denomination_of_the_reported_position'] = plugins.toolkit._('boe_dim:CUD (Currency of denomination of the reported position )')
+        facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
+        facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
+        facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
         facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
         facets_dict['granularity'] = plugins.toolkit._('Granularity')
+        facets_dict['metrics'] = plugins.toolkit._('Metrics')
+        facets_dict['eba_dim_bas_base'] = plugins.toolkit._('eba_dim:BAS (Base)')
+        facets_dict['eba_dim_tri_type_of_risk'] = plugins.toolkit._('eba_dim:TRI (Type of risk)')
+        facets_dict['eba_dim_cud_currency_of_denomination_of_the_reported_position'] = plugins.toolkit._('boe_dim:CUD (Currency of denomination of the reported position )')
+        facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
+        facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
+        facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         return facets_dict
 
     # IConfigurable
@@ -51,8 +73,16 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             if not config.get(option, None):
                 raise RuntimeError(missing_config.format(option))
 
+    def get_validators(self):
+        return {
+            "tag_length_validator": validators.tag_length_validator,
+            "tag_name_validator": validators.tag_name_validator
+        }
+
     #IActions
     def get_actions(self):
         return {
-            'create_view': actions.create_view
+            'create_view': actions.create_view,
+            'package_create': actions.package_create,
+            'package_update': actions.package_update
         }

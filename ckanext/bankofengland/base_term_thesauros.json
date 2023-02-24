@@ -1,0 +1,1367 @@
+[
+  {
+    "BASE_TERM_ID": 0,
+    "BASE_TERM_UNSTEMMED": "US dollars",
+    "BASE_TERM_STEMMED": "us dollar"
+  },
+  {
+    "BASE_TERM_ID": 1,
+    "BASE_TERM_UNSTEMMED": "percent",
+    "BASE_TERM_STEMMED": "percent"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "BASE_TERM_UNSTEMMED": "sterling",
+    "BASE_TERM_STEMMED": "sterl"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "BASE_TERM_UNSTEMMED": "acceptances",
+    "BASE_TERM_STEMMED": "accept"
+  },
+  {
+    "BASE_TERM_ID": 4,
+    "BASE_TERM_UNSTEMMED": "accrued",
+    "BASE_TERM_STEMMED": "accru"
+  },
+  {
+    "BASE_TERM_ID": 5,
+    "BASE_TERM_UNSTEMMED": "agriculture",
+    "BASE_TERM_STEMMED": "agricultur"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "BASE_TERM_UNSTEMMED": "amounts outstanding",
+    "BASE_TERM_STEMMED": "amount outstand"
+  },
+  {
+    "BASE_TERM_ID": 7,
+    "BASE_TERM_UNSTEMMED": "approvals",
+    "BASE_TERM_STEMMED": "approv"
+  },
+  {
+    "BASE_TERM_ID": 8,
+    "BASE_TERM_UNSTEMMED": "Bank of England",
+    "BASE_TERM_STEMMED": "bank of england"
+  },
+  {
+    "BASE_TERM_ID": 9,
+    "BASE_TERM_UNSTEMMED": "beverages",
+    "BASE_TERM_STEMMED": "beverag"
+  },
+  {
+    "BASE_TERM_ID": 10,
+    "BASE_TERM_UNSTEMMED": "BIS",
+    "BASE_TERM_STEMMED": "bi"
+  },
+  {
+    "BASE_TERM_ID": 11,
+    "BASE_TERM_UNSTEMMED": "BoP",
+    "BASE_TERM_STEMMED": "bop"
+  },
+  {
+    "BASE_TERM_ID": 12,
+    "BASE_TERM_UNSTEMMED": "bridging loans",
+    "BASE_TERM_STEMMED": "bridg loan"
+  },
+  {
+    "BASE_TERM_ID": 13,
+    "BASE_TERM_UNSTEMMED": "broad money",
+    "BASE_TERM_STEMMED": "broad monei"
+  },
+  {
+    "BASE_TERM_ID": 14,
+    "BASE_TERM_UNSTEMMED": "cancellations",
+    "BASE_TERM_STEMMED": "cancel"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "BASE_TERM_UNSTEMMED": "capital issues",
+    "BASE_TERM_STEMMED": "capit issu"
+  },
+  {
+    "BASE_TERM_ID": 16,
+    "BASE_TERM_UNSTEMMED": "catering",
+    "BASE_TERM_STEMMED": "cater"
+  },
+  {
+    "BASE_TERM_ID": 17,
+    "BASE_TERM_UNSTEMMED": "CDs",
+    "BASE_TERM_STEMMED": "cd"
+  },
+  {
+    "BASE_TERM_ID": 18,
+    "BASE_TERM_UNSTEMMED": "central government",
+    "BASE_TERM_STEMMED": "central govern"
+  },
+  {
+    "BASE_TERM_ID": 19,
+    "BASE_TERM_UNSTEMMED": "CGGD",
+    "BASE_TERM_STEMMED": "cggd"
+  },
+  {
+    "BASE_TERM_ID": 20,
+    "BASE_TERM_UNSTEMMED": "central government net cash requirement",
+    "BASE_TERM_STEMMED": "central govern net cash requir"
+  },
+  {
+    "BASE_TERM_ID": 21,
+    "BASE_TERM_UNSTEMMED": "central government net cash requirement (own account)",
+    "BASE_TERM_STEMMED": "central govern net cash requir (own account)"
+  },
+  {
+    "BASE_TERM_ID": 22,
+    "BASE_TERM_UNSTEMMED": "CGO",
+    "BASE_TERM_STEMMED": "cgo"
+  },
+  {
+    "BASE_TERM_ID": 23,
+    "BASE_TERM_UNSTEMMED": "changes",
+    "BASE_TERM_STEMMED": "chang"
+  },
+  {
+    "BASE_TERM_ID": 24,
+    "BASE_TERM_UNSTEMMED": "channel islands",
+    "BASE_TERM_STEMMED": "channel island"
+  },
+  {
+    "BASE_TERM_ID": 25,
+    "BASE_TERM_UNSTEMMED": "CMI",
+    "BASE_TERM_STEMMED": "cmi"
+  },
+  {
+    "BASE_TERM_ID": 26,
+    "BASE_TERM_UNSTEMMED": "coin",
+    "BASE_TERM_STEMMED": "coin"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "BASE_TERM_UNSTEMMED": "cold water purification and supply",
+    "BASE_TERM_STEMMED": "cold water purif and suppli"
+  },
+  {
+    "BASE_TERM_ID": 28,
+    "BASE_TERM_UNSTEMMED": "communication",
+    "BASE_TERM_STEMMED": "commun"
+  },
+  {
+    "BASE_TERM_ID": 29,
+    "BASE_TERM_UNSTEMMED": "construction",
+    "BASE_TERM_STEMMED": "construct"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "BASE_TERM_UNSTEMMED": "consumer credit",
+    "BASE_TERM_STEMMED": "consum credit"
+  },
+  {
+    "BASE_TERM_ID": 31,
+    "BASE_TERM_UNSTEMMED": "corporate",
+    "BASE_TERM_STEMMED": "corpor"
+  },
+  {
+    "BASE_TERM_ID": 32,
+    "BASE_TERM_UNSTEMMED": "commercial paper",
+    "BASE_TERM_STEMMED": "commerci paper"
+  },
+  {
+    "BASE_TERM_ID": 33,
+    "BASE_TERM_UNSTEMMED": "cash ratio deposits",
+    "BASE_TERM_STEMMED": "cash ratio deposit"
+  },
+  {
+    "BASE_TERM_ID": 34,
+    "BASE_TERM_UNSTEMMED": "CTD",
+    "BASE_TERM_STEMMED": "ctd"
+  },
+  {
+    "BASE_TERM_ID": 35,
+    "BASE_TERM_UNSTEMMED": "DMA",
+    "BASE_TERM_STEMMED": "dma"
+  },
+  {
+    "BASE_TERM_ID": 36,
+    "BASE_TERM_UNSTEMMED": "DMO",
+    "BASE_TERM_STEMMED": "dmo"
+  },
+  {
+    "BASE_TERM_ID": 37,
+    "BASE_TERM_UNSTEMMED": "EBRD",
+    "BASE_TERM_STEMMED": "ebrd"
+  },
+  {
+    "BASE_TERM_ID": 38,
+    "BASE_TERM_UNSTEMMED": "ECB",
+    "BASE_TERM_STEMMED": "ecb"
+  },
+  {
+    "BASE_TERM_ID": 39,
+    "BASE_TERM_UNSTEMMED": "ECGD",
+    "BASE_TERM_STEMMED": "ecgd"
+  },
+  {
+    "BASE_TERM_ID": 40,
+    "BASE_TERM_UNSTEMMED": "ECP",
+    "BASE_TERM_STEMMED": "ecp"
+  },
+  {
+    "BASE_TERM_ID": 41,
+    "BASE_TERM_UNSTEMMED": "euro",
+    "BASE_TERM_STEMMED": "euro"
+  },
+  {
+    "BASE_TERM_ID": 42,
+    "BASE_TERM_UNSTEMMED": "EEA",
+    "BASE_TERM_STEMMED": "eea"
+  },
+  {
+    "BASE_TERM_ID": 43,
+    "BASE_TERM_UNSTEMMED": "EIR",
+    "BASE_TERM_STEMMED": "eir"
+  },
+  {
+    "BASE_TERM_ID": 44,
+    "BASE_TERM_UNSTEMMED": "ELs",
+    "BASE_TERM_STEMMED": "el"
+  },
+  {
+    "BASE_TERM_ID": 45,
+    "BASE_TERM_UNSTEMMED": "EMU",
+    "BASE_TERM_STEMMED": "emu"
+  },
+  {
+    "BASE_TERM_ID": 46,
+    "BASE_TERM_UNSTEMMED": "ERI",
+    "BASE_TERM_STEMMED": "eri"
+  },
+  {
+    "BASE_TERM_ID": 47,
+    "BASE_TERM_UNSTEMMED": "European Central Bank",
+    "BASE_TERM_STEMMED": "european central bank"
+  },
+  {
+    "BASE_TERM_ID": 48,
+    "BASE_TERM_UNSTEMMED": "external",
+    "BASE_TERM_STEMMED": "extern"
+  },
+  {
+    "BASE_TERM_ID": 49,
+    "BASE_TERM_UNSTEMMED": "foreign currency",
+    "BASE_TERM_STEMMED": "foreign currenc"
+  },
+  {
+    "BASE_TERM_ID": 50,
+    "BASE_TERM_UNSTEMMED": "FDI",
+    "BASE_TERM_STEMMED": "fdi"
+  },
+  {
+    "BASE_TERM_ID": 51,
+    "BASE_TERM_UNSTEMMED": "FRAs",
+    "BASE_TERM_STEMMED": "fra"
+  },
+  {
+    "BASE_TERM_ID": 52,
+    "BASE_TERM_UNSTEMMED": "FRNs",
+    "BASE_TERM_STEMMED": "frn"
+  },
+  {
+    "BASE_TERM_ID": 53,
+    "BASE_TERM_UNSTEMMED": "fuel",
+    "BASE_TERM_STEMMED": "fuel"
+  },
+  {
+    "BASE_TERM_ID": 54,
+    "BASE_TERM_UNSTEMMED": "GC",
+    "BASE_TERM_STEMMED": "gc"
+  },
+  {
+    "BASE_TERM_ID": 55,
+    "BASE_TERM_UNSTEMMED": "GGCGD",
+    "BASE_TERM_STEMMED": "ggcgd"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "BASE_TERM_UNSTEMMED": "gilts",
+    "BASE_TERM_STEMMED": "gilt"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "BASE_TERM_UNSTEMMED": "annually",
+    "BASE_TERM_STEMMED": "annual"
+  },
+  {
+    "BASE_TERM_ID": 58,
+    "BASE_TERM_UNSTEMMED": "cash loaded cards",
+    "BASE_TERM_STEMMED": "cash load card"
+  },
+  {
+    "BASE_TERM_ID": 59,
+    "BASE_TERM_UNSTEMMED": "government",
+    "BASE_TERM_STEMMED": "govern"
+  },
+  {
+    "BASE_TERM_ID": 60,
+    "BASE_TERM_UNSTEMMED": "households",
+    "BASE_TERM_STEMMED": "household"
+  },
+  {
+    "BASE_TERM_ID": 61,
+    "BASE_TERM_UNSTEMMED": "housing associations",
+    "BASE_TERM_STEMMED": "hous associ"
+  },
+  {
+    "BASE_TERM_ID": 62,
+    "BASE_TERM_UNSTEMMED": "interest bearing",
+    "BASE_TERM_STEMMED": "interest bear"
+  },
+  {
+    "BASE_TERM_ID": 63,
+    "BASE_TERM_UNSTEMMED": "IMF",
+    "BASE_TERM_STEMMED": "imf"
+  },
+  {
+    "BASE_TERM_ID": 64,
+    "BASE_TERM_UNSTEMMED": "index linked",
+    "BASE_TERM_STEMMED": "index link"
+  },
+  {
+    "BASE_TERM_ID": 65,
+    "BASE_TERM_UNSTEMMED": "individuals",
+    "BASE_TERM_STEMMED": "individu"
+  },
+  {
+    "BASE_TERM_ID": 66,
+    "BASE_TERM_UNSTEMMED": "instant access",
+    "BASE_TERM_STEMMED": "instant access"
+  },
+  {
+    "BASE_TERM_ID": 67,
+    "BASE_TERM_UNSTEMMED": "ISA",
+    "BASE_TERM_STEMMED": "isa"
+  },
+  {
+    "BASE_TERM_ID": 68,
+    "BASE_TERM_UNSTEMMED": "isle of man",
+    "BASE_TERM_STEMMED": "isl of man"
+  },
+  {
+    "BASE_TERM_ID": 69,
+    "BASE_TERM_UNSTEMMED": "local government net cash requirement",
+    "BASE_TERM_STEMMED": "local govern net cash requir"
+  },
+  {
+    "BASE_TERM_ID": 70,
+    "BASE_TERM_UNSTEMMED": "legal",
+    "BASE_TERM_STEMMED": "legal"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "BASE_TERM_UNSTEMMED": "lending secured on dwellings",
+    "BASE_TERM_STEMMED": "lend secur on dwell"
+  },
+  {
+    "BASE_TERM_ID": 72,
+    "BASE_TERM_UNSTEMMED": "loans",
+    "BASE_TERM_STEMMED": "loan"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "BASE_TERM_UNSTEMMED": "local authority",
+    "BASE_TERM_STEMMED": "local author"
+  },
+  {
+    "BASE_TERM_ID": 75,
+    "BASE_TERM_UNSTEMMED": "M0",
+    "BASE_TERM_STEMMED": "m0"
+  },
+  {
+    "BASE_TERM_ID": 76,
+    "BASE_TERM_UNSTEMMED": "M2",
+    "BASE_TERM_STEMMED": "m2"
+  },
+  {
+    "BASE_TERM_ID": 77,
+    "BASE_TERM_UNSTEMMED": "M4",
+    "BASE_TERM_STEMMED": "m4"
+  },
+  {
+    "BASE_TERM_ID": 78,
+    "BASE_TERM_UNSTEMMED": "M4 lending",
+    "BASE_TERM_STEMMED": "m4 lend"
+  },
+  {
+    "BASE_TERM_ID": 79,
+    "BASE_TERM_UNSTEMMED": "manufacturing",
+    "BASE_TERM_STEMMED": "manufactur"
+  },
+  {
+    "BASE_TERM_ID": 80,
+    "BASE_TERM_UNSTEMMED": "major British banks",
+    "BASE_TERM_STEMMED": "major british bank"
+  },
+  {
+    "BASE_TERM_ID": 81,
+    "BASE_TERM_UNSTEMMED": "MFIs",
+    "BASE_TERM_STEMMED": "mfi"
+  },
+  {
+    "BASE_TERM_ID": 82,
+    "BASE_TERM_UNSTEMMED": "millions",
+    "BASE_TERM_STEMMED": "million"
+  },
+  {
+    "BASE_TERM_ID": 83,
+    "BASE_TERM_UNSTEMMED": "MMF",
+    "BASE_TERM_STEMMED": "mmf"
+  },
+  {
+    "BASE_TERM_ID": 84,
+    "BASE_TERM_UNSTEMMED": "MMI",
+    "BASE_TERM_STEMMED": "mmi"
+  },
+  {
+    "BASE_TERM_ID": 85,
+    "BASE_TERM_UNSTEMMED": "monthly",
+    "BASE_TERM_STEMMED": "monthli"
+  },
+  {
+    "BASE_TERM_ID": 86,
+    "BASE_TERM_UNSTEMMED": "mortgage equity withdrawal",
+    "BASE_TERM_STEMMED": "mortgag equiti withdraw"
+  },
+  {
+    "BASE_TERM_ID": 87,
+    "BASE_TERM_UNSTEMMED": "motor vehicles",
+    "BASE_TERM_STEMMED": "motor vehicl"
+  },
+  {
+    "BASE_TERM_ID": 88,
+    "BASE_TERM_UNSTEMMED": "medium term notes",
+    "BASE_TERM_STEMMED": "medium term note"
+  },
+  {
+    "BASE_TERM_ID": 89,
+    "BASE_TERM_UNSTEMMED": "NFC",
+    "BASE_TERM_STEMMED": "nfc"
+  },
+  {
+    "BASE_TERM_ID": 90,
+    "BASE_TERM_UNSTEMMED": "NIB",
+    "BASE_TERM_STEMMED": "nib"
+  },
+  {
+    "BASE_TERM_ID": 91,
+    "BASE_TERM_UNSTEMMED": "net non deposit liabilities",
+    "BASE_TERM_STEMMED": "net non deposit liabil"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "BASE_TERM_UNSTEMMED": "non residents",
+    "BASE_TERM_STEMMED": "non resid"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "BASE_TERM_UNSTEMMED": "notes",
+    "BASE_TERM_STEMMED": "note"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "BASE_TERM_UNSTEMMED": "NPISH",
+    "BASE_TERM_STEMMED": "npish"
+  },
+  {
+    "BASE_TERM_ID": 96,
+    "BASE_TERM_UNSTEMMED": "NS",
+    "BASE_TERM_STEMMED": "ns"
+  },
+  {
+    "BASE_TERM_ID": 97,
+    "BASE_TERM_UNSTEMMED": "not seasonally adjusted",
+    "BASE_TERM_STEMMED": "not season adjust"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "BASE_TERM_UNSTEMMED": "OFC",
+    "BASE_TERM_STEMMED": "ofc"
+  },
+  {
+    "BASE_TERM_ID": 99,
+    "BASE_TERM_UNSTEMMED": "OMOs",
+    "BASE_TERM_STEMMED": "omo"
+  },
+  {
+    "BASE_TERM_ID": 100,
+    "BASE_TERM_UNSTEMMED": "other specialist lenders",
+    "BASE_TERM_STEMMED": "other specialist lender"
+  },
+  {
+    "BASE_TERM_ID": 101,
+    "BASE_TERM_UNSTEMMED": "public corporations net cash requirement",
+    "BASE_TERM_STEMMED": "public corpor net cash requir"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "BASE_TERM_UNSTEMMED": "PNFCs",
+    "BASE_TERM_STEMMED": "pnfc"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "BASE_TERM_UNSTEMMED": "profit",
+    "BASE_TERM_STEMMED": "profit"
+  },
+  {
+    "BASE_TERM_ID": 105,
+    "BASE_TERM_UNSTEMMED": "PS",
+    "BASE_TERM_STEMMED": "ps"
+  },
+  {
+    "BASE_TERM_ID": 106,
+    "BASE_TERM_UNSTEMMED": "PSCGD",
+    "BASE_TERM_STEMMED": "pscgd"
+  },
+  {
+    "BASE_TERM_ID": 107,
+    "BASE_TERM_UNSTEMMED": "public sector net cash requirement",
+    "BASE_TERM_STEMMED": "public sector net cash requir"
+  },
+  {
+    "BASE_TERM_ID": 108,
+    "BASE_TERM_UNSTEMMED": "PSND",
+    "BASE_TERM_STEMMED": "psnd"
+  },
+  {
+    "BASE_TERM_ID": 109,
+    "BASE_TERM_UNSTEMMED": "public corporations",
+    "BASE_TERM_STEMMED": "public corpor"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "BASE_TERM_UNSTEMMED": "quarterly",
+    "BASE_TERM_STEMMED": "quarterli"
+  },
+  {
+    "BASE_TERM_ID": 111,
+    "BASE_TERM_UNSTEMMED": "real estate",
+    "BASE_TERM_STEMMED": "real estat"
+  },
+  {
+    "BASE_TERM_ID": 112,
+    "BASE_TERM_UNSTEMMED": "repo",
+    "BASE_TERM_STEMMED": "repo"
+  },
+  {
+    "BASE_TERM_ID": 113,
+    "BASE_TERM_UNSTEMMED": "reverse repo",
+    "BASE_TERM_STEMMED": "revers repo"
+  },
+  {
+    "BASE_TERM_ID": 114,
+    "BASE_TERM_UNSTEMMED": "seasonally adjusted",
+    "BASE_TERM_STEMMED": "season adjust"
+  },
+  {
+    "BASE_TERM_ID": 115,
+    "BASE_TERM_UNSTEMMED": "SAYE",
+    "BASE_TERM_STEMMED": "say"
+  },
+  {
+    "BASE_TERM_ID": 116,
+    "BASE_TERM_UNSTEMMED": "sight deposits",
+    "BASE_TERM_STEMMED": "sight deposit"
+  },
+  {
+    "BASE_TERM_ID": 117,
+    "BASE_TERM_UNSTEMMED": "special drawing rights",
+    "BASE_TERM_STEMMED": "special draw right"
+  },
+  {
+    "BASE_TERM_ID": 118,
+    "BASE_TERM_UNSTEMMED": "securitised",
+    "BASE_TERM_STEMMED": "securitis"
+  },
+  {
+    "BASE_TERM_ID": 119,
+    "BASE_TERM_UNSTEMMED": "buy/sellbacks",
+    "BASE_TERM_STEMMED": "buy/sellback"
+  },
+  {
+    "BASE_TERM_ID": 121,
+    "BASE_TERM_UNSTEMMED": "SONIA",
+    "BASE_TERM_STEMMED": "sonia"
+  },
+  {
+    "BASE_TERM_ID": 122,
+    "BASE_TERM_UNSTEMMED": "SPV",
+    "BASE_TERM_STEMMED": "spv"
+  },
+  {
+    "BASE_TERM_ID": 123,
+    "BASE_TERM_UNSTEMMED": "stock borrowed",
+    "BASE_TERM_STEMMED": "stock borrow"
+  },
+  {
+    "BASE_TERM_ID": 124,
+    "BASE_TERM_UNSTEMMED": "stock lent",
+    "BASE_TERM_STEMMED": "stock lent"
+  },
+  {
+    "BASE_TERM_ID": 125,
+    "BASE_TERM_UNSTEMMED": "suspense",
+    "BASE_TERM_STEMMED": "suspens"
+  },
+  {
+    "BASE_TERM_ID": 126,
+    "BASE_TERM_UNSTEMMED": "SVR",
+    "BASE_TERM_STEMMED": "svr"
+  },
+  {
+    "BASE_TERM_ID": 127,
+    "BASE_TERM_UNSTEMMED": "syndicated loans",
+    "BASE_TERM_STEMMED": "syndic loan"
+  },
+  {
+    "BASE_TERM_ID": 128,
+    "BASE_TERM_UNSTEMMED": "TESSA",
+    "BASE_TERM_STEMMED": "tessa"
+  },
+  {
+    "BASE_TERM_ID": 129,
+    "BASE_TERM_UNSTEMMED": "time deposits",
+    "BASE_TERM_STEMMED": "time deposit"
+  },
+  {
+    "BASE_TERM_ID": 130,
+    "BASE_TERM_UNSTEMMED": "tobacco",
+    "BASE_TERM_STEMMED": "tobacco"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "BASE_TERM_UNSTEMMED": "transit",
+    "BASE_TERM_STEMMED": "transit"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "BASE_TERM_UNSTEMMED": "transport",
+    "BASE_TERM_STEMMED": "transport"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "BASE_TERM_UNSTEMMED": "treasury bills",
+    "BASE_TERM_STEMMED": "treasuri bill"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "BASE_TERM_UNSTEMMED": "UBs",
+    "BASE_TERM_STEMMED": "ub"
+  },
+  {
+    "BASE_TERM_ID": 135,
+    "BASE_TERM_UNSTEMMED": "UK",
+    "BASE_TERM_STEMMED": "uk"
+  },
+  {
+    "BASE_TERM_ID": 136,
+    "BASE_TERM_UNSTEMMED": "un-incorporated",
+    "BASE_TERM_STEMMED": "un-incorpor"
+  },
+  {
+    "BASE_TERM_ID": 137,
+    "BASE_TERM_UNSTEMMED": "US",
+    "BASE_TERM_STEMMED": "us"
+  },
+  {
+    "BASE_TERM_ID": 138,
+    "BASE_TERM_UNSTEMMED": "write backs",
+    "BASE_TERM_STEMMED": "write back"
+  },
+  {
+    "BASE_TERM_ID": 139,
+    "BASE_TERM_UNSTEMMED": "write offs",
+    "BASE_TERM_STEMMED": "write off"
+  },
+  {
+    "BASE_TERM_ID": 140,
+    "BASE_TERM_UNSTEMMED": "EUAE",
+    "BASE_TERM_STEMMED": "euae"
+  },
+  {
+    "BASE_TERM_ID": 141,
+    "BASE_TERM_UNSTEMMED": "EUAF",
+    "BASE_TERM_STEMMED": "euaf"
+  },
+  {
+    "BASE_TERM_ID": 142,
+    "BASE_TERM_UNSTEMMED": "EUAG",
+    "BASE_TERM_STEMMED": "euag"
+  },
+  {
+    "BASE_TERM_ID": 143,
+    "BASE_TERM_UNSTEMMED": "EUAH",
+    "BASE_TERM_STEMMED": "euah"
+  },
+  {
+    "BASE_TERM_ID": 144,
+    "BASE_TERM_UNSTEMMED": "EUAI",
+    "BASE_TERM_STEMMED": "euai"
+  },
+  {
+    "BASE_TERM_ID": 145,
+    "BASE_TERM_UNSTEMMED": "EUAC",
+    "BASE_TERM_STEMMED": "euac"
+  },
+  {
+    "BASE_TERM_ID": 146,
+    "BASE_TERM_UNSTEMMED": "EUAK",
+    "BASE_TERM_STEMMED": "euak"
+  },
+  {
+    "BASE_TERM_ID": 147,
+    "BASE_TERM_UNSTEMMED": "AVAK",
+    "BASE_TERM_STEMMED": "avak"
+  },
+  {
+    "BASE_TERM_ID": 148,
+    "BASE_TERM_UNSTEMMED": "EUAL",
+    "BASE_TERM_STEMMED": "eual"
+  },
+  {
+    "BASE_TERM_ID": 149,
+    "BASE_TERM_UNSTEMMED": "EUAM",
+    "BASE_TERM_STEMMED": "euam"
+  },
+  {
+    "BASE_TERM_ID": 150,
+    "BASE_TERM_UNSTEMMED": "EUAN",
+    "BASE_TERM_STEMMED": "euan"
+  },
+  {
+    "BASE_TERM_ID": 151,
+    "BASE_TERM_UNSTEMMED": "EUAJ",
+    "BASE_TERM_STEMMED": "euaj"
+  },
+  {
+    "BASE_TERM_ID": 152,
+    "BASE_TERM_UNSTEMMED": "EUAO",
+    "BASE_TERM_STEMMED": "euao"
+  },
+  {
+    "BASE_TERM_ID": 153,
+    "BASE_TERM_UNSTEMMED": "EUAP",
+    "BASE_TERM_STEMMED": "euap"
+  },
+  {
+    "BASE_TERM_ID": 154,
+    "BASE_TERM_UNSTEMMED": "EUAQ",
+    "BASE_TERM_STEMMED": "euaq"
+  },
+  {
+    "BASE_TERM_ID": 155,
+    "BASE_TERM_UNSTEMMED": "EUAR",
+    "BASE_TERM_STEMMED": "euar"
+  },
+  {
+    "BASE_TERM_ID": 156,
+    "BASE_TERM_UNSTEMMED": "EUAS",
+    "BASE_TERM_STEMMED": "eua"
+  },
+  {
+    "BASE_TERM_ID": 157,
+    "BASE_TERM_UNSTEMMED": "EUAD",
+    "BASE_TERM_STEMMED": "euad"
+  },
+  {
+    "BASE_TERM_ID": 158,
+    "BASE_TERM_UNSTEMMED": "EUBN",
+    "BASE_TERM_STEMMED": "eubn"
+  },
+  {
+    "BASE_TERM_ID": 159,
+    "BASE_TERM_UNSTEMMED": "EUBO",
+    "BASE_TERM_STEMMED": "eubo"
+  },
+  {
+    "BASE_TERM_ID": 160,
+    "BASE_TERM_UNSTEMMED": "EUBC",
+    "BASE_TERM_STEMMED": "eubc"
+  },
+  {
+    "BASE_TERM_ID": 161,
+    "BASE_TERM_UNSTEMMED": "EUBD",
+    "BASE_TERM_STEMMED": "eubd"
+  },
+  {
+    "BASE_TERM_ID": 162,
+    "BASE_TERM_UNSTEMMED": "EUBE",
+    "BASE_TERM_STEMMED": "eub"
+  },
+  {
+    "BASE_TERM_ID": 163,
+    "BASE_TERM_UNSTEMMED": "EUAT",
+    "BASE_TERM_STEMMED": "euat"
+  },
+  {
+    "BASE_TERM_ID": 164,
+    "BASE_TERM_UNSTEMMED": "EUAU",
+    "BASE_TERM_STEMMED": "euau"
+  },
+  {
+    "BASE_TERM_ID": 165,
+    "BASE_TERM_UNSTEMMED": "EUAV",
+    "BASE_TERM_STEMMED": "euav"
+  },
+  {
+    "BASE_TERM_ID": 166,
+    "BASE_TERM_UNSTEMMED": "EUBA",
+    "BASE_TERM_STEMMED": "euba"
+  },
+  {
+    "BASE_TERM_ID": 167,
+    "BASE_TERM_UNSTEMMED": "EUBB",
+    "BASE_TERM_STEMMED": "eubb"
+  },
+  {
+    "BASE_TERM_ID": 168,
+    "BASE_TERM_UNSTEMMED": "EUBH",
+    "BASE_TERM_STEMMED": "eubh"
+  },
+  {
+    "BASE_TERM_ID": 169,
+    "BASE_TERM_UNSTEMMED": "EUBI",
+    "BASE_TERM_STEMMED": "eubi"
+  },
+  {
+    "BASE_TERM_ID": 170,
+    "BASE_TERM_UNSTEMMED": "EUBJ",
+    "BASE_TERM_STEMMED": "eubj"
+  },
+  {
+    "BASE_TERM_ID": 171,
+    "BASE_TERM_UNSTEMMED": "EUBK",
+    "BASE_TERM_STEMMED": "eubk"
+  },
+  {
+    "BASE_TERM_ID": 172,
+    "BASE_TERM_UNSTEMMED": "EUBL",
+    "BASE_TERM_STEMMED": "eubl"
+  },
+  {
+    "BASE_TERM_ID": 173,
+    "BASE_TERM_UNSTEMMED": "EUBM",
+    "BASE_TERM_STEMMED": "eubm"
+  },
+  {
+    "BASE_TERM_ID": 174,
+    "BASE_TERM_UNSTEMMED": "AVCB",
+    "BASE_TERM_STEMMED": "avcb"
+  },
+  {
+    "BASE_TERM_ID": 175,
+    "BASE_TERM_UNSTEMMED": "sell/buybacks",
+    "BASE_TERM_STEMMED": "sell/buyback"
+  },
+  {
+    "BASE_TERM_ID": 176,
+    "BASE_TERM_UNSTEMMED": "HMT",
+    "BASE_TERM_STEMMED": "hmt"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "BASE_TERM_UNSTEMMED": "ICPFs",
+    "BASE_TERM_STEMMED": "icpf"
+  },
+  {
+    "BASE_TERM_ID": 178,
+    "BASE_TERM_UNSTEMMED": "AVBP",
+    "BASE_TERM_STEMMED": "avbp"
+  },
+  {
+    "BASE_TERM_ID": 179,
+    "BASE_TERM_UNSTEMMED": "AVBM",
+    "BASE_TERM_STEMMED": "avbm"
+  },
+  {
+    "BASE_TERM_ID": 180,
+    "BASE_TERM_UNSTEMMED": "AVCA",
+    "BASE_TERM_STEMMED": "avca"
+  },
+  {
+    "BASE_TERM_ID": 181,
+    "BASE_TERM_UNSTEMMED": "AVCC",
+    "BASE_TERM_STEMMED": "avcc"
+  },
+  {
+    "BASE_TERM_ID": 182,
+    "BASE_TERM_UNSTEMMED": "AVCF",
+    "BASE_TERM_STEMMED": "avcf"
+  },
+  {
+    "BASE_TERM_ID": 183,
+    "BASE_TERM_UNSTEMMED": "AVCG",
+    "BASE_TERM_STEMMED": "avcg"
+  },
+  {
+    "BASE_TERM_ID": 184,
+    "BASE_TERM_UNSTEMMED": "AVCJ",
+    "BASE_TERM_STEMMED": "avcj"
+  },
+  {
+    "BASE_TERM_ID": 185,
+    "BASE_TERM_UNSTEMMED": "AVCI",
+    "BASE_TERM_STEMMED": "avci"
+  },
+  {
+    "BASE_TERM_ID": 186,
+    "BASE_TERM_UNSTEMMED": "AUAV",
+    "BASE_TERM_STEMMED": "auav"
+  },
+  {
+    "BASE_TERM_ID": 187,
+    "BASE_TERM_UNSTEMMED": "AAPR",
+    "BASE_TERM_STEMMED": "aapr"
+  },
+  {
+    "BASE_TERM_ID": 188,
+    "BASE_TERM_UNSTEMMED": "VTXF",
+    "BASE_TERM_STEMMED": "vtxf"
+  },
+  {
+    "BASE_TERM_ID": 189,
+    "BASE_TERM_UNSTEMMED": "VQIM",
+    "BASE_TERM_STEMMED": "vqim"
+  },
+  {
+    "BASE_TERM_ID": 190,
+    "BASE_TERM_UNSTEMMED": "VQIE",
+    "BASE_TERM_STEMMED": "vqie"
+  },
+  {
+    "BASE_TERM_ID": 191,
+    "BASE_TERM_UNSTEMMED": "ALRA",
+    "BASE_TERM_STEMMED": "alra"
+  },
+  {
+    "BASE_TERM_ID": 192,
+    "BASE_TERM_UNSTEMMED": "VQIC",
+    "BASE_TERM_STEMMED": "vqic"
+  },
+  {
+    "BASE_TERM_ID": 193,
+    "BASE_TERM_UNSTEMMED": "VQHQ",
+    "BASE_TERM_STEMMED": "vqhq"
+  },
+  {
+    "BASE_TERM_ID": 194,
+    "BASE_TERM_UNSTEMMED": "VQHD",
+    "BASE_TERM_STEMMED": "vqhd"
+  },
+  {
+    "BASE_TERM_ID": 195,
+    "BASE_TERM_UNSTEMMED": "VTMJ",
+    "BASE_TERM_STEMMED": "vtmj"
+  },
+  {
+    "BASE_TERM_ID": 196,
+    "BASE_TERM_UNSTEMMED": "VVVW",
+    "BASE_TERM_STEMMED": "vvvw"
+  },
+  {
+    "BASE_TERM_ID": 197,
+    "BASE_TERM_UNSTEMMED": "VRBE",
+    "BASE_TERM_STEMMED": "vrbe"
+  },
+  {
+    "BASE_TERM_ID": 198,
+    "BASE_TERM_UNSTEMMED": "AHLM",
+    "BASE_TERM_STEMMED": "ahlm"
+  },
+  {
+    "BASE_TERM_ID": 199,
+    "BASE_TERM_UNSTEMMED": "VTMK",
+    "BASE_TERM_STEMMED": "vtmk"
+  },
+  {
+    "BASE_TERM_ID": 200,
+    "BASE_TERM_UNSTEMMED": "VVVX",
+    "BASE_TERM_STEMMED": "vvvx"
+  },
+  {
+    "BASE_TERM_ID": 201,
+    "BASE_TERM_UNSTEMMED": "VQIV",
+    "BASE_TERM_STEMMED": "vqiv"
+  },
+  {
+    "BASE_TERM_ID": 202,
+    "BASE_TERM_UNSTEMMED": "VQIS",
+    "BASE_TERM_STEMMED": "vqi"
+  },
+  {
+    "BASE_TERM_ID": 203,
+    "BASE_TERM_UNSTEMMED": "VQIW",
+    "BASE_TERM_STEMMED": "vqiw"
+  },
+  {
+    "BASE_TERM_ID": 204,
+    "BASE_TERM_UNSTEMMED": "VQIU",
+    "BASE_TERM_STEMMED": "vqiu"
+  },
+  {
+    "BASE_TERM_ID": 205,
+    "BASE_TERM_UNSTEMMED": "VQIR",
+    "BASE_TERM_STEMMED": "vqir"
+  },
+  {
+    "BASE_TERM_ID": 206,
+    "BASE_TERM_UNSTEMMED": "VQIT",
+    "BASE_TERM_STEMMED": "vqit"
+  },
+  {
+    "BASE_TERM_ID": 207,
+    "BASE_TERM_UNSTEMMED": "VQID",
+    "BASE_TERM_STEMMED": "vqid"
+  },
+  {
+    "BASE_TERM_ID": 208,
+    "BASE_TERM_UNSTEMMED": "VQIH",
+    "BASE_TERM_STEMMED": "vqih"
+  },
+  {
+    "BASE_TERM_ID": 209,
+    "BASE_TERM_UNSTEMMED": "VQIK",
+    "BASE_TERM_STEMMED": "vqik"
+  },
+  {
+    "BASE_TERM_ID": 210,
+    "BASE_TERM_UNSTEMMED": "VQHZ",
+    "BASE_TERM_STEMMED": "vqhz"
+  },
+  {
+    "BASE_TERM_ID": 211,
+    "BASE_TERM_UNSTEMMED": "VQHW",
+    "BASE_TERM_STEMMED": "vqhw"
+  },
+  {
+    "BASE_TERM_ID": 212,
+    "BASE_TERM_UNSTEMMED": "VQIA",
+    "BASE_TERM_STEMMED": "vqia"
+  },
+  {
+    "BASE_TERM_ID": 213,
+    "BASE_TERM_UNSTEMMED": "VQHY",
+    "BASE_TERM_STEMMED": "vqhy"
+  },
+  {
+    "BASE_TERM_ID": 214,
+    "BASE_TERM_UNSTEMMED": "VQHV",
+    "BASE_TERM_STEMMED": "vqhv"
+  },
+  {
+    "BASE_TERM_ID": 215,
+    "BASE_TERM_UNSTEMMED": "VQHX",
+    "BASE_TERM_STEMMED": "vqhx"
+  },
+  {
+    "BASE_TERM_ID": 216,
+    "BASE_TERM_UNSTEMMED": "VQHH",
+    "BASE_TERM_STEMMED": "vqhh"
+  },
+  {
+    "BASE_TERM_ID": 217,
+    "BASE_TERM_UNSTEMMED": "VQHO",
+    "BASE_TERM_STEMMED": "vqho"
+  },
+  {
+    "BASE_TERM_ID": 218,
+    "BASE_TERM_UNSTEMMED": "BKPK",
+    "BASE_TERM_STEMMED": "bkpk"
+  },
+  {
+    "BASE_TERM_ID": 219,
+    "BASE_TERM_UNSTEMMED": "BKPL",
+    "BASE_TERM_STEMMED": "bkpl"
+  },
+  {
+    "BASE_TERM_ID": 220,
+    "BASE_TERM_UNSTEMMED": "BKPM",
+    "BASE_TERM_STEMMED": "bkpm"
+  },
+  {
+    "BASE_TERM_ID": 221,
+    "BASE_TERM_UNSTEMMED": "ACUA",
+    "BASE_TERM_STEMMED": "acua"
+  },
+  {
+    "BASE_TERM_ID": 222,
+    "BASE_TERM_UNSTEMMED": "BKPJ",
+    "BASE_TERM_STEMMED": "bkpj"
+  },
+  {
+    "BASE_TERM_ID": 223,
+    "BASE_TERM_UNSTEMMED": "ACRV",
+    "BASE_TERM_STEMMED": "acrv"
+  },
+  {
+    "BASE_TERM_ID": 224,
+    "BASE_TERM_UNSTEMMED": "BKSL",
+    "BASE_TERM_STEMMED": "bksl"
+  },
+  {
+    "BASE_TERM_ID": 225,
+    "BASE_TERM_UNSTEMMED": "BKPG",
+    "BASE_TERM_STEMMED": "bkpg"
+  },
+  {
+    "BASE_TERM_ID": 226,
+    "BASE_TERM_UNSTEMMED": "EYSJ",
+    "BASE_TERM_STEMMED": "eysj"
+  },
+  {
+    "BASE_TERM_ID": 227,
+    "BASE_TERM_UNSTEMMED": "EYSV",
+    "BASE_TERM_STEMMED": "eysv"
+  },
+  {
+    "BASE_TERM_ID": 228,
+    "BASE_TERM_UNSTEMMED": "BKPH",
+    "BASE_TERM_STEMMED": "bkph"
+  },
+  {
+    "BASE_TERM_ID": 229,
+    "BASE_TERM_UNSTEMMED": "BKPI",
+    "BASE_TERM_STEMMED": "bkpi"
+  },
+  {
+    "BASE_TERM_ID": 230,
+    "BASE_TERM_UNSTEMMED": "BKPW",
+    "BASE_TERM_STEMMED": "bkpw"
+  },
+  {
+    "BASE_TERM_ID": 231,
+    "BASE_TERM_UNSTEMMED": "EYKP",
+    "BASE_TERM_STEMMED": "eykp"
+  },
+  {
+    "BASE_TERM_ID": 232,
+    "BASE_TERM_UNSTEMMED": "BKPX",
+    "BASE_TERM_STEMMED": "bkpx"
+  },
+  {
+    "BASE_TERM_ID": 233,
+    "BASE_TERM_UNSTEMMED": "EYYD",
+    "BASE_TERM_STEMMED": "eyyd"
+  },
+  {
+    "BASE_TERM_ID": 234,
+    "BASE_TERM_UNSTEMMED": "BKQA",
+    "BASE_TERM_STEMMED": "bkqa"
+  },
+  {
+    "BASE_TERM_ID": 235,
+    "BASE_TERM_UNSTEMMED": "AIPD",
+    "BASE_TERM_STEMMED": "aipd"
+  },
+  {
+    "BASE_TERM_ID": 236,
+    "BASE_TERM_UNSTEMMED": "BKSO",
+    "BASE_TERM_STEMMED": "bkso"
+  },
+  {
+    "BASE_TERM_ID": 237,
+    "BASE_TERM_UNSTEMMED": "BKQG",
+    "BASE_TERM_STEMMED": "bkqg"
+  },
+  {
+    "BASE_TERM_ID": 238,
+    "BASE_TERM_UNSTEMMED": "BKSP",
+    "BASE_TERM_STEMMED": "bksp"
+  },
+  {
+    "BASE_TERM_ID": 239,
+    "BASE_TERM_UNSTEMMED": "BKSQ",
+    "BASE_TERM_STEMMED": "bksq"
+  },
+  {
+    "BASE_TERM_ID": 240,
+    "BASE_TERM_UNSTEMMED": "BKQJ",
+    "BASE_TERM_STEMMED": "bkqj"
+  },
+  {
+    "BASE_TERM_ID": 241,
+    "BASE_TERM_UNSTEMMED": "BKQK",
+    "BASE_TERM_STEMMED": "bkqk"
+  },
+  {
+    "BASE_TERM_ID": 242,
+    "BASE_TERM_UNSTEMMED": "RUTO",
+    "BASE_TERM_STEMMED": "ruto"
+  },
+  {
+    "BASE_TERM_ID": 243,
+    "BASE_TERM_UNSTEMMED": "AJIA",
+    "BASE_TERM_STEMMED": "ajia"
+  },
+  {
+    "BASE_TERM_ID": 244,
+    "BASE_TERM_UNSTEMMED": "AJRJ",
+    "BASE_TERM_STEMMED": "ajrj"
+  },
+  {
+    "BASE_TERM_ID": 245,
+    "BASE_TERM_UNSTEMMED": "AJRK",
+    "BASE_TERM_STEMMED": "ajrk"
+  },
+  {
+    "BASE_TERM_ID": 246,
+    "BASE_TERM_UNSTEMMED": "AJRL",
+    "BASE_TERM_STEMMED": "ajrl"
+  },
+  {
+    "BASE_TERM_ID": 247,
+    "BASE_TERM_UNSTEMMED": "AJHX",
+    "BASE_TERM_STEMMED": "ajhx"
+  },
+  {
+    "BASE_TERM_ID": 248,
+    "BASE_TERM_UNSTEMMED": "AJVR",
+    "BASE_TERM_STEMMED": "ajvr"
+  },
+  {
+    "BASE_TERM_ID": 249,
+    "BASE_TERM_UNSTEMMED": "AJVT",
+    "BASE_TERM_STEMMED": "ajvt"
+  },
+  {
+    "BASE_TERM_ID": 250,
+    "BASE_TERM_UNSTEMMED": "WBIA",
+    "BASE_TERM_STEMMED": "wbia"
+  },
+  {
+    "BASE_TERM_ID": 251,
+    "BASE_TERM_UNSTEMMED": "WSIA",
+    "BASE_TERM_STEMMED": "wsia"
+  },
+  {
+    "BASE_TERM_ID": 252,
+    "BASE_TERM_UNSTEMMED": "WTIA",
+    "BASE_TERM_STEMMED": "wtia"
+  },
+  {
+    "BASE_TERM_ID": 253,
+    "BASE_TERM_UNSTEMMED": "WBTA",
+    "BASE_TERM_STEMMED": "wbta"
+  },
+  {
+    "BASE_TERM_ID": 254,
+    "BASE_TERM_UNSTEMMED": "WSTA",
+    "BASE_TERM_STEMMED": "wsta"
+  },
+  {
+    "BASE_TERM_ID": 255,
+    "BASE_TERM_UNSTEMMED": "WTTA",
+    "BASE_TERM_STEMMED": "wtta"
+  },
+  {
+    "BASE_TERM_ID": 256,
+    "BASE_TERM_UNSTEMMED": "charges",
+    "BASE_TERM_STEMMED": "charg"
+  },
+  {
+    "BASE_TERM_ID": 257,
+    "BASE_TERM_UNSTEMMED": "receivable",
+    "BASE_TERM_STEMMED": "receiv"
+  },
+  {
+    "BASE_TERM_ID": 258,
+    "BASE_TERM_UNSTEMMED": "payable",
+    "BASE_TERM_STEMMED": "payabl"
+  },
+  {
+    "BASE_TERM_ID": 259,
+    "BASE_TERM_UNSTEMMED": "United States",
+    "BASE_TERM_STEMMED": "unit state"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "BASE_TERM_UNSTEMMED": "Expenditure",
+    "BASE_TERM_STEMMED": "expenditur"
+  },
+  {
+    "BASE_TERM_ID": 261,
+    "BASE_TERM_UNSTEMMED": "Bangladesh",
+    "BASE_TERM_STEMMED": "bangladesh"
+  },
+  {
+    "BASE_TERM_ID": 262,
+    "BASE_TERM_UNSTEMMED": "Belize",
+    "BASE_TERM_STEMMED": "beliz"
+  },
+  {
+    "BASE_TERM_ID": 263,
+    "BASE_TERM_UNSTEMMED": "Democratic People's Republic of Korea",
+    "BASE_TERM_STEMMED": "democrat people' republ of korea"
+  },
+  {
+    "BASE_TERM_ID": 264,
+    "BASE_TERM_UNSTEMMED": "Democratic Republic of Congo",
+    "BASE_TERM_STEMMED": "democrat republ of congo"
+  },
+  {
+    "BASE_TERM_ID": 265,
+    "BASE_TERM_UNSTEMMED": "Eritrea",
+    "BASE_TERM_STEMMED": "eritrea"
+  },
+  {
+    "BASE_TERM_ID": 266,
+    "BASE_TERM_UNSTEMMED": "German Democratic Republic",
+    "BASE_TERM_STEMMED": "german democrat republ"
+  },
+  {
+    "BASE_TERM_ID": 267,
+    "BASE_TERM_UNSTEMMED": "Germany",
+    "BASE_TERM_STEMMED": "germani"
+  },
+  {
+    "BASE_TERM_ID": 268,
+    "BASE_TERM_UNSTEMMED": "Ivory Coast",
+    "BASE_TERM_STEMMED": "ivori coast"
+  },
+  {
+    "BASE_TERM_ID": 269,
+    "BASE_TERM_UNSTEMMED": "Palestinian Autonomy",
+    "BASE_TERM_STEMMED": "palestinian autonomi"
+  },
+  {
+    "BASE_TERM_ID": 270,
+    "BASE_TERM_UNSTEMMED": "Republic of Korea",
+    "BASE_TERM_STEMMED": "republ of korea"
+  },
+  {
+    "BASE_TERM_ID": 271,
+    "BASE_TERM_UNSTEMMED": "Sri Lanka",
+    "BASE_TERM_STEMMED": "sri lanka"
+  },
+  {
+    "BASE_TERM_ID": 272,
+    "BASE_TERM_UNSTEMMED": "Zimbabwe",
+    "BASE_TERM_STEMMED": "zimbabw"
+  },
+  {
+    "BASE_TERM_ID": 273,
+    "BASE_TERM_UNSTEMMED": "AJGA",
+    "BASE_TERM_STEMMED": "ajga"
+  },
+  {
+    "BASE_TERM_ID": 274,
+    "BASE_TERM_UNSTEMMED": "AJFA",
+    "BASE_TERM_STEMMED": "ajfa"
+  },
+  {
+    "BASE_TERM_ID": 275,
+    "BASE_TERM_UNSTEMMED": "Bank Rate",
+    "BASE_TERM_STEMMED": "bank rate"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "BASE_TERM_UNSTEMMED": "small and medium-sized enterprises",
+    "BASE_TERM_STEMMED": "small and medium-size enterprise"
+  }
+]
