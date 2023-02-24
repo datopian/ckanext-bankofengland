@@ -32,6 +32,10 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
         facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
+        facets_dict['eba_dim_mce_main_category_that_generates_income_or_expenses'] = plugins.toolkit._('eba_dim:MCE (Main category that generates income or expenses)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
@@ -44,6 +48,10 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
         facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
+        facets_dict['eba_dim_mce_main_category_that_generates_income_or_expenses'] = plugins.toolkit._('eba_dim:MCE (Main category that generates income or expenses)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
@@ -56,6 +64,10 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['eba_dim_mcy_main_category'] = plugins.toolkit._('eba_dim:MCY (Main category)')
         facets_dict['eba_dim_mcb_instrument'] = plugins.toolkit._('eba_dim:MCB (Instrument)')
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
+        facets_dict['eba_dim_mce_main_category_that_generates_income_or_expenses'] = plugins.toolkit._('eba_dim:MCE (Main category that generates income or expenses)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         return facets_dict
 
     # IConfigurable
