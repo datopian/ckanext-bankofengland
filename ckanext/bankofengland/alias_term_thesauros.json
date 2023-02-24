@@ -1,0 +1,3254 @@
+[
+  {
+    "BASE_TERM_ID": 0,
+    "ALIAS_TERM_UNSTEMMED": "$",
+    "ALIAS_TERM_STEMMED": "$",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 0,
+    "ALIAS_TERM_UNSTEMMED": "dollar",
+    "ALIAS_TERM_STEMMED": "dollar",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 0,
+    "ALIAS_TERM_UNSTEMMED": "dollars",
+    "ALIAS_TERM_STEMMED": "dollar",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 0,
+    "ALIAS_TERM_UNSTEMMED": "US dollar",
+    "ALIAS_TERM_STEMMED": "us dollar",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 0,
+    "ALIAS_TERM_UNSTEMMED": "USD",
+    "ALIAS_TERM_STEMMED": "usd",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 1,
+    "ALIAS_TERM_UNSTEMMED": "%",
+    "ALIAS_TERM_STEMMED": "%",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 1,
+    "ALIAS_TERM_UNSTEMMED": "per cent",
+    "ALIAS_TERM_STEMMED": "per cent",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 1,
+    "ALIAS_TERM_UNSTEMMED": "percentage",
+    "ALIAS_TERM_STEMMED": "percentag",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "ALIAS_TERM_UNSTEMMED": "pound",
+    "ALIAS_TERM_STEMMED": "pound",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "ALIAS_TERM_UNSTEMMED": "pound sterling",
+    "ALIAS_TERM_STEMMED": "pound sterl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "ALIAS_TERM_UNSTEMMED": "pounds",
+    "ALIAS_TERM_STEMMED": "pound",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "ALIAS_TERM_UNSTEMMED": "pounds sterling",
+    "ALIAS_TERM_STEMMED": "pound sterl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 2,
+    "ALIAS_TERM_UNSTEMMED": "£",
+    "ALIAS_TERM_STEMMED": "£",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "ALIAS_TERM_UNSTEMMED": "acceptance",
+    "ALIAS_TERM_STEMMED": "accept",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "ALIAS_TERM_UNSTEMMED": "bill",
+    "ALIAS_TERM_STEMMED": "bill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "ALIAS_TERM_UNSTEMMED": "bill of exchange",
+    "ALIAS_TERM_STEMMED": "bill of exchang",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "ALIAS_TERM_UNSTEMMED": "bills",
+    "ALIAS_TERM_STEMMED": "bill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 3,
+    "ALIAS_TERM_UNSTEMMED": "bills of exchange",
+    "ALIAS_TERM_STEMMED": "bill of exchang",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 4,
+    "ALIAS_TERM_UNSTEMMED": "accrual",
+    "ALIAS_TERM_STEMMED": "accrual",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 4,
+    "ALIAS_TERM_UNSTEMMED": "accruals",
+    "ALIAS_TERM_STEMMED": "accrual",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 5,
+    "ALIAS_TERM_UNSTEMMED": "farm",
+    "ALIAS_TERM_STEMMED": "farm",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 5,
+    "ALIAS_TERM_UNSTEMMED": "farming",
+    "ALIAS_TERM_STEMMED": "farm",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 5,
+    "ALIAS_TERM_UNSTEMMED": "farms",
+    "ALIAS_TERM_STEMMED": "farm",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "ALIAS_TERM_UNSTEMMED": "amount",
+    "ALIAS_TERM_STEMMED": "amount",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "ALIAS_TERM_UNSTEMMED": "amount outstanding",
+    "ALIAS_TERM_STEMMED": "amount outstand",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "ALIAS_TERM_UNSTEMMED": "balance",
+    "ALIAS_TERM_STEMMED": "balanc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "ALIAS_TERM_UNSTEMMED": "level",
+    "ALIAS_TERM_STEMMED": "level",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 6,
+    "ALIAS_TERM_UNSTEMMED": "stock",
+    "ALIAS_TERM_STEMMED": "stock",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 7,
+    "ALIAS_TERM_UNSTEMMED": "approved loans",
+    "ALIAS_TERM_STEMMED": "approv loan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 7,
+    "ALIAS_TERM_UNSTEMMED": "commitments",
+    "ALIAS_TERM_STEMMED": "commit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 7,
+    "ALIAS_TERM_UNSTEMMED": "loans approved",
+    "ALIAS_TERM_STEMMED": "loan approv",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 8,
+    "ALIAS_TERM_UNSTEMMED": "BoE",
+    "ALIAS_TERM_STEMMED": "boe",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 8,
+    "ALIAS_TERM_UNSTEMMED": "BofE",
+    "ALIAS_TERM_STEMMED": "bofe",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 9,
+    "ALIAS_TERM_UNSTEMMED": "beverage",
+    "ALIAS_TERM_STEMMED": "beverag",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 9,
+    "ALIAS_TERM_UNSTEMMED": "drink",
+    "ALIAS_TERM_STEMMED": "drink",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 9,
+    "ALIAS_TERM_UNSTEMMED": "drinks",
+    "ALIAS_TERM_STEMMED": "drink",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 10,
+    "ALIAS_TERM_UNSTEMMED": "Bank for International Settlements",
+    "ALIAS_TERM_STEMMED": "bank for intern settlement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 10,
+    "ALIAS_TERM_UNSTEMMED": "Bank of International Settlements",
+    "ALIAS_TERM_STEMMED": "bank of intern settlement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 11,
+    "ALIAS_TERM_UNSTEMMED": "balance of payments",
+    "ALIAS_TERM_STEMMED": "balanc of payment",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 11,
+    "ALIAS_TERM_UNSTEMMED": "BofP",
+    "ALIAS_TERM_STEMMED": "bofp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 12,
+    "ALIAS_TERM_UNSTEMMED": "bridging finance",
+    "ALIAS_TERM_STEMMED": "bridg financ",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 13,
+    "ALIAS_TERM_UNSTEMMED": "money stock",
+    "ALIAS_TERM_STEMMED": "monei stock",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 13,
+    "ALIAS_TERM_UNSTEMMED": "M4",
+    "ALIAS_TERM_STEMMED": "m4",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 14,
+    "ALIAS_TERM_UNSTEMMED": "cancelled loans",
+    "ALIAS_TERM_STEMMED": "cancel loan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 14,
+    "ALIAS_TERM_UNSTEMMED": "loans cancelled",
+    "ALIAS_TERM_STEMMED": "loan cancel",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "ALIAS_TERM_UNSTEMMED": "equities",
+    "ALIAS_TERM_STEMMED": "equiti",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "ALIAS_TERM_UNSTEMMED": "equity",
+    "ALIAS_TERM_STEMMED": "equiti",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "ALIAS_TERM_UNSTEMMED": "share",
+    "ALIAS_TERM_STEMMED": "share",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "ALIAS_TERM_UNSTEMMED": "shares",
+    "ALIAS_TERM_STEMMED": "share",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 15,
+    "ALIAS_TERM_UNSTEMMED": "securities",
+    "ALIAS_TERM_STEMMED": "secur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 16,
+    "ALIAS_TERM_UNSTEMMED": "restaurant",
+    "ALIAS_TERM_STEMMED": "restaur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 16,
+    "ALIAS_TERM_UNSTEMMED": "restaurants",
+    "ALIAS_TERM_STEMMED": "restaur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 17,
+    "ALIAS_TERM_UNSTEMMED": "certificate of deposit",
+    "ALIAS_TERM_STEMMED": "certif of deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 17,
+    "ALIAS_TERM_UNSTEMMED": "certificates of deposit",
+    "ALIAS_TERM_STEMMED": "certif of deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 17,
+    "ALIAS_TERM_UNSTEMMED": "CD",
+    "ALIAS_TERM_STEMMED": "cd",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 18,
+    "ALIAS_TERM_UNSTEMMED": "CG",
+    "ALIAS_TERM_STEMMED": "cg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 19,
+    "ALIAS_TERM_UNSTEMMED": "central government gross debt",
+    "ALIAS_TERM_STEMMED": "central govern gross debt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 20,
+    "ALIAS_TERM_UNSTEMMED": "central government borrowing requirement",
+    "ALIAS_TERM_STEMMED": "central govern borrow requir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 20,
+    "ALIAS_TERM_UNSTEMMED": "CGBR",
+    "ALIAS_TERM_STEMMED": "cgbr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 20,
+    "ALIAS_TERM_UNSTEMMED": "CGNCR",
+    "ALIAS_TERM_STEMMED": "cgncr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 21,
+    "ALIAS_TERM_UNSTEMMED": "central government borrowing requirement (own account)",
+    "ALIAS_TERM_STEMMED": "central govern borrow requir (own account)",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 21,
+    "ALIAS_TERM_UNSTEMMED": "CGBR (O)",
+    "ALIAS_TERM_STEMMED": "cgbr (o)",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 21,
+    "ALIAS_TERM_UNSTEMMED": "CGNCR(O)",
+    "ALIAS_TERM_STEMMED": "cgncr(o)",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 21,
+    "ALIAS_TERM_UNSTEMMED": "CGNCRO",
+    "ALIAS_TERM_STEMMED": "cgncro",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 22,
+    "ALIAS_TERM_UNSTEMMED": "central gilts office",
+    "ALIAS_TERM_STEMMED": "central gilt offic",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 23,
+    "ALIAS_TERM_UNSTEMMED": "change",
+    "ALIAS_TERM_STEMMED": "chang",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 23,
+    "ALIAS_TERM_UNSTEMMED": "flow",
+    "ALIAS_TERM_STEMMED": "flow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 23,
+    "ALIAS_TERM_UNSTEMMED": "flows",
+    "ALIAS_TERM_STEMMED": "flow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 24,
+    "ALIAS_TERM_UNSTEMMED": "guernsey",
+    "ALIAS_TERM_STEMMED": "guernsei",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 24,
+    "ALIAS_TERM_UNSTEMMED": "jersey",
+    "ALIAS_TERM_STEMMED": "jersei",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 25,
+    "ALIAS_TERM_UNSTEMMED": "central monetary institution",
+    "ALIAS_TERM_STEMMED": "central monetari institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 25,
+    "ALIAS_TERM_UNSTEMMED": "central monetary institutions",
+    "ALIAS_TERM_STEMMED": "central monetari institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 25,
+    "ALIAS_TERM_UNSTEMMED": "CMIs",
+    "ALIAS_TERM_STEMMED": "cmi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 26,
+    "ALIAS_TERM_UNSTEMMED": "coins",
+    "ALIAS_TERM_STEMMED": "coin",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "ALIAS_TERM_UNSTEMMED": "cold water",
+    "ALIAS_TERM_STEMMED": "cold water",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "ALIAS_TERM_UNSTEMMED": "cold water purification",
+    "ALIAS_TERM_STEMMED": "cold water purif",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "ALIAS_TERM_UNSTEMMED": "cold water supply",
+    "ALIAS_TERM_STEMMED": "cold water suppli",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "ALIAS_TERM_UNSTEMMED": "water",
+    "ALIAS_TERM_STEMMED": "water",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 27,
+    "ALIAS_TERM_UNSTEMMED": "water companies",
+    "ALIAS_TERM_STEMMED": "water compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 28,
+    "ALIAS_TERM_UNSTEMMED": "telecom",
+    "ALIAS_TERM_STEMMED": "telecom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 28,
+    "ALIAS_TERM_UNSTEMMED": "telecommunication",
+    "ALIAS_TERM_STEMMED": "telecommun",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 28,
+    "ALIAS_TERM_UNSTEMMED": "telecommunications",
+    "ALIAS_TERM_STEMMED": "telecommun",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 28,
+    "ALIAS_TERM_UNSTEMMED": "telecoms",
+    "ALIAS_TERM_STEMMED": "telecom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 29,
+    "ALIAS_TERM_UNSTEMMED": "builders",
+    "ALIAS_TERM_STEMMED": "builder",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 29,
+    "ALIAS_TERM_UNSTEMMED": "building",
+    "ALIAS_TERM_STEMMED": "build",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "ALIAS_TERM_UNSTEMMED": "credit",
+    "ALIAS_TERM_STEMMED": "credit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "ALIAS_TERM_UNSTEMMED": "personal lending",
+    "ALIAS_TERM_STEMMED": "person lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "ALIAS_TERM_UNSTEMMED": "retail borrowing",
+    "ALIAS_TERM_STEMMED": "retail borrow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "ALIAS_TERM_UNSTEMMED": "retail lending",
+    "ALIAS_TERM_STEMMED": "retail lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 30,
+    "ALIAS_TERM_UNSTEMMED": "unsecured lending",
+    "ALIAS_TERM_STEMMED": "unsecur lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 31,
+    "ALIAS_TERM_UNSTEMMED": "corporates",
+    "ALIAS_TERM_STEMMED": "corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 31,
+    "ALIAS_TERM_UNSTEMMED": "corporation",
+    "ALIAS_TERM_STEMMED": "corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 31,
+    "ALIAS_TERM_UNSTEMMED": "corporations",
+    "ALIAS_TERM_STEMMED": "corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 31,
+    "ALIAS_TERM_UNSTEMMED": "corps",
+    "ALIAS_TERM_STEMMED": "corp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 32,
+    "ALIAS_TERM_UNSTEMMED": "£CP",
+    "ALIAS_TERM_STEMMED": "£cp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 32,
+    "ALIAS_TERM_UNSTEMMED": "CP",
+    "ALIAS_TERM_STEMMED": "cp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 33,
+    "ALIAS_TERM_UNSTEMMED": "cash ratio deposit",
+    "ALIAS_TERM_STEMMED": "cash ratio deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 33,
+    "ALIAS_TERM_UNSTEMMED": "CRD",
+    "ALIAS_TERM_STEMMED": "crd",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 33,
+    "ALIAS_TERM_UNSTEMMED": "CRDs",
+    "ALIAS_TERM_STEMMED": "crd",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 34,
+    "ALIAS_TERM_UNSTEMMED": "certificate of tax deposit",
+    "ALIAS_TERM_STEMMED": "certif of tax deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 34,
+    "ALIAS_TERM_UNSTEMMED": "certificates of tax deposit",
+    "ALIAS_TERM_STEMMED": "certif of tax deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 34,
+    "ALIAS_TERM_UNSTEMMED": "CTDs",
+    "ALIAS_TERM_STEMMED": "ctd",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 35,
+    "ALIAS_TERM_UNSTEMMED": "debt management account",
+    "ALIAS_TERM_STEMMED": "debt manag account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 36,
+    "ALIAS_TERM_UNSTEMMED": "Debt Management Office",
+    "ALIAS_TERM_STEMMED": "debt manag offic",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 37,
+    "ALIAS_TERM_UNSTEMMED": "European bank for reconstruction and development",
+    "ALIAS_TERM_STEMMED": "european bank for reconstruct and develop",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 37,
+    "ALIAS_TERM_UNSTEMMED": "European bank of reconstruction and development",
+    "ALIAS_TERM_STEMMED": "european bank of reconstruct and develop",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 38,
+    "ALIAS_TERM_UNSTEMMED": "European Central Bank",
+    "ALIAS_TERM_STEMMED": "european central bank",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 39,
+    "ALIAS_TERM_UNSTEMMED": "export credits guarantee",
+    "ALIAS_TERM_STEMMED": "export credit guarante",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 39,
+    "ALIAS_TERM_UNSTEMMED": "Export credits guarantee department",
+    "ALIAS_TERM_STEMMED": "export credit guarante depart",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 40,
+    "ALIAS_TERM_UNSTEMMED": "euro commercial paper",
+    "ALIAS_TERM_STEMMED": "euro commerci paper",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 41,
+    "ALIAS_TERM_UNSTEMMED": "ecu",
+    "ALIAS_TERM_STEMMED": "ecu",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 41,
+    "ALIAS_TERM_UNSTEMMED": "european currency unit",
+    "ALIAS_TERM_STEMMED": "european currenc unit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 42,
+    "ALIAS_TERM_UNSTEMMED": "exchange equalisation account",
+    "ALIAS_TERM_STEMMED": "exchang equalis account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 43,
+    "ALIAS_TERM_UNSTEMMED": "effective interest rate",
+    "ALIAS_TERM_STEMMED": "effect interest rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 43,
+    "ALIAS_TERM_UNSTEMMED": "effective interest rates",
+    "ALIAS_TERM_STEMMED": "effect interest rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 44,
+    "ALIAS_TERM_UNSTEMMED": "eligible liabilities",
+    "ALIAS_TERM_STEMMED": "elig liabil",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 44,
+    "ALIAS_TERM_UNSTEMMED": "eligible liability",
+    "ALIAS_TERM_STEMMED": "elig liabil",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 44,
+    "ALIAS_TERM_UNSTEMMED": "EL",
+    "ALIAS_TERM_STEMMED": "el",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 45,
+    "ALIAS_TERM_UNSTEMMED": "economic monetary union",
+    "ALIAS_TERM_STEMMED": "econom monetari union",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 45,
+    "ALIAS_TERM_UNSTEMMED": "european monetary union",
+    "ALIAS_TERM_STEMMED": "european monetari union",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 45,
+    "ALIAS_TERM_UNSTEMMED": "european union",
+    "ALIAS_TERM_STEMMED": "european union",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 45,
+    "ALIAS_TERM_UNSTEMMED": "EU",
+    "ALIAS_TERM_STEMMED": "eu",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 46,
+    "ALIAS_TERM_UNSTEMMED": "effective exchange rate",
+    "ALIAS_TERM_STEMMED": "effect exchang rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 46,
+    "ALIAS_TERM_UNSTEMMED": "effective exchange rates",
+    "ALIAS_TERM_STEMMED": "effect exchang rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 47,
+    "ALIAS_TERM_UNSTEMMED": "ECB",
+    "ALIAS_TERM_STEMMED": "ecb",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 48,
+    "ALIAS_TERM_UNSTEMMED": "ext",
+    "ALIAS_TERM_STEMMED": "ext",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 48,
+    "ALIAS_TERM_UNSTEMMED": "foreign",
+    "ALIAS_TERM_STEMMED": "foreign",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 49,
+    "ALIAS_TERM_UNSTEMMED": "for ex",
+    "ALIAS_TERM_STEMMED": "for ex",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 49,
+    "ALIAS_TERM_UNSTEMMED": "foreign currencies",
+    "ALIAS_TERM_STEMMED": "foreign currenc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 49,
+    "ALIAS_TERM_UNSTEMMED": "forex",
+    "ALIAS_TERM_STEMMED": "forex",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 49,
+    "ALIAS_TERM_UNSTEMMED": "FC",
+    "ALIAS_TERM_STEMMED": "fc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 50,
+    "ALIAS_TERM_UNSTEMMED": "direct investment",
+    "ALIAS_TERM_STEMMED": "direct invest",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 50,
+    "ALIAS_TERM_UNSTEMMED": "foreign direct investment",
+    "ALIAS_TERM_STEMMED": "foreign direct invest",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 51,
+    "ALIAS_TERM_UNSTEMMED": "forward rate agreement",
+    "ALIAS_TERM_STEMMED": "forward rate agreement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 51,
+    "ALIAS_TERM_UNSTEMMED": "forward rate agreements",
+    "ALIAS_TERM_STEMMED": "forward rate agreement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 51,
+    "ALIAS_TERM_UNSTEMMED": "FRA",
+    "ALIAS_TERM_STEMMED": "fra",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 52,
+    "ALIAS_TERM_UNSTEMMED": "floating rate note",
+    "ALIAS_TERM_STEMMED": "float rate note",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 52,
+    "ALIAS_TERM_UNSTEMMED": "floating rate notes",
+    "ALIAS_TERM_STEMMED": "float rate note",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 53,
+    "ALIAS_TERM_UNSTEMMED": "petrol",
+    "ALIAS_TERM_STEMMED": "petrol",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 54,
+    "ALIAS_TERM_UNSTEMMED": "general collateral",
+    "ALIAS_TERM_STEMMED": "gener collater",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 55,
+    "ALIAS_TERM_UNSTEMMED": "general government consolidated gross debt",
+    "ALIAS_TERM_STEMMED": "gener govern consolid gross debt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 55,
+    "ALIAS_TERM_UNSTEMMED": "Maastricht debt",
+    "ALIAS_TERM_STEMMED": "maastricht debt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "ALIAS_TERM_UNSTEMMED": "british government bonds",
+    "ALIAS_TERM_STEMMED": "british govern bond",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "ALIAS_TERM_UNSTEMMED": "british government stocks",
+    "ALIAS_TERM_STEMMED": "british govern stock",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "ALIAS_TERM_UNSTEMMED": "gilt",
+    "ALIAS_TERM_STEMMED": "gilt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "ALIAS_TERM_UNSTEMMED": "gilt edged securities",
+    "ALIAS_TERM_STEMMED": "gilt edg secur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 56,
+    "ALIAS_TERM_UNSTEMMED": "BGS",
+    "ALIAS_TERM_STEMMED": "bg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "ALIAS_TERM_UNSTEMMED": "annual",
+    "ALIAS_TERM_STEMMED": "annual",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "ALIAS_TERM_UNSTEMMED": "y-o-y",
+    "ALIAS_TERM_STEMMED": "y-o-i",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "ALIAS_TERM_UNSTEMMED": "year on year",
+    "ALIAS_TERM_STEMMED": "year on year",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "ALIAS_TERM_UNSTEMMED": "yearly",
+    "ALIAS_TERM_STEMMED": "yearli",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 57,
+    "ALIAS_TERM_UNSTEMMED": "12 month",
+    "ALIAS_TERM_STEMMED": "12 month",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 58,
+    "ALIAS_TERM_UNSTEMMED": "smart card",
+    "ALIAS_TERM_STEMMED": "smart card",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 58,
+    "ALIAS_TERM_UNSTEMMED": "smart cards",
+    "ALIAS_TERM_STEMMED": "smart card",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 58,
+    "ALIAS_TERM_UNSTEMMED": "smartcard",
+    "ALIAS_TERM_STEMMED": "smartcard",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 58,
+    "ALIAS_TERM_UNSTEMMED": "smartcards",
+    "ALIAS_TERM_STEMMED": "smartcard",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 59,
+    "ALIAS_TERM_UNSTEMMED": "govt",
+    "ALIAS_TERM_STEMMED": "govt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 60,
+    "ALIAS_TERM_UNSTEMMED": "household sector",
+    "ALIAS_TERM_STEMMED": "household sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 60,
+    "ALIAS_TERM_UNSTEMMED": "HH",
+    "ALIAS_TERM_STEMMED": "hh",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 61,
+    "ALIAS_TERM_UNSTEMMED": "housing assns",
+    "ALIAS_TERM_STEMMED": "hous assn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 61,
+    "ALIAS_TERM_UNSTEMMED": "housing association",
+    "ALIAS_TERM_STEMMED": "hous associ",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 61,
+    "ALIAS_TERM_UNSTEMMED": "HAs",
+    "ALIAS_TERM_STEMMED": "ha",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 62,
+    "ALIAS_TERM_UNSTEMMED": "non interest bearing",
+    "ALIAS_TERM_STEMMED": "non interest bear",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 62,
+    "ALIAS_TERM_UNSTEMMED": "IB",
+    "ALIAS_TERM_STEMMED": "ib",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 63,
+    "ALIAS_TERM_UNSTEMMED": "International Monetary Fund",
+    "ALIAS_TERM_STEMMED": "intern monetari fund",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 64,
+    "ALIAS_TERM_UNSTEMMED": "IL",
+    "ALIAS_TERM_STEMMED": "il",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 65,
+    "ALIAS_TERM_UNSTEMMED": "individual",
+    "ALIAS_TERM_STEMMED": "individu",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 65,
+    "ALIAS_TERM_UNSTEMMED": "personal sector",
+    "ALIAS_TERM_STEMMED": "person sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 65,
+    "ALIAS_TERM_UNSTEMMED": "retail sector",
+    "ALIAS_TERM_STEMMED": "retail sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 66,
+    "ALIAS_TERM_UNSTEMMED": "sight deposit",
+    "ALIAS_TERM_STEMMED": "sight deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 66,
+    "ALIAS_TERM_UNSTEMMED": "sight deposits",
+    "ALIAS_TERM_STEMMED": "sight deposit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 67,
+    "ALIAS_TERM_UNSTEMMED": "individual savings account",
+    "ALIAS_TERM_STEMMED": "individu save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 67,
+    "ALIAS_TERM_UNSTEMMED": "individual savings accounts",
+    "ALIAS_TERM_STEMMED": "individu save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 67,
+    "ALIAS_TERM_UNSTEMMED": "ISAs",
+    "ALIAS_TERM_STEMMED": "isa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 68,
+    "ALIAS_TERM_UNSTEMMED": "IoM",
+    "ALIAS_TERM_STEMMED": "iom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 68,
+    "ALIAS_TERM_UNSTEMMED": "Isle of Mann",
+    "ALIAS_TERM_STEMMED": "isl of mann",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 69,
+    "ALIAS_TERM_UNSTEMMED": "local authority net cash requirement",
+    "ALIAS_TERM_STEMMED": "local author net cash requir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 69,
+    "ALIAS_TERM_UNSTEMMED": "LANCR",
+    "ALIAS_TERM_STEMMED": "lancr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 69,
+    "ALIAS_TERM_UNSTEMMED": "LGNCR",
+    "ALIAS_TERM_STEMMED": "lgncr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 70,
+    "ALIAS_TERM_UNSTEMMED": "law",
+    "ALIAS_TERM_STEMMED": "law",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "house purchase",
+    "ALIAS_TERM_STEMMED": "hous purchas",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "mortgage",
+    "ALIAS_TERM_STEMMED": "mortgag",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "mortgages",
+    "ALIAS_TERM_STEMMED": "mortgag",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "secured lending",
+    "ALIAS_TERM_STEMMED": "secur lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "secured loans",
+    "ALIAS_TERM_STEMMED": "secur loan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 71,
+    "ALIAS_TERM_UNSTEMMED": "secured on dwellings",
+    "ALIAS_TERM_STEMMED": "secur on dwell",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 72,
+    "ALIAS_TERM_UNSTEMMED": "advances",
+    "ALIAS_TERM_STEMMED": "advanc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 72,
+    "ALIAS_TERM_UNSTEMMED": "borrowing",
+    "ALIAS_TERM_STEMMED": "borrow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 72,
+    "ALIAS_TERM_UNSTEMMED": "lending",
+    "ALIAS_TERM_STEMMED": "lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 72,
+    "ALIAS_TERM_UNSTEMMED": "loan",
+    "ALIAS_TERM_STEMMED": "loan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "ALIAS_TERM_UNSTEMMED": "local authorities",
+    "ALIAS_TERM_STEMMED": "local author",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "ALIAS_TERM_UNSTEMMED": "local government",
+    "ALIAS_TERM_STEMMED": "local govern",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "ALIAS_TERM_UNSTEMMED": "LA",
+    "ALIAS_TERM_STEMMED": "la",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "ALIAS_TERM_UNSTEMMED": "LAs",
+    "ALIAS_TERM_STEMMED": "la",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 73,
+    "ALIAS_TERM_UNSTEMMED": "LG",
+    "ALIAS_TERM_STEMMED": "lg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 75,
+    "ALIAS_TERM_UNSTEMMED": "monetary base",
+    "ALIAS_TERM_STEMMED": "monetari base",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 75,
+    "ALIAS_TERM_UNSTEMMED": "narrow money",
+    "ALIAS_TERM_STEMMED": "narrow monei",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 76,
+    "ALIAS_TERM_UNSTEMMED": "retail M4",
+    "ALIAS_TERM_STEMMED": "retail m4",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 77,
+    "ALIAS_TERM_UNSTEMMED": "broad money",
+    "ALIAS_TERM_STEMMED": "broad monei",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 77,
+    "ALIAS_TERM_UNSTEMMED": "money supply",
+    "ALIAS_TERM_STEMMED": "monei suppli",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 78,
+    "ALIAS_TERM_UNSTEMMED": "monetary financial institutions' sterling net lending to private sector",
+    "ALIAS_TERM_STEMMED": "monetari financi institutions' sterl net lend to privat sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 78,
+    "ALIAS_TERM_UNSTEMMED": "M4L",
+    "ALIAS_TERM_STEMMED": "m4l",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 79,
+    "ALIAS_TERM_UNSTEMMED": "manufacture",
+    "ALIAS_TERM_STEMMED": "manufactur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 79,
+    "ALIAS_TERM_UNSTEMMED": "manufacturer",
+    "ALIAS_TERM_STEMMED": "manufactur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 79,
+    "ALIAS_TERM_UNSTEMMED": "manufacturers",
+    "ALIAS_TERM_STEMMED": "manufactur",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 80,
+    "ALIAS_TERM_UNSTEMMED": "MBBG",
+    "ALIAS_TERM_STEMMED": "mbbg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 80,
+    "ALIAS_TERM_UNSTEMMED": "Major British Banking Groups",
+    "ALIAS_TERM_STEMMED": "major british bank group",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 81,
+    "ALIAS_TERM_UNSTEMMED": "monetary financial institution",
+    "ALIAS_TERM_STEMMED": "monetari financi institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 81,
+    "ALIAS_TERM_UNSTEMMED": "monetary financial institutions",
+    "ALIAS_TERM_STEMMED": "monetari financi institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 81,
+    "ALIAS_TERM_UNSTEMMED": "MFI",
+    "ALIAS_TERM_STEMMED": "mfi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 82,
+    "ALIAS_TERM_UNSTEMMED": "mns",
+    "ALIAS_TERM_STEMMED": "mn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 83,
+    "ALIAS_TERM_UNSTEMMED": "money market fund",
+    "ALIAS_TERM_STEMMED": "monei market fund",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 84,
+    "ALIAS_TERM_UNSTEMMED": "money market instrument",
+    "ALIAS_TERM_STEMMED": "monei market instrument",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 84,
+    "ALIAS_TERM_UNSTEMMED": "money market instruments",
+    "ALIAS_TERM_STEMMED": "monei market instrument",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 84,
+    "ALIAS_TERM_UNSTEMMED": "MMIs",
+    "ALIAS_TERM_STEMMED": "mmi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 85,
+    "ALIAS_TERM_UNSTEMMED": "one month",
+    "ALIAS_TERM_STEMMED": "on month",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 85,
+    "ALIAS_TERM_UNSTEMMED": "1 month",
+    "ALIAS_TERM_STEMMED": "1 month",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 86,
+    "ALIAS_TERM_UNSTEMMED": "MEW",
+    "ALIAS_TERM_STEMMED": "mew",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 87,
+    "ALIAS_TERM_UNSTEMMED": "automobile",
+    "ALIAS_TERM_STEMMED": "automobil",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 87,
+    "ALIAS_TERM_UNSTEMMED": "automobiles",
+    "ALIAS_TERM_STEMMED": "automobil",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 87,
+    "ALIAS_TERM_UNSTEMMED": "car",
+    "ALIAS_TERM_STEMMED": "car",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 87,
+    "ALIAS_TERM_UNSTEMMED": "cars",
+    "ALIAS_TERM_STEMMED": "car",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 88,
+    "ALIAS_TERM_UNSTEMMED": "medium term note",
+    "ALIAS_TERM_STEMMED": "medium term note",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 88,
+    "ALIAS_TERM_UNSTEMMED": "MTN",
+    "ALIAS_TERM_STEMMED": "mtn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 88,
+    "ALIAS_TERM_UNSTEMMED": "MTNs",
+    "ALIAS_TERM_STEMMED": "mtn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 89,
+    "ALIAS_TERM_UNSTEMMED": "non financial corporation",
+    "ALIAS_TERM_STEMMED": "non financi corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 90,
+    "ALIAS_TERM_UNSTEMMED": "non interest bearing",
+    "ALIAS_TERM_STEMMED": "non interest bear",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 91,
+    "ALIAS_TERM_UNSTEMMED": "net non deposit £ liabilities",
+    "ALIAS_TERM_STEMMED": "net non deposit £ liabil",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 91,
+    "ALIAS_TERM_UNSTEMMED": "NNDLs",
+    "ALIAS_TERM_STEMMED": "nndl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "non resident",
+    "ALIAS_TERM_STEMMED": "non resid",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "overseas",
+    "ALIAS_TERM_STEMMED": "oversea",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "overseas resident",
+    "ALIAS_TERM_STEMMED": "oversea resid",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "overseas residents",
+    "ALIAS_TERM_STEMMED": "oversea resid",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "rest of world",
+    "ALIAS_TERM_STEMMED": "rest of world",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 93,
+    "ALIAS_TERM_UNSTEMMED": "RoW",
+    "ALIAS_TERM_STEMMED": "row",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "ALIAS_TERM_UNSTEMMED": "bank notes",
+    "ALIAS_TERM_STEMMED": "bank note",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "ALIAS_TERM_UNSTEMMED": "banknotes",
+    "ALIAS_TERM_STEMMED": "banknot",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "ALIAS_TERM_UNSTEMMED": "cash",
+    "ALIAS_TERM_STEMMED": "cash",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "ALIAS_TERM_UNSTEMMED": "notes and coin",
+    "ALIAS_TERM_STEMMED": "note and coin",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 94,
+    "ALIAS_TERM_UNSTEMMED": "notes and coins",
+    "ALIAS_TERM_STEMMED": "note and coin",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "ALIAS_TERM_UNSTEMMED": "non profit institutions",
+    "ALIAS_TERM_STEMMED": "non profit institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "ALIAS_TERM_UNSTEMMED": "non profit institutions serving households",
+    "ALIAS_TERM_STEMMED": "non profit institut serv household",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "ALIAS_TERM_UNSTEMMED": "non profit making",
+    "ALIAS_TERM_STEMMED": "non profit make",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "ALIAS_TERM_UNSTEMMED": "NPI",
+    "ALIAS_TERM_STEMMED": "npi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 95,
+    "ALIAS_TERM_UNSTEMMED": "NPIs",
+    "ALIAS_TERM_STEMMED": "npi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 96,
+    "ALIAS_TERM_UNSTEMMED": "national savings",
+    "ALIAS_TERM_STEMMED": "nation save",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 96,
+    "ALIAS_TERM_UNSTEMMED": "national savings and investments",
+    "ALIAS_TERM_STEMMED": "nation save and invest",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 96,
+    "ALIAS_TERM_UNSTEMMED": "NSI",
+    "ALIAS_TERM_STEMMED": "nsi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 97,
+    "ALIAS_TERM_UNSTEMMED": "non seasonally adjusted",
+    "ALIAS_TERM_STEMMED": "non season adjust",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 97,
+    "ALIAS_TERM_UNSTEMMED": "nsa",
+    "ALIAS_TERM_STEMMED": "nsa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 97,
+    "ALIAS_TERM_UNSTEMMED": "unadjusted",
+    "ALIAS_TERM_STEMMED": "unadjust",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "other financial corporation",
+    "ALIAS_TERM_STEMMED": "other financi corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "other financial corporations",
+    "ALIAS_TERM_STEMMED": "other financi corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "other financial institution",
+    "ALIAS_TERM_STEMMED": "other financi institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "other financial institutions",
+    "ALIAS_TERM_STEMMED": "other financi institut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "OFCs",
+    "ALIAS_TERM_STEMMED": "ofc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "OFI",
+    "ALIAS_TERM_STEMMED": "ofi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 98,
+    "ALIAS_TERM_UNSTEMMED": "OFIs",
+    "ALIAS_TERM_STEMMED": "ofi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 99,
+    "ALIAS_TERM_UNSTEMMED": "open market operation",
+    "ALIAS_TERM_STEMMED": "open market oper",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 99,
+    "ALIAS_TERM_UNSTEMMED": "open market operations",
+    "ALIAS_TERM_STEMMED": "open market oper",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 100,
+    "ALIAS_TERM_UNSTEMMED": "other specialist lender",
+    "ALIAS_TERM_STEMMED": "other specialist lender",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 100,
+    "ALIAS_TERM_UNSTEMMED": "OSL",
+    "ALIAS_TERM_STEMMED": "osl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 100,
+    "ALIAS_TERM_UNSTEMMED": "OSLs",
+    "ALIAS_TERM_STEMMED": "osl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 101,
+    "ALIAS_TERM_UNSTEMMED": "public corporation net cash requirement",
+    "ALIAS_TERM_STEMMED": "public corpor net cash requir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 101,
+    "ALIAS_TERM_UNSTEMMED": "public corporations' net cash requirement",
+    "ALIAS_TERM_STEMMED": "public corporations' net cash requir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 101,
+    "ALIAS_TERM_UNSTEMMED": "PCNCR",
+    "ALIAS_TERM_STEMMED": "pcncr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "industrial & commercial companies",
+    "ALIAS_TERM_STEMMED": "industri & commerci compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "industrial and commercial companies",
+    "ALIAS_TERM_STEMMED": "industri and commerci compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "private non financial corporation",
+    "ALIAS_TERM_STEMMED": "privat non financi corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "private non financial corporations",
+    "ALIAS_TERM_STEMMED": "privat non financi corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "ICC",
+    "ALIAS_TERM_STEMMED": "icc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "ICCs",
+    "ALIAS_TERM_STEMMED": "icc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 103,
+    "ALIAS_TERM_UNSTEMMED": "PNFC",
+    "ALIAS_TERM_STEMMED": "pnfc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "gain",
+    "ALIAS_TERM_STEMMED": "gain",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "income",
+    "ALIAS_TERM_STEMMED": "incom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "profits",
+    "ALIAS_TERM_STEMMED": "profit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "national savings",
+    "ALIAS_TERM_STEMMED": "nation save",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "interest rate",
+    "ALIAS_TERM_STEMMED": "interest rate",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "building societies",
+    "ALIAS_TERM_STEMMED": "build societi",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "monetary financial",
+    "ALIAS_TERM_STEMMED": "monetari financi",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "outward",
+    "ALIAS_TERM_STEMMED": "outward",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 104,
+    "ALIAS_TERM_UNSTEMMED": "inward",
+    "ALIAS_TERM_STEMMED": "inward",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 105,
+    "ALIAS_TERM_UNSTEMMED": "private sector",
+    "ALIAS_TERM_STEMMED": "privat sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 105,
+    "ALIAS_TERM_UNSTEMMED": "public sector",
+    "ALIAS_TERM_STEMMED": "public sector",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 106,
+    "ALIAS_TERM_UNSTEMMED": "public sector consolidated gross debt",
+    "ALIAS_TERM_STEMMED": "public sector consolid gross debt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 107,
+    "ALIAS_TERM_UNSTEMMED": "public sector NCR",
+    "ALIAS_TERM_STEMMED": "public sector ncr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 107,
+    "ALIAS_TERM_UNSTEMMED": "public sector borrowing requirement",
+    "ALIAS_TERM_STEMMED": "public sector borrow requir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 107,
+    "ALIAS_TERM_UNSTEMMED": "PSBR",
+    "ALIAS_TERM_STEMMED": "psbr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 107,
+    "ALIAS_TERM_UNSTEMMED": "PSNCR",
+    "ALIAS_TERM_STEMMED": "psncr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 108,
+    "ALIAS_TERM_UNSTEMMED": "public sector net debt",
+    "ALIAS_TERM_STEMMED": "public sector net debt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 109,
+    "ALIAS_TERM_UNSTEMMED": "public corporation",
+    "ALIAS_TERM_STEMMED": "public corpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 109,
+    "ALIAS_TERM_UNSTEMMED": "PC",
+    "ALIAS_TERM_STEMMED": "pc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 109,
+    "ALIAS_TERM_UNSTEMMED": "PCs",
+    "ALIAS_TERM_STEMMED": "pc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "ALIAS_TERM_UNSTEMMED": "quarter",
+    "ALIAS_TERM_STEMMED": "quarter",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "ALIAS_TERM_UNSTEMMED": "three month",
+    "ALIAS_TERM_STEMMED": "three month",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "ALIAS_TERM_UNSTEMMED": "three monthly",
+    "ALIAS_TERM_STEMMED": "three monthli",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "ALIAS_TERM_UNSTEMMED": "3 month",
+    "ALIAS_TERM_STEMMED": "3 month",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 110,
+    "ALIAS_TERM_UNSTEMMED": "3 monthly",
+    "ALIAS_TERM_STEMMED": "3 monthli",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 111,
+    "ALIAS_TERM_UNSTEMMED": "commercial property",
+    "ALIAS_TERM_STEMMED": "commerci properti",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 111,
+    "ALIAS_TERM_UNSTEMMED": "property",
+    "ALIAS_TERM_STEMMED": "properti",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 111,
+    "ALIAS_TERM_UNSTEMMED": "property companies",
+    "ALIAS_TERM_STEMMED": "properti compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 112,
+    "ALIAS_TERM_UNSTEMMED": "sale and repurchase",
+    "ALIAS_TERM_STEMMED": "sale and repurchas",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 112,
+    "ALIAS_TERM_UNSTEMMED": "sale and repurchase agreement",
+    "ALIAS_TERM_STEMMED": "sale and repurchas agreement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 113,
+    "ALIAS_TERM_UNSTEMMED": "reverse repos",
+    "ALIAS_TERM_STEMMED": "revers repo",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 113,
+    "ALIAS_TERM_UNSTEMMED": "reverse sale and repurchase",
+    "ALIAS_TERM_STEMMED": "revers sale and repurchas",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 113,
+    "ALIAS_TERM_UNSTEMMED": "reverse sale and repurchase agreement",
+    "ALIAS_TERM_STEMMED": "revers sale and repurchas agreement",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 114,
+    "ALIAS_TERM_UNSTEMMED": "not seasonally adjusted",
+    "ALIAS_TERM_STEMMED": "not season adjust",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 114,
+    "ALIAS_TERM_UNSTEMMED": "sa",
+    "ALIAS_TERM_STEMMED": "sa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 115,
+    "ALIAS_TERM_UNSTEMMED": "save as you earn",
+    "ALIAS_TERM_STEMMED": "save as you earn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 116,
+    "ALIAS_TERM_UNSTEMMED": "current account",
+    "ALIAS_TERM_STEMMED": "current account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 116,
+    "ALIAS_TERM_UNSTEMMED": "current accounts",
+    "ALIAS_TERM_STEMMED": "current account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 117,
+    "ALIAS_TERM_UNSTEMMED": "SDR",
+    "ALIAS_TERM_STEMMED": "sdr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 117,
+    "ALIAS_TERM_UNSTEMMED": "SDR's",
+    "ALIAS_TERM_STEMMED": "sdr'",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 117,
+    "ALIAS_TERM_UNSTEMMED": "SDRs",
+    "ALIAS_TERM_STEMMED": "sdr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 118,
+    "ALIAS_TERM_UNSTEMMED": "securitisation",
+    "ALIAS_TERM_STEMMED": "securitis",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 118,
+    "ALIAS_TERM_UNSTEMMED": "securitisations",
+    "ALIAS_TERM_STEMMED": "securitis",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 119,
+    "ALIAS_TERM_UNSTEMMED": "sell back",
+    "ALIAS_TERM_STEMMED": "sell back",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 119,
+    "ALIAS_TERM_UNSTEMMED": "sell backs",
+    "ALIAS_TERM_STEMMED": "sell back",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 121,
+    "ALIAS_TERM_UNSTEMMED": "sterling overnight interbank average rate",
+    "ALIAS_TERM_STEMMED": "sterl overnight interbank averag rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 122,
+    "ALIAS_TERM_UNSTEMMED": "Special Purpose Vehicle",
+    "ALIAS_TERM_STEMMED": "special purpos vehicl",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 123,
+    "ALIAS_TERM_UNSTEMMED": "stock borrowing",
+    "ALIAS_TERM_STEMMED": "stock borrow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 124,
+    "ALIAS_TERM_UNSTEMMED": "stock lending",
+    "ALIAS_TERM_STEMMED": "stock lend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 125,
+    "ALIAS_TERM_UNSTEMMED": "suspended",
+    "ALIAS_TERM_STEMMED": "suspend",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 126,
+    "ALIAS_TERM_UNSTEMMED": "standard variable mortgage rate",
+    "ALIAS_TERM_STEMMED": "standard variabl mortgag rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 126,
+    "ALIAS_TERM_UNSTEMMED": "standard variable rate",
+    "ALIAS_TERM_STEMMED": "standard variabl rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 126,
+    "ALIAS_TERM_UNSTEMMED": "variable rate",
+    "ALIAS_TERM_STEMMED": "variabl rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 127,
+    "ALIAS_TERM_UNSTEMMED": "lending syndicates",
+    "ALIAS_TERM_STEMMED": "lend syndic",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 127,
+    "ALIAS_TERM_UNSTEMMED": "syndicated borrowing",
+    "ALIAS_TERM_STEMMED": "syndic borrow",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 127,
+    "ALIAS_TERM_UNSTEMMED": "syndications",
+    "ALIAS_TERM_STEMMED": "syndic",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 128,
+    "ALIAS_TERM_UNSTEMMED": "tax exempt special saving account",
+    "ALIAS_TERM_STEMMED": "tax exempt special save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 128,
+    "ALIAS_TERM_UNSTEMMED": "tax exempt special saving accounts",
+    "ALIAS_TERM_STEMMED": "tax exempt special save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 128,
+    "ALIAS_TERM_UNSTEMMED": "tax exempt special savings account",
+    "ALIAS_TERM_STEMMED": "tax exempt special save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 128,
+    "ALIAS_TERM_UNSTEMMED": "tax exempt special savings accounts",
+    "ALIAS_TERM_STEMMED": "tax exempt special save account",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 129,
+    "ALIAS_TERM_UNSTEMMED": "savings",
+    "ALIAS_TERM_STEMMED": "save",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 130,
+    "ALIAS_TERM_UNSTEMMED": "cigarettes",
+    "ALIAS_TERM_STEMMED": "cigarett",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 130,
+    "ALIAS_TERM_UNSTEMMED": "cigars",
+    "ALIAS_TERM_STEMMED": "cigar",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "ALIAS_TERM_UNSTEMMED": "clearing",
+    "ALIAS_TERM_STEMMED": "clear",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "ALIAS_TERM_UNSTEMMED": "collection",
+    "ALIAS_TERM_STEMMED": "collect",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "ALIAS_TERM_UNSTEMMED": "items in collection",
+    "ALIAS_TERM_STEMMED": "item in collect",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "ALIAS_TERM_UNSTEMMED": "transits",
+    "ALIAS_TERM_STEMMED": "transit",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 131,
+    "ALIAS_TERM_UNSTEMMED": "transmission",
+    "ALIAS_TERM_STEMMED": "transmiss",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "aeroplane",
+    "ALIAS_TERM_STEMMED": "aeroplan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "aeroplanes",
+    "ALIAS_TERM_STEMMED": "aeroplan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "airplane",
+    "ALIAS_TERM_STEMMED": "airplan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "airplanes",
+    "ALIAS_TERM_STEMMED": "airplan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "plane",
+    "ALIAS_TERM_STEMMED": "plane",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "planes",
+    "ALIAS_TERM_STEMMED": "plane",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "rail",
+    "ALIAS_TERM_STEMMED": "rail",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "railways",
+    "ALIAS_TERM_STEMMED": "railwai",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 132,
+    "ALIAS_TERM_UNSTEMMED": "ships",
+    "ALIAS_TERM_STEMMED": "ship",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "treasury bill",
+    "ALIAS_TERM_STEMMED": "treasuri bill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "T Bill",
+    "ALIAS_TERM_STEMMED": "t bill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "TB",
+    "ALIAS_TERM_STEMMED": "tb",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "TBill",
+    "ALIAS_TERM_STEMMED": "tbill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "TBills",
+    "ALIAS_TERM_STEMMED": "tbill",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 133,
+    "ALIAS_TERM_UNSTEMMED": "TBs",
+    "ALIAS_TERM_STEMMED": "tb",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "ALIAS_TERM_UNSTEMMED": "sole trader",
+    "ALIAS_TERM_STEMMED": "sole trader",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "ALIAS_TERM_UNSTEMMED": "sole traders",
+    "ALIAS_TERM_STEMMED": "sole trader",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "ALIAS_TERM_UNSTEMMED": "unincorporated business",
+    "ALIAS_TERM_STEMMED": "unincorpor busi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "ALIAS_TERM_UNSTEMMED": "unincorporated businesses",
+    "ALIAS_TERM_STEMMED": "unincorpor busi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 134,
+    "ALIAS_TERM_UNSTEMMED": "UB",
+    "ALIAS_TERM_STEMMED": "ub",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 135,
+    "ALIAS_TERM_UNSTEMMED": "United Kingdom",
+    "ALIAS_TERM_STEMMED": "unit kingdom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 136,
+    "ALIAS_TERM_UNSTEMMED": "unincorporated",
+    "ALIAS_TERM_STEMMED": "unincorpor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 137,
+    "ALIAS_TERM_UNSTEMMED": "United States",
+    "ALIAS_TERM_STEMMED": "unit state",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 138,
+    "ALIAS_TERM_UNSTEMMED": "recoveries",
+    "ALIAS_TERM_STEMMED": "recoveri",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 138,
+    "ALIAS_TERM_UNSTEMMED": "write back",
+    "ALIAS_TERM_STEMMED": "write back",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 139,
+    "ALIAS_TERM_UNSTEMMED": "write down",
+    "ALIAS_TERM_STEMMED": "write down",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 139,
+    "ALIAS_TERM_UNSTEMMED": "write downs",
+    "ALIAS_TERM_STEMMED": "write down",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 139,
+    "ALIAS_TERM_UNSTEMMED": "write off",
+    "ALIAS_TERM_STEMMED": "write off",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 140,
+    "ALIAS_TERM_UNSTEMMED": "%VQNA",
+    "ALIAS_TERM_STEMMED": "%vqna",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 141,
+    "ALIAS_TERM_UNSTEMMED": "%VQNB",
+    "ALIAS_TERM_STEMMED": "%vqnb",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 142,
+    "ALIAS_TERM_UNSTEMMED": "%VQMW",
+    "ALIAS_TERM_STEMMED": "%vqmw",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 143,
+    "ALIAS_TERM_UNSTEMMED": "%VQMY",
+    "ALIAS_TERM_STEMMED": "%vqmy",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 144,
+    "ALIAS_TERM_UNSTEMMED": "%VQMZ",
+    "ALIAS_TERM_STEMMED": "%vqmz",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 145,
+    "ALIAS_TERM_UNSTEMMED": "%VQMX",
+    "ALIAS_TERM_STEMMED": "%vqmx",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 146,
+    "ALIAS_TERM_UNSTEMMED": "%VQVT",
+    "ALIAS_TERM_STEMMED": "%vqvt",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 147,
+    "ALIAS_TERM_UNSTEMMED": "%VQUX",
+    "ALIAS_TERM_STEMMED": "%vqux",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 148,
+    "ALIAS_TERM_UNSTEMMED": "%VQUT",
+    "ALIAS_TERM_STEMMED": "%vqut",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 149,
+    "ALIAS_TERM_UNSTEMMED": "%VQUV",
+    "ALIAS_TERM_STEMMED": "%vquv",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 150,
+    "ALIAS_TERM_UNSTEMMED": "%VQUW",
+    "ALIAS_TERM_STEMMED": "%vquw",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 151,
+    "ALIAS_TERM_UNSTEMMED": "%VQUU",
+    "ALIAS_TERM_STEMMED": "%vquu",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 152,
+    "ALIAS_TERM_UNSTEMMED": "%VQKY",
+    "ALIAS_TERM_STEMMED": "%vqky",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 153,
+    "ALIAS_TERM_UNSTEMMED": "%VQLC",
+    "ALIAS_TERM_STEMMED": "%vqlc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 154,
+    "ALIAS_TERM_UNSTEMMED": "%VQJS",
+    "ALIAS_TERM_STEMMED": "%vqj",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 155,
+    "ALIAS_TERM_UNSTEMMED": "%VQKA",
+    "ALIAS_TERM_STEMMED": "%vqka",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 156,
+    "ALIAS_TERM_UNSTEMMED": "%VQKE",
+    "ALIAS_TERM_STEMMED": "%vqke",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 157,
+    "ALIAS_TERM_UNSTEMMED": "%VQJW",
+    "ALIAS_TERM_STEMMED": "%vqjw",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 158,
+    "ALIAS_TERM_UNSTEMMED": "%VQKW",
+    "ALIAS_TERM_STEMMED": "%vqkw",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 159,
+    "ALIAS_TERM_UNSTEMMED": "%VQLA",
+    "ALIAS_TERM_STEMMED": "%vqla",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 160,
+    "ALIAS_TERM_UNSTEMMED": "%VQJQ",
+    "ALIAS_TERM_STEMMED": "%vqjq",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 161,
+    "ALIAS_TERM_UNSTEMMED": "%VQJY",
+    "ALIAS_TERM_STEMMED": "%vqjy",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 162,
+    "ALIAS_TERM_UNSTEMMED": "%VQKC",
+    "ALIAS_TERM_STEMMED": "%vqkc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 163,
+    "ALIAS_TERM_UNSTEMMED": "%VQJU",
+    "ALIAS_TERM_STEMMED": "%vqju",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 164,
+    "ALIAS_TERM_UNSTEMMED": "%VQXX",
+    "ALIAS_TERM_STEMMED": "%vqxx",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 165,
+    "ALIAS_TERM_UNSTEMMED": "%VQWW",
+    "ALIAS_TERM_STEMMED": "%vqww",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 166,
+    "ALIAS_TERM_UNSTEMMED": "%VQXC",
+    "ALIAS_TERM_STEMMED": "%vqxc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 167,
+    "ALIAS_TERM_UNSTEMMED": "%VQXF",
+    "ALIAS_TERM_STEMMED": "%vqxf",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 168,
+    "ALIAS_TERM_UNSTEMMED": "%VRKC",
+    "ALIAS_TERM_STEMMED": "%vrkc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 169,
+    "ALIAS_TERM_UNSTEMMED": "%VRKI",
+    "ALIAS_TERM_STEMMED": "%vrki",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 170,
+    "ALIAS_TERM_UNSTEMMED": "%VRGU",
+    "ALIAS_TERM_STEMMED": "%vrgu",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 171,
+    "ALIAS_TERM_UNSTEMMED": "%VRHE",
+    "ALIAS_TERM_STEMMED": "%vrhe",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 172,
+    "ALIAS_TERM_UNSTEMMED": "%VRHK",
+    "ALIAS_TERM_STEMMED": "%vrhk",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 173,
+    "ALIAS_TERM_UNSTEMMED": "%VRGZ",
+    "ALIAS_TERM_STEMMED": "%vrgz",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 174,
+    "ALIAS_TERM_UNSTEMMED": "%VQDC",
+    "ALIAS_TERM_STEMMED": "%vqdc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 175,
+    "ALIAS_TERM_UNSTEMMED": "buy back",
+    "ALIAS_TERM_STEMMED": "bui back",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 175,
+    "ALIAS_TERM_UNSTEMMED": "buy backs",
+    "ALIAS_TERM_STEMMED": "bui back",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 176,
+    "ALIAS_TERM_UNSTEMMED": "HM Treasury",
+    "ALIAS_TERM_STEMMED": "hm treasuri",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 176,
+    "ALIAS_TERM_UNSTEMMED": "Her Majesty's Treasury",
+    "ALIAS_TERM_STEMMED": "her majesty' treasuri",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "insurance companies",
+    "ALIAS_TERM_STEMMED": "insur compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "insurance companies & pension funds",
+    "ALIAS_TERM_STEMMED": "insur compani & pension fund",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "insurance companies and pension funds",
+    "ALIAS_TERM_STEMMED": "insur compani and pension fund",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "pension companies",
+    "ALIAS_TERM_STEMMED": "pension compani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "pension funds",
+    "ALIAS_TERM_STEMMED": "pension fund",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "IC&PF",
+    "ALIAS_TERM_STEMMED": "ic&pf",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "IC&PFs",
+    "ALIAS_TERM_STEMMED": "ic&pf",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 177,
+    "ALIAS_TERM_UNSTEMMED": "ICPF",
+    "ALIAS_TERM_STEMMED": "icpf",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 178,
+    "ALIAS_TERM_UNSTEMMED": "%VQLP",
+    "ALIAS_TERM_STEMMED": "%vqlp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 179,
+    "ALIAS_TERM_UNSTEMMED": "%VQSA",
+    "ALIAS_TERM_STEMMED": "%vqsa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 180,
+    "ALIAS_TERM_UNSTEMMED": "%VTMB",
+    "ALIAS_TERM_STEMMED": "%vtmb",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 181,
+    "ALIAS_TERM_UNSTEMMED": "%VQAT",
+    "ALIAS_TERM_STEMMED": "%vqat",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 182,
+    "ALIAS_TERM_UNSTEMMED": "%VQKH",
+    "ALIAS_TERM_STEMMED": "%vqkh",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 183,
+    "ALIAS_TERM_UNSTEMMED": "%VQKG",
+    "ALIAS_TERM_STEMMED": "%vqkg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 184,
+    "ALIAS_TERM_UNSTEMMED": "%VRPC",
+    "ALIAS_TERM_STEMMED": "%vrpc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 185,
+    "ALIAS_TERM_UNSTEMMED": "%VRHV",
+    "ALIAS_TERM_STEMMED": "%vrhv",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 186,
+    "ALIAS_TERM_UNSTEMMED": "%VTUZ",
+    "ALIAS_TERM_STEMMED": "%vtuz",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 187,
+    "ALIAS_TERM_UNSTEMMED": "%VTVG",
+    "ALIAS_TERM_STEMMED": "%vtvg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 188,
+    "ALIAS_TERM_UNSTEMMED": "%THFA",
+    "ALIAS_TERM_STEMMED": "%thfa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 189,
+    "ALIAS_TERM_UNSTEMMED": "%AHJM",
+    "ALIAS_TERM_STEMMED": "%ahjm",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 190,
+    "ALIAS_TERM_UNSTEMMED": "%RBZI",
+    "ALIAS_TERM_STEMMED": "%rbzi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 191,
+    "ALIAS_TERM_UNSTEMMED": "%VQIF",
+    "ALIAS_TERM_STEMMED": "%vqif",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 192,
+    "ALIAS_TERM_UNSTEMMED": "%ALOZ",
+    "ALIAS_TERM_STEMMED": "%aloz",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 193,
+    "ALIAS_TERM_UNSTEMMED": "%AHIM",
+    "ALIAS_TERM_STEMMED": "%ahim",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 194,
+    "ALIAS_TERM_UNSTEMMED": "%ALOR",
+    "ALIAS_TERM_STEMMED": "%alor",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 195,
+    "ALIAS_TERM_UNSTEMMED": "%AAMN",
+    "ALIAS_TERM_STEMMED": "%aamn",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 196,
+    "ALIAS_TERM_UNSTEMMED": "%VQFP",
+    "ALIAS_TERM_STEMMED": "%vqfp",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 197,
+    "ALIAS_TERM_UNSTEMMED": "%AHLA",
+    "ALIAS_TERM_STEMMED": "%ahla",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 198,
+    "ALIAS_TERM_UNSTEMMED": "%VQZX",
+    "ALIAS_TERM_STEMMED": "%vqzx",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 199,
+    "ALIAS_TERM_UNSTEMMED": "%AHIF",
+    "ALIAS_TERM_STEMMED": "%ahif",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 200,
+    "ALIAS_TERM_UNSTEMMED": "%AHIK",
+    "ALIAS_TERM_STEMMED": "%ahik",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 201,
+    "ALIAS_TERM_UNSTEMMED": "%ALOJ",
+    "ALIAS_TERM_STEMMED": "%aloj",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 202,
+    "ALIAS_TERM_UNSTEMMED": "%ALOM",
+    "ALIAS_TERM_STEMMED": "%alom",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 203,
+    "ALIAS_TERM_UNSTEMMED": "%ALON",
+    "ALIAS_TERM_STEMMED": "%alon",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 204,
+    "ALIAS_TERM_UNSTEMMED": "%AHKQ",
+    "ALIAS_TERM_STEMMED": "%ahkq",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 205,
+    "ALIAS_TERM_UNSTEMMED": "%AHKR",
+    "ALIAS_TERM_STEMMED": "%ahkr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 206,
+    "ALIAS_TERM_UNSTEMMED": "%ALOK",
+    "ALIAS_TERM_STEMMED": "%alok",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 207,
+    "ALIAS_TERM_UNSTEMMED": "%ALOL",
+    "ALIAS_TERM_STEMMED": "%alol",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 208,
+    "ALIAS_TERM_UNSTEMMED": "%ALOQ",
+    "ALIAS_TERM_STEMMED": "%aloq",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 209,
+    "ALIAS_TERM_UNSTEMMED": "%ALOI",
+    "ALIAS_TERM_STEMMED": "%aloi",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 210,
+    "ALIAS_TERM_UNSTEMMED": "%ALOB",
+    "ALIAS_TERM_STEMMED": "%alob",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 211,
+    "ALIAS_TERM_UNSTEMMED": "%ALOE",
+    "ALIAS_TERM_STEMMED": "%alo",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 212,
+    "ALIAS_TERM_UNSTEMMED": "%ALOF",
+    "ALIAS_TERM_STEMMED": "%alof",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 213,
+    "ALIAS_TERM_UNSTEMMED": "%AHKY",
+    "ALIAS_TERM_STEMMED": "%ahki",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 214,
+    "ALIAS_TERM_UNSTEMMED": "%AHKZ",
+    "ALIAS_TERM_STEMMED": "%ahkz",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 215,
+    "ALIAS_TERM_UNSTEMMED": "%ALOC",
+    "ALIAS_TERM_STEMMED": "%aloc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 216,
+    "ALIAS_TERM_UNSTEMMED": "%ALOD",
+    "ALIAS_TERM_STEMMED": "%alod",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 217,
+    "ALIAS_TERM_UNSTEMMED": "%ALOA",
+    "ALIAS_TERM_STEMMED": "%aloa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 218,
+    "ALIAS_TERM_UNSTEMMED": "%D001",
+    "ALIAS_TERM_STEMMED": "%d001",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 219,
+    "ALIAS_TERM_UNSTEMMED": "%D002",
+    "ALIAS_TERM_STEMMED": "%d002",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 220,
+    "ALIAS_TERM_UNSTEMMED": "%D003",
+    "ALIAS_TERM_STEMMED": "%d003",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 221,
+    "ALIAS_TERM_UNSTEMMED": "%G011",
+    "ALIAS_TERM_STEMMED": "%g011",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 222,
+    "ALIAS_TERM_UNSTEMMED": "%D005",
+    "ALIAS_TERM_STEMMED": "%d005",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 223,
+    "ALIAS_TERM_UNSTEMMED": "%D008",
+    "ALIAS_TERM_STEMMED": "%d008",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 224,
+    "ALIAS_TERM_UNSTEMMED": "%G013",
+    "ALIAS_TERM_STEMMED": "%g013",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 225,
+    "ALIAS_TERM_UNSTEMMED": "%E001",
+    "ALIAS_TERM_STEMMED": "%e001",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 226,
+    "ALIAS_TERM_UNSTEMMED": "%E003",
+    "ALIAS_TERM_STEMMED": "%e003",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 227,
+    "ALIAS_TERM_UNSTEMMED": "%E004",
+    "ALIAS_TERM_STEMMED": "%e004",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 228,
+    "ALIAS_TERM_UNSTEMMED": "%E007",
+    "ALIAS_TERM_STEMMED": "%e007",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 229,
+    "ALIAS_TERM_UNSTEMMED": "%E008",
+    "ALIAS_TERM_STEMMED": "%e008",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 230,
+    "ALIAS_TERM_UNSTEMMED": "%F007",
+    "ALIAS_TERM_STEMMED": "%f007",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 231,
+    "ALIAS_TERM_UNSTEMMED": "%G001",
+    "ALIAS_TERM_STEMMED": "%g001",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 232,
+    "ALIAS_TERM_UNSTEMMED": "%G004",
+    "ALIAS_TERM_STEMMED": "%g004",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 233,
+    "ALIAS_TERM_UNSTEMMED": "%G006",
+    "ALIAS_TERM_STEMMED": "%g006",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 234,
+    "ALIAS_TERM_UNSTEMMED": "%G009",
+    "ALIAS_TERM_STEMMED": "%g009",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 235,
+    "ALIAS_TERM_UNSTEMMED": "%H001",
+    "ALIAS_TERM_STEMMED": "%h001",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 236,
+    "ALIAS_TERM_UNSTEMMED": "%H005",
+    "ALIAS_TERM_STEMMED": "%h005",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 237,
+    "ALIAS_TERM_UNSTEMMED": "%H006",
+    "ALIAS_TERM_STEMMED": "%h006",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 238,
+    "ALIAS_TERM_UNSTEMMED": "%J001",
+    "ALIAS_TERM_STEMMED": "%j001",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 239,
+    "ALIAS_TERM_UNSTEMMED": "%J003",
+    "ALIAS_TERM_STEMMED": "%j003",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 240,
+    "ALIAS_TERM_UNSTEMMED": "%J005",
+    "ALIAS_TERM_STEMMED": "%j005",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 241,
+    "ALIAS_TERM_UNSTEMMED": "%J006",
+    "ALIAS_TERM_STEMMED": "%j006",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 242,
+    "ALIAS_TERM_UNSTEMMED": "%J007",
+    "ALIAS_TERM_STEMMED": "%j007",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 243,
+    "ALIAS_TERM_UNSTEMMED": "%LUST",
+    "ALIAS_TERM_STEMMED": "%lust",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 244,
+    "ALIAS_TERM_UNSTEMMED": "%SNZC",
+    "ALIAS_TERM_STEMMED": "%snzc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 245,
+    "ALIAS_TERM_UNSTEMMED": "%MNZC",
+    "ALIAS_TERM_STEMMED": "%mnzc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 246,
+    "ALIAS_TERM_UNSTEMMED": "%LNZC",
+    "ALIAS_TERM_STEMMED": "%lnzc",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 247,
+    "ALIAS_TERM_UNSTEMMED": "%GBG",
+    "ALIAS_TERM_STEMMED": "%gbg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 248,
+    "ALIAS_TERM_UNSTEMMED": "THAS",
+    "ALIAS_TERM_STEMMED": "tha",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 249,
+    "ALIAS_TERM_UNSTEMMED": "WBMG",
+    "ALIAS_TERM_STEMMED": "wbmg",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 250,
+    "ALIAS_TERM_UNSTEMMED": "%THAI",
+    "ALIAS_TERM_STEMMED": "%thai",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 251,
+    "ALIAS_TERM_UNSTEMMED": "%THAJ",
+    "ALIAS_TERM_STEMMED": "%thaj",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 252,
+    "ALIAS_TERM_UNSTEMMED": "%THAK",
+    "ALIAS_TERM_STEMMED": "%thak",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 253,
+    "ALIAS_TERM_UNSTEMMED": "%THAL",
+    "ALIAS_TERM_STEMMED": "%thal",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 254,
+    "ALIAS_TERM_UNSTEMMED": "%THAM",
+    "ALIAS_TERM_STEMMED": "%tham",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 255,
+    "ALIAS_TERM_UNSTEMMED": "%THAN",
+    "ALIAS_TERM_STEMMED": "%than",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 256,
+    "ALIAS_TERM_UNSTEMMED": "commissions and fees",
+    "ALIAS_TERM_STEMMED": "commiss and fee",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 256,
+    "ALIAS_TERM_UNSTEMMED": "fees and commissions",
+    "ALIAS_TERM_STEMMED": "fee and commiss",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 257,
+    "ALIAS_TERM_UNSTEMMED": "received",
+    "ALIAS_TERM_STEMMED": "receiv",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 258,
+    "ALIAS_TERM_UNSTEMMED": "paid",
+    "ALIAS_TERM_STEMMED": "paid",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 259,
+    "ALIAS_TERM_UNSTEMMED": "US",
+    "ALIAS_TERM_STEMMED": "us",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 259,
+    "ALIAS_TERM_UNSTEMMED": "USA",
+    "ALIAS_TERM_STEMMED": "usa",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 259,
+    "ALIAS_TERM_UNSTEMMED": "America",
+    "ALIAS_TERM_STEMMED": "america",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 259,
+    "ALIAS_TERM_UNSTEMMED": "United States of America",
+    "ALIAS_TERM_STEMMED": "unit state of america",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "ALIAS_TERM_UNSTEMMED": "inward",
+    "ALIAS_TERM_STEMMED": "inward",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "ALIAS_TERM_UNSTEMMED": "outward",
+    "ALIAS_TERM_STEMMED": "outward",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "ALIAS_TERM_UNSTEMMED": "net service earnings",
+    "ALIAS_TERM_STEMMED": "net servic earn",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "ALIAS_TERM_UNSTEMMED": "payable",
+    "ALIAS_TERM_STEMMED": "payabl",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 260,
+    "ALIAS_TERM_UNSTEMMED": "receivable",
+    "ALIAS_TERM_STEMMED": "receiv",
+    "INCLUDE_TERM": "N"
+  },
+  {
+    "BASE_TERM_ID": 261,
+    "ALIAS_TERM_UNSTEMMED": "East Pakistan",
+    "ALIAS_TERM_STEMMED": "east pakistan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 261,
+    "ALIAS_TERM_UNSTEMMED": "Pakistan",
+    "ALIAS_TERM_STEMMED": "pakistan",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 262,
+    "ALIAS_TERM_UNSTEMMED": "British Honduras",
+    "ALIAS_TERM_STEMMED": "british hondura",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 263,
+    "ALIAS_TERM_UNSTEMMED": "Democratic Peoples Republic of Korea",
+    "ALIAS_TERM_STEMMED": "democrat peopl republ of korea",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 263,
+    "ALIAS_TERM_UNSTEMMED": "DPRK",
+    "ALIAS_TERM_STEMMED": "dprk",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 263,
+    "ALIAS_TERM_UNSTEMMED": "Korea Democratic People's Republic of",
+    "ALIAS_TERM_STEMMED": "korea democrat people' republ of",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 263,
+    "ALIAS_TERM_UNSTEMMED": "North Korea",
+    "ALIAS_TERM_STEMMED": "north korea",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 264,
+    "ALIAS_TERM_UNSTEMMED": "Congo Democratic Republic of",
+    "ALIAS_TERM_STEMMED": "congo democrat republ of",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 264,
+    "ALIAS_TERM_UNSTEMMED": "Zaire",
+    "ALIAS_TERM_STEMMED": "zair",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 264,
+    "ALIAS_TERM_UNSTEMMED": "Belgian Congo",
+    "ALIAS_TERM_STEMMED": "belgian congo",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 264,
+    "ALIAS_TERM_UNSTEMMED": "Congo",
+    "ALIAS_TERM_STEMMED": "congo",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 265,
+    "ALIAS_TERM_UNSTEMMED": "Ethiopia",
+    "ALIAS_TERM_STEMMED": "ethiopia",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 266,
+    "ALIAS_TERM_UNSTEMMED": "GDR",
+    "ALIAS_TERM_STEMMED": "gdr",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 266,
+    "ALIAS_TERM_UNSTEMMED": "East Germany",
+    "ALIAS_TERM_STEMMED": "east germani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 267,
+    "ALIAS_TERM_UNSTEMMED": "German",
+    "ALIAS_TERM_STEMMED": "german",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 267,
+    "ALIAS_TERM_UNSTEMMED": "West Germany",
+    "ALIAS_TERM_STEMMED": "west germani",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 268,
+    "ALIAS_TERM_UNSTEMMED": "Cote d'Ivoire",
+    "ALIAS_TERM_STEMMED": "cote d'ivoir",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 269,
+    "ALIAS_TERM_UNSTEMMED": "Palestine",
+    "ALIAS_TERM_STEMMED": "palestin",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 269,
+    "ALIAS_TERM_UNSTEMMED": "Palestinian",
+    "ALIAS_TERM_STEMMED": "palestinian",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 269,
+    "ALIAS_TERM_UNSTEMMED": "Palestinian Administered Territories",
+    "ALIAS_TERM_STEMMED": "palestinian administ territori",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 270,
+    "ALIAS_TERM_UNSTEMMED": "Korea Republic of",
+    "ALIAS_TERM_STEMMED": "korea republ of",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 270,
+    "ALIAS_TERM_UNSTEMMED": "South Korea",
+    "ALIAS_TERM_STEMMED": "south korea",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 271,
+    "ALIAS_TERM_UNSTEMMED": "Ceylon",
+    "ALIAS_TERM_STEMMED": "ceylon",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 272,
+    "ALIAS_TERM_UNSTEMMED": "Southern Rhodesia",
+    "ALIAS_TERM_STEMMED": "southern rhodesia",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 272,
+    "ALIAS_TERM_UNSTEMMED": "Rhodesia",
+    "ALIAS_TERM_STEMMED": "rhodesia",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 273,
+    "ALIAS_TERM_UNSTEMMED": "%LUSS",
+    "ALIAS_TERM_STEMMED": "%luss",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 274,
+    "ALIAS_TERM_UNSTEMMED": "%AUSS",
+    "ALIAS_TERM_STEMMED": "%auss",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 275,
+    "ALIAS_TERM_UNSTEMMED": "Base Rate",
+    "ALIAS_TERM_STEMMED": "base rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 275,
+    "ALIAS_TERM_UNSTEMMED": "Repo Rate",
+    "ALIAS_TERM_STEMMED": "repo rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 275,
+    "ALIAS_TERM_UNSTEMMED": "Bank of England Rate",
+    "ALIAS_TERM_STEMMED": "bank of england rate",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "ALIAS_TERM_UNSTEMMED": "SMES",
+    "ALIAS_TERM_STEMMED": "SMES",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "ALIAS_TERM_UNSTEMMED": "smes",
+    "ALIAS_TERM_STEMMED": "smes",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "ALIAS_TERM_UNSTEMMED": "SMEs",
+    "ALIAS_TERM_STEMMED": "SMEs",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "ALIAS_TERM_UNSTEMMED": "SME",
+    "ALIAS_TERM_STEMMED": "SME",
+    "INCLUDE_TERM": "Y"
+  },
+  {
+    "BASE_TERM_ID": 276,
+    "ALIAS_TERM_UNSTEMMED": "sme",
+    "ALIAS_TERM_STEMMED": "sme",
+    "INCLUDE_TERM": "Y"
+  }
+]

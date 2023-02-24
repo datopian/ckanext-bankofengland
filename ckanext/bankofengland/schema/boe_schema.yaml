@@ -130,6 +130,89 @@ dataset_fields:
       label: Hourly
   validators: ignore_missing
 
+- field_name: metrics
+  preset: select
+  label: Metrics
+  choices:
+    - value: boe_met:mi9001 (Market value [Statistics])
+      label: boe_met:mi9001 (Market value [Statistics])
+  validators: ignore_missing
+
+- field_name: eba_dim_bas_base
+  label: eba_dim:BAS (Base)
+  preset: select
+  choices:
+    - value: eba_BA:x7 (Liabilities)
+      label: eba_BA:x7 (Liabilities)
+    - value: eba_BA:x6 (Assets)
+      label: eba_BA:x6 (Assets)
+  validators: ignore_missing
+
+- field_name: eba_dim_tri_type_of_risk
+  label: eba_dim:TRI (Type of risk)
+  preset: select
+  choices:
+    - value: eba_TRx9997 Interest rate + Foreign exchange*NEW*
+      label: eba_TRx9997 Interest rate + Foreign exchange*NEW*
+    - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
+      label: boe_eba_TR:x9001 Commodity/Equity/Other risk
+    - value: eba_TR:x2 (Credit risk)
+      label: eba_TR:x2 (Credit risk)
+    - value: eba_TR:x9 (Interest rate risk)
+      label: eba_TR:x9 (Interest rate risk)
+    - value: eba_TR:x16 (Foreign-exchange risk)
+      label: eba_TR:x16 (Foreign-exchange risk)
+    - value: eba_TRx9999 Credit + Commodity risk *NEW*
+      label: eba_TRx9999 Credit + Commodity risk *NEW*
+    - value: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
+      label: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
+    - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
+      label: boe_eba_TR:x9001 Commodity/Equity/Other risk
+  validators: ignore_missing
+
+- field_name: eba_dim_cud_currency_of_denomination_of_the_reported_position
+  label: boe_dim:CUD (Currency of denomination of the reported position )
+  preset: select
+  choices:
+    - value: eba_CU:x0
+      label: eba_CU:x0
+  validators: ignore_missing
+
+- field_name: eba_dim_mcy_main_category
+  label: eba_dim:MCY (Main category)
+  preset: select
+  choices:
+    - value: eba_MC:x99 (Derivatives)
+      label: eba_MC:x99 (Derivatives)
+  validators: ignore_missing
+
+- field_name: eba_dim_mcb_instrument
+  label: eba_dim:MCB (Instrument)
+  preset: select
+  choices:
+    - value: eba_MCx9188 Options
+      label: eba_MCx9188 Options
+    - value: eba_MCx9245 Futures/Forwards
+      label: eba_MCx9245 Futures/Forwards
+    - value: eba_MCx9246 Swaps
+      label: eba_MCx9246 Swaps
+    - value: eba_MCx9247 FRAs 
+      label: eba_MCx9247 FRAs
+    - value: eba_MCx9194 Other derivatives
+      label: eba_MCx9194 Other derivatives
+    - value: eba_MCx0 - all derivative instruments
+      label: eba_MCx0 - all derivative instruments
+  validators: ignore_missing
+
+- field_name: boe_dim_counterparty_sector_of_reporter
+  label: boe_dim:Counterparty sector of reporter
+  preset: select
+  choices:
+    - value: boe_eba_CT:x9075 (Banks and building societies) 
+      label: boe_eba_CT:x9075 (Banks and building societies)
+    - value: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
+      label: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
+  validators: ignore_missing
 
 resource_fields:
 

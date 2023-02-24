@@ -1,6 +1,8 @@
 import requests
 import ckan.plugins.toolkit as toolkit
 from ckan.common import config
+import json
+import pathlib
 
 
 def build_id(input):
@@ -78,34 +80,35 @@ def create_view(context, data_dict):
     track_view(build_id(data_dict["tables"]))
     return add_permissions(build_id(data_dict["tables"]))
 
-def get_related_tags(tag):
-    thesauros = toolkit.get_action('package_show')(None, { 'id': 'thesauros' })
-    thesauros_base_terms_resource = list(filter(lambda x: x['name'] == 'base_term_thesauros', thesauros['resources']))[0]
-    thesauros_alias_terms_resource = list(filter(lambda x: x['name'] == 'alias_terms_thesauros', thesauros['resources']))[0]
-    base_term_id = toolkit.get_action('datastore_search')(None, { 'resource_id': thesauros_base_terms_resource['id'], 'filters' : { 'BASE_TERM_UNSTEMMED': tag}, 'limit': 1000 })
-    if len(base_term_id['records']) == 0:
+def get_related_tags(tag, base_terms, alias_terms):
+    base_term = list(filter(lambda term: term['BASE_TERM_UNSTEMMED'].lower() == tag.lower(), base_terms))
+    if len(base_term) == 0:
         return [tag]
     else:
-        alias_terms = toolkit.get_action('datastore_search')(None, { 'resource_id': thesauros_alias_terms_resource['id'], 'filters' : { 'BASE_TERM_ID': base_term_id['records'][0]['BASE_TERM_ID']}, 'limit': 1000 })
-        return [term['ALIAS_TERM_UNSTEMMED'] for term in list(alias_terms['records'])]
+        alias_terms = filter(lambda term: term['BASE_TERM_ID'] == base_term[0]['BASE_TERM_ID'] and term['INCLUDE_TERM'] != 'N ', alias_terms)
+        return [term['ALIAS_TERM_UNSTEMMED'] for term in alias_terms]
 
 def flatten(l):
     return [item for sublist in l for item in sublist]
 
 @toolkit.chained_action
 def package_create(original_action, context, data_dict):
+    base_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/base_term_thesauros.json'))
+    alias_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/alias_term_thesauros.json'))
     tags = data_dict['tags'] if 'tags' in data_dict else []
     tags = [tag['name'] for tag in tags ]
-    new_tags = [{'name': tag_name, 'state': 'active' } for tag_name in flatten([get_related_tags(tag) for tag in tags])]
+    new_tags = [{'name': tag_name, 'state': 'active' } for tag_name in flatten([get_related_tags(tag, base_terms, alias_terms) for tag in tags])]
     data_dict['tags'] = new_tags
     result = original_action(context, data_dict)
     return result
 
 @toolkit.chained_action
 def package_update(original_action, context, data_dict):
+    base_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/base_term_thesauros.json'))
+    alias_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/alias_term_thesauros.json'))
     tags = data_dict['tags'] if 'tags' in data_dict else []
     tags = [tag['name'] for tag in tags ]
-    new_tags = [{'name': tag_name, 'state': 'active' } for tag_name in flatten([get_related_tags(tag) for tag in tags])]
+    new_tags = [{'name': tag_name, 'state': 'active' } for tag_name in flatten([get_related_tags(tag, base_terms, alias_terms) for tag in tags])]
     data_dict['tags'] = new_tags
     result = original_action(context, data_dict)
     return result
