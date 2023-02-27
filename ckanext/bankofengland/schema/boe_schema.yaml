@@ -152,8 +152,8 @@ dataset_fields:
   label: eba_dim:TRI (Type of risk)
   preset: select
   choices:
-    - value: eba_TRx9997 Interest rate + Foreign exchange*NEW*
-      label: eba_TRx9997 Interest rate + Foreign exchange*NEW*
+    - value: eba_TRx9997 Interest rate plus Foreign exchange
+      label: eba_TRx9997 Interest rate + Foreign exchange
     - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
       label: boe_eba_TR:x9001 Commodity/Equity/Other risk
     - value: eba_TR:x2 (Credit risk)
@@ -162,10 +162,10 @@ dataset_fields:
       label: eba_TR:x9 (Interest rate risk)
     - value: eba_TR:x16 (Foreign-exchange risk)
       label: eba_TR:x16 (Foreign-exchange risk)
-    - value: eba_TRx9999 Credit + Commodity risk *NEW*
-      label: eba_TRx9999 Credit + Commodity risk *NEW*
-    - value: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
-      label: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
+    - value: eba_TRx9999 Credit plus Commodity risk
+      label: eba_TRx9999 Credit + Commodity risk
+    - value: eba_TRx9998 Interest rate plus Foreign exchange plus Credit plus Commodity risk
+      label: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk
     - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
       label: boe_eba_TR:x9001 Commodity/Equity/Other risk
   validators: ignore_missing
