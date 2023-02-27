@@ -80,6 +80,11 @@ def create_view(context, data_dict):
     track_view(build_id(data_dict["tables"]))
     return add_permissions(build_id(data_dict["tables"]))
 
+@toolkit.side_effect_free
+def search_package_list(context, data_dict):
+    packages = toolkit.get_action('package_search')(None, { 'q': data_dict['q']})
+    return [package['name'] for package in packages['results']]
+
 def get_related_tags(tag, base_terms, alias_terms):
     base_term = list(filter(lambda term: term['BASE_TERM_UNSTEMMED'].lower() == tag.lower(), base_terms))
     if len(base_term) == 0:

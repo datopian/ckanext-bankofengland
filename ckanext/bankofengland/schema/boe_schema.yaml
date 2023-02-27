@@ -152,8 +152,8 @@ dataset_fields:
   label: eba_dim:TRI (Type of risk)
   preset: select
   choices:
-    - value: eba_TRx9997 Interest rate + Foreign exchange*NEW*
-      label: eba_TRx9997 Interest rate + Foreign exchange*NEW*
+    - value: eba_TRx9997 Interest rate plus Foreign exchange
+      label: eba_TRx9997 Interest rate + Foreign exchange
     - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
       label: boe_eba_TR:x9001 Commodity/Equity/Other risk
     - value: eba_TR:x2 (Credit risk)
@@ -162,10 +162,10 @@ dataset_fields:
       label: eba_TR:x9 (Interest rate risk)
     - value: eba_TR:x16 (Foreign-exchange risk)
       label: eba_TR:x16 (Foreign-exchange risk)
-    - value: eba_TRx9999 Credit + Commodity risk *NEW*
-      label: eba_TRx9999 Credit + Commodity risk *NEW*
-    - value: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
-      label: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk*NEW*
+    - value: eba_TRx9999 Credit plus Commodity risk
+      label: eba_TRx9999 Credit + Commodity risk
+    - value: eba_TRx9998 Interest rate plus Foreign exchange plus Credit plus Commodity risk
+      label: eba_TRx9998 Interest rate + Foreign exchange + Credit + Commodity risk
     - value: boe_eba_TR:x9001 Commodity/Equity/Other risk
       label: boe_eba_TR:x9001 Commodity/Equity/Other risk
   validators: ignore_missing
@@ -212,6 +212,51 @@ dataset_fields:
       label: boe_eba_CT:x9075 (Banks and building societies)
     - value: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
       label: boe_eba_CT:x613 (Monetary financial institutions (MFIs))
+  validators: ignore_missing
+
+- field_name: child
+  label: Child
+  preset: dataset_string_autocomplete
+  validators: ignore_missing
+
+- field_name: eba_dim_cps_counterparty_sector
+  label: eba_dim:CPS (Counterparty sector)
+  preset: select
+  choices:
+    - value: eba_CT:x9234 
+      label: eba_CT:x9234
+    - value: eba_CT:x9023 (Public sector)
+      label: eba_CT:x9023 (Public sector)
+    - value: eba_CT:x9235
+      label: eba_CT:x9235
+    - value: eba_CT:x9082 (Non-financial Corporations other than Public sector entities, Individual households and individual trusts, Unincorporated businesses other than unlimited liability partnerships, non-profit institutions serving households (NPISHs))
+      label: eba_CT:x9082 (Non-financial Corporations other than Public sector entities, Individual households and individual trusts, Unincorporated businesses other than unlimited liability partnerships, non-profit institutions serving households (NPISHs))
+    - value: eba_CT:x9163 (Deposit-taking corporations and Central Monetary Institutions [counterparty's home country definition])
+      label: eba_CT:x9163 (Deposit-taking corporations and Central Monetary Institutions [counterparty's home country definition])
+    - value: boe_eba_CT:x9165 
+      label: boe_eba_CT:x9165
+    - value: eba_CT:x9236
+      label: eba_CT:x9236
+    - value: eba_CT:x9234 (new - monetary financial institutions)
+      label: eba_CT:x9234 (new - monetary financial institutions)
+    - value: eba_CT:x9235 (new - other financial corporations)
+      label: eba_CT:x9235 (new - other financial corporations)
+    - value: boe_eba_CT:x9165 (new - other counterparties)
+      label: boe_eba_CT:x9165 (new - other counterparties)
+    - value: eba_CT:x9236 (new - all counterparties)
+      label: eba_CT:x9236 (new - all counterparties)
+  validators: ignore_missing
+
+- field_name: eba_dim_rcp_residence_of_counterparty
+  label: eba_dim:RCP (Residence of counterparty)
+  preset: select
+  choices:
+    - value: eba_GA:GB (United Kingdom)
+      label: eba_GA:GB (United Kingdom)
+    - value: boe_eba_GA:x9001 (Non UK resident)
+      label: boe_eba_GA:x9001 (Non UK resident)
+    - value: eba_GA:x0
+      label: eba_GA:x0
   validators: ignore_missing
 
 resource_fields:
