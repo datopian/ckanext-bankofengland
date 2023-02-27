@@ -217,6 +217,7 @@ dataset_fields:
 - field_name: child
   label: Child
   preset: dataset_string_autocomplete
+  validators: ignore_missing
 
 - field_name: eba_dim_cps_counterparty_sector
   label: eba_dim:CPS (Counterparty sector)
