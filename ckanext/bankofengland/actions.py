@@ -147,6 +147,20 @@ def package_update(original_action, context, data_dict):
     result = original_action(context, data_dict)
     return result
 
+@toolkit.chained_action
+def resource_create(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    create_resource_versions(context, [result])
+
+    return result
+
+@toolkit.chained_action
+def resource_update(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    create_resource_versions(context, [result])
+
+    return result
+
 def create_resource_versions(context, resources):
     errors = []
 

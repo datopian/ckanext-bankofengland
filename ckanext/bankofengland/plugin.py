@@ -93,5 +93,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'package_update': actions.package_update,
             'search_package_list': actions.search_package_list,
             'get_resource_version_diffs': actions.get_resource_version_diffs,
-            'get_resource_from_blob': actions.get_resource_from_blob
+            'get_resource_from_blob': actions.get_resource_from_blob,
+            'resource_create': actions.resource_create,
+            'resource_update': actions.resource_update,
         }
