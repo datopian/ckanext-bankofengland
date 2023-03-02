@@ -91,6 +91,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'create_view': actions.create_view,
             'package_create': actions.package_create,
             'package_update': actions.package_update,
-            'search_package_list': actions.search_package_list
+            'search_package_list': actions.search_package_list,
+            'get_resource_version_diffs': actions.get_resource_version_diffs,
+            'get_resource_from_blob': actions.get_resource_from_blob
         }
-

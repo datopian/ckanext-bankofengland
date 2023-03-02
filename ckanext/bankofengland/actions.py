@@ -1,9 +1,30 @@
 import requests
-import ckan.plugins.toolkit as toolkit
-from ckan.common import config
 import json
 import pathlib
+import logging
+import hashlib
+import difflib
+from sqlalchemy import MetaData
+import random
+import string
 
+import ckan.plugins.toolkit as toolkit
+from ckan.common import config, c
+import ckan.model as model
+
+
+log = logging.getLogger(__name__)
+
+
+def _get_context():
+    user = c.user
+    context = {
+        "model": model,
+        "session": model.Session,
+        "user": user,
+        "auth_user_obj": c.userobj,
+    }
+    return context
 
 def build_id(input):
     return "_".join(sorted(input))
@@ -109,6 +130,14 @@ def package_create(original_action, context, data_dict):
 
 @toolkit.chained_action
 def package_update(original_action, context, data_dict):
+    resources = data_dict.get('resources')
+
+    if resources:
+        resource_version_errors = create_resource_versions(
+            context,
+            resources
+        )
+
     base_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/base_term_thesauros.json'))
     alias_terms = json.load(open(str(pathlib.Path(__file__).parent.resolve()) + '/alias_term_thesauros.json'))
     tags = data_dict['tags'] if 'tags' in data_dict else []
@@ -117,3 +146,112 @@ def package_update(original_action, context, data_dict):
     data_dict['tags'] = new_tags
     result = original_action(context, data_dict)
     return result
+
+def create_resource_versions(context, resources):
+    errors = []
+
+    for resource in resources:
+        resource_id = resource.get('id')
+
+        if resource_id:
+            resource_error = {resource_id: []}
+
+            log.info(
+                'Creating new version for resource: {}'
+                .format(resource_id)
+            )
+
+            try:
+                versions_table = get_table('version')
+                resource_hash = resource.get('hash')
+
+                version_exists = model.Session.query(versions_table).filter(
+                    versions_table.c.resource_id == resource_id,
+                    versions_table.c.sha256 == resource_hash
+                ).first()
+
+                version_name = ''.join(
+                    random.choice(string.ascii_letters + string.digits)
+                    for _ in range(30)
+                )
+
+                if not version_exists:
+                    version = toolkit.get_action('resource_version_create')(
+                        context, {
+                            'resource_id': resource_id,
+                            'name': version_name,
+                            'notes': resource.get('description'),
+                            'sha256': resource.get('hash'),
+                            'size': resource.get('size'),
+                        }
+                    )
+                    log.info('New version created: {}'.format(version))
+                else:
+                    log.info(
+                        'Versions are already up-to-date for resource: {}'
+                        .format(resource_id)
+                    )
+            except Exception as e:
+                log.error(
+                    'Error creating new version for resource: {}'
+                    .format(e)
+                )
+                resource_error[resource_id].append(e)
+
+            errors.append(resource_error)
+
+    return errors
+
+def get_table(name):
+    meta = MetaData()
+    meta.reflect(bind=model.meta.engine)
+    table = meta.tables[name]
+
+    return table
+
+def get_resource_from_blob(resource_dict):
+    context = _get_context()
+
+    version = toolkit.get_action('get_resource_download_spec')(
+        context,
+        data_dict=resource_dict
+    )
+
+    req = requests.get(version['href'])
+
+    return [line for line in req.text.split('\n') if line != '']
+
+@toolkit.side_effect_free
+def get_resource_version_diffs(context, data_dict):
+    version_a_id = data_dict.get('version_a')
+    version_b_id = data_dict.get('version_b')
+    version_a_dict = toolkit.get_action('version_show')(
+        context,
+        data_dict={'version_id': version_a_id}
+    )
+    version_b_dict = toolkit.get_action('version_show')(
+        context,
+        data_dict={'version_id': version_b_id}
+    )
+
+    version_a = get_resource_from_blob({
+        'id': version_a_dict.get('resource_id'),
+        'lfs_prefix': 'ckan/{}'.format(version_a_dict.get('package_id')),
+        'sha256': version_a_dict.get('sha256'),
+        'size': int(version_a_dict.get('size'))
+    })
+
+    version_b = get_resource_from_blob({
+        'id': version_b_dict.get('resource_id'),
+        'lfs_prefix': 'ckan/{}'.format(version_b_dict.get('package_id')),
+        'sha256': version_b_dict.get('sha256'),
+        'size': int(version_b_dict.get('size'))
+    })
+
+    version_diff = difflib.HtmlDiff().make_file(
+        version_a,
+        version_b,
+        context=True,
+    )
+
+    return version_diff
