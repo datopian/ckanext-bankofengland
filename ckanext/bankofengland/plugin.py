@@ -89,6 +89,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     def get_actions(self):
         return {
             'create_view': actions.create_view,
+            'get_history': actions.get_history,
             'package_create': actions.package_create,
             'package_update': actions.package_update,
             'search_package_list': actions.search_package_list
