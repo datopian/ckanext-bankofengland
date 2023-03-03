@@ -97,7 +97,6 @@ def create_view(context, data_dict):
     track_view(build_id(data_dict["tables"]))
     return add_permissions(build_id(data_dict["tables"]))
 
-
 @toolkit.side_effect_free
 def get_history(context, data_dict):
     package = toolkit.get_action("package_show")(
@@ -116,9 +115,8 @@ def get_history(context, data_dict):
 
 @toolkit.side_effect_free
 def search_package_list(context, data_dict):
-    packages = toolkit.get_action("package_search")(None, {"q": data_dict["q"]})
-    return [package["name"] for package in packages["results"]]
-
+    packages = toolkit.get_action('package_search')(None, { 'q': data_dict['q']})
+    return [package['name'] for package in packages['results']]
 
 def get_related_tags(tag, base_terms, alias_terms):
     base_term = list(
