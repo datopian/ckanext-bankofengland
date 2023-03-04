@@ -281,3 +281,4 @@ resource_fields:
 - field_name: publish_date
   label: Published date
   preset: datetime
+  required: true
