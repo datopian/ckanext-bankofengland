@@ -15,12 +15,12 @@ def build_joins(input):
     return "".join(list(map(lambda string: f'JOIN {string} USING("Date") ', input[1:])))
 
 
-def build_sql(input):
+def build_sql(tables):
     return 'CREATE VIEW {table_name} AS SELECT {first_table}."Date", {list_of_tables} FROM {first_table} {joins}'.format(
-        table_name=build_id(input),
-        first_table=input[0],
-        list_of_tables=", ".join(f'{x}."{x.upper()}"' for x in input),
-        joins=build_joins(input),
+        table_name=build_id([table['tableName'] for table in tables]),
+        first_table=tables[0]['tableName'],
+        list_of_tables=", ".join(f'{table["tableName"]}."{table["columnName"].upper()}"' for table in tables),
+        joins=build_joins([table['tableName'] for table in tables]),
     )
 
 
@@ -51,7 +51,7 @@ def add_permissions(table_name):
         "X-Hasura-Admin-Secret": config.get("ckanext.bankofengland.hasura_admin_key"),
     }
     response = requests.post(url, json=body, headers=headers)
-    return response.status_code
+    return response.json()
 
 
 def track_view(table_name):
@@ -68,7 +68,7 @@ def track_view(table_name):
         "X-Hasura-Admin-Secret": config.get("ckanext.bankofengland.hasura_admin_key"),
     }
     response = requests.post(url, json=body, headers=headers)
-    return response.status_code
+    return response.json()
 
 
 def run_sql(query):
@@ -82,7 +82,7 @@ def run_sql(query):
         "X-Hasura-Admin-Secret": config.get("ckanext.bankofengland.hasura_admin_key"),
     }
     response = requests.post(url, json=body, headers=headers)
-    return response.status_code
+    return response.json()
 
 
 def create_view(context, data_dict):
@@ -90,9 +90,10 @@ def create_view(context, data_dict):
         raise toolkit.ValidationError("Missing tables value in input")
     if len(data_dict["tables"]) == 0:
         raise toolkit.ValidationError("Need to have at least one table")
-    run_sql(build_sql(data_dict["tables"]))
-    track_view(build_id(data_dict["tables"]))
-    return add_permissions(build_id(data_dict["tables"]))
+    sql_result = run_sql(build_sql(data_dict["tables"]))
+    track_view_result = track_view(build_id([table['tableName'] for table in data_dict['tables']]))
+    add_permissions_result = add_permissions([table['tableName'] for table in data_dict['tables']])
+    return { "sql_result": sql_result, "track_view_result": track_view_result, "add_permissions_result": add_permissions_result }
 
 @toolkit.side_effect_free
 def get_history(context, data_dict):
