@@ -46,6 +46,7 @@ def add_permissions(table_name):
             "permission": {"columns": "*", "filter": {}, "allow_aggregations": True},
         },
     }
+    print(body, flush=True)
     headers = {
         "X-Hasura-Role": "admin",
         "X-Hasura-Admin-Secret": config.get("ckanext.bankofengland.hasura_admin_key"),
@@ -92,7 +93,7 @@ def create_view(context, data_dict):
         raise toolkit.ValidationError("Need to have at least one table")
     sql_result = run_sql(build_sql(data_dict["tables"]))
     track_view_result = track_view(build_id([table['tableName'] for table in data_dict['tables']]))
-    add_permissions_result = add_permissions([table['tableName'] for table in data_dict['tables']])
+    add_permissions_result = add_permissions(build_id([table['tableName'] for table in data_dict['tables']]))
     return { "sql_result": sql_result, "track_view_result": track_view_result, "add_permissions_result": add_permissions_result }
 
 @toolkit.side_effect_free
