@@ -90,9 +90,6 @@ def create_view(context, data_dict):
         raise toolkit.ValidationError("Missing tables value in input")
     if len(data_dict["tables"]) == 0:
         raise toolkit.ValidationError("Need to have at least one table")
-    for table in data_dict["tables"]:
-        if len(table) != 7:
-            raise toolkit.ValidationError("Invalid table name")
     run_sql(build_sql(data_dict["tables"]))
     track_view(build_id(data_dict["tables"]))
     return add_permissions(build_id(data_dict["tables"]))
