@@ -121,11 +121,17 @@
       }
     },
     {
-      "preset_name": "datetime",
+      "preset_name": "datetime-date",
       "values": {
-        "form_snippet": "datetime.html",
-        "display_snippet": "datetime.html",
-        "validators": "scheming_isodatetime convert_to_json_if_datetime"
+        "form_snippet": "datetime-date.html",
+        "display_snippet": "datetime-date.html"
+      }
+    },
+    {
+      "preset_name": "datetime-time",
+      "values": {
+        "form_snippet": "datetime-time.html",
+        "display_snippet": "datetime-time.html"
       }
     },
     {

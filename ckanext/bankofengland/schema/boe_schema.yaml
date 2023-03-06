@@ -279,6 +279,12 @@ resource_fields:
   preset: resource_format_autocomplete
 
 - field_name: publish_date
-  label: Published date
-  preset: datetime
+  label: Publish date
+  preset: datetime-date
+  required: true
+  validators: only_future_date
+
+- field_name: publish_time
+  label: Publish time
+  preset: datetime-time
   required: true

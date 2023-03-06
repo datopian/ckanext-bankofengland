@@ -1,8 +1,16 @@
 import requests
-import ckan.plugins.toolkit as toolkit
-from ckan.common import config
 import json
 import pathlib
+import logging
+import json
+
+import ckan.plugins.toolkit as toolkit
+from ckan.common import config
+
+import ckanext.bankofengland.helpers as boe_helpers
+
+
+log = logging.getLogger(__name__)
 
 
 def build_id(input):
@@ -163,6 +171,7 @@ def package_create(original_action, context, data_dict):
 
 @toolkit.chained_action
 def package_update(original_action, context, data_dict):
+    log.error(data_dict)
     base_terms = json.load(
         open(str(pathlib.Path(__file__).parent.resolve()) + "/base_term_thesauros.json")
     )
@@ -180,5 +189,37 @@ def package_update(original_action, context, data_dict):
         )
     ]
     data_dict["tags"] = new_tags
+    result = original_action(context, data_dict)
+    return result
+
+
+@toolkit.chained_action
+def resource_show(original_action, context, data_dict):
+    log.error('resource_show')
+    log.error(data_dict)
+    result = original_action(context, data_dict)
+    return result
+
+
+@toolkit.chained_action
+def package_show(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    log.error(result)
+
+    user = context.get('auth_user_obj')
+    log.error(user)
+    log.error(user.sysadmin)
+
+    if user and user.sysadmin:
+        return result
+
+    filtered_result = boe_helpers.filter_unpublished_resources(result)
+
+    return filtered_result
+
+
+@toolkit.chained_action
+def package_search(original_action, context, data_dict):
+    log.error('package_search')
     result = original_action(context, data_dict)
     return result

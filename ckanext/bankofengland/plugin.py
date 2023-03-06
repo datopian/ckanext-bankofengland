@@ -3,7 +3,7 @@ import logging
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
-from ckanext.bankofengland import actions, validators
+from ckanext.bankofengland import actions, validators, helpers
 
 log = logging.getLogger(__name__)
 
@@ -14,6 +14,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurable)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IValidators)
+    plugins.implements(plugins.ITemplateHelpers)
 
     # IConfigurer
 
@@ -69,7 +70,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     def configure(self, config):
         # Certain config options must exists for the plugin to work. Raise an
         # exception if they're missing.
-        missing_config = "{0} is not configured. Please amend your .ini file."
+        missing_config = '{0} is not configured. Please amend your .ini file.'
         config_options = (
             'ckanext.bankofengland.hasura_url',
             'ckanext.bankofengland.hasura_admin_key',
@@ -81,8 +82,9 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
 
     def get_validators(self):
         return {
-            "tag_length_validator": validators.tag_length_validator,
-            "tag_name_validator": validators.tag_name_validator
+            'tag_length_validator': validators.tag_length_validator,
+            'tag_name_validator': validators.tag_name_validator,
+            'only_future_date': validators.only_future_date,
         }
 
     #IActions
@@ -92,6 +94,17 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'get_history': actions.get_history,
             'package_create': actions.package_create,
             'package_update': actions.package_update,
-            'search_package_list': actions.search_package_list
+            'search_package_list': actions.search_package_list,
+            'package_show': actions.package_show,
+            'package_search': actions.package_search,
+            'resource_show': actions.resource_show,
         }
 
+    # ITemplateHelpers
+    def get_helpers(self):
+        return {
+            'get_current_date': helpers.get_current_date,
+            'get_current_datetime': helpers.get_current_datetime,
+            'get_resource_publish_date': helpers.get_resource_publish_date,
+            'filter_unpublished_resources': helpers.filter_unpublished_resources,
+        }
