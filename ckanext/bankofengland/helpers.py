@@ -1,5 +1,6 @@
 import datetime
 import logging
+import pytz
 
 
 log = logging.getLogger(__name__)
@@ -10,7 +11,7 @@ def get_current_date():
 
 
 def get_current_datetime():
-    return datetime.datetime.now()
+    return datetime.datetime.now(pytz.utc)
 
 
 def filter_unpublished_resources(data_dict):
@@ -24,6 +25,8 @@ def filter_unpublished_resources(data_dict):
             publish_date = datetime.datetime.strptime(
                 publish_date, '%Y-%m-%dT%H:%M:%S'
             )
+            publish_date = publish_date.astimezone(pytz.utc)
+
             current_date = get_current_datetime()
 
             if publish_date <= current_date:

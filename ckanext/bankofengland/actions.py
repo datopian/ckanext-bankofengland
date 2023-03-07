@@ -228,7 +228,7 @@ def resource_show(original_action, context, data_dict):
 @toolkit.side_effect_free
 def package_show(original_action, context, data_dict):
     result = original_action(context, data_dict)
-    filtered_result = filter_unpublished_resources(result, single=True)
+    filtered_result = filter_unpublished_resources(context, result, single=True)
 
     return filtered_result
 
@@ -237,13 +237,13 @@ def package_show(original_action, context, data_dict):
 @toolkit.side_effect_free
 def package_search(original_action, context, data_dict):
     result = original_action(context, data_dict)
-    filtered_result = filter_unpublished_resources(result)
+    filtered_result = filter_unpublished_resources(context, result)
 
     return filtered_result
 
 
-def filter_unpublished_resources(result, single=False):
-    user = c.userobj
+def filter_unpublished_resources(context, result, single=False):
+    user = context.get('auth_user_obj')
     filtered_result = result
 
     organizations_available = h.organizations_available(permission='manage_group')
