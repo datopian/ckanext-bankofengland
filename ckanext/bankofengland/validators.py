@@ -17,8 +17,6 @@ def only_future_date(value, context):
         current_date = datetime.datetime.now().replace(
             hour=0, minute=0, second=0, microsecond=0
         )
-        log.error(date)
-        log.error(current_date)
 
         if date < current_date:
             raise toolkit.Invalid("Date must be in the future")
