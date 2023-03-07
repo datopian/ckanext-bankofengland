@@ -1,10 +1,16 @@
 import requests
 import ckan.plugins.toolkit as toolkit
 from ckan.common import config
+import ckan.model as model
+import ckan.logic as logic
+import ckan.lib.dictization.model_dictize as model_dictize
+from datetime import datetime, timezone
+from typing import cast
 import json
+import pytz
 import pathlib
 
-
+_check_access = logic.check_access
 def build_id(input):
     return "_".join(sorted(input))
 
@@ -182,3 +188,21 @@ def package_update(original_action, context, data_dict):
     data_dict["tags"] = new_tags
     result = original_action(context, data_dict)
     return result
+
+@toolkit.side_effect_free
+def resource_show(context, data_dict):
+    utc=pytz.UTC
+    resource = model.Resource.get(data_dict['id'])
+    if not resource:
+        raise toolkit.ObjectNotFound
+    resource = model_dictize.resource_dictize(resource, context)
+    resource_date = datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
+    if datetime.now(timezone.utc) > utc.localize(resource_date):
+        return resource
+    else:
+        try:
+            access = toolkit.check_access('resource_update', context, data_dict)
+            if access:
+                return resource
+        except:
+            raise toolkit.NotAuthorized("This resource has not been published yet")
