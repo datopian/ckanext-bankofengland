@@ -3,11 +3,13 @@ import json
 import pathlib
 import logging
 import json
+import datetime
 
 import ckan.plugins.toolkit as toolkit
-from ckan.common import config
+from ckan.common import config, c
 
 import ckanext.bankofengland.helpers as boe_helpers
+import ckan.lib.helpers as h
 
 
 log = logging.getLogger(__name__)
@@ -104,6 +106,7 @@ def create_view(context, data_dict):
     add_permissions_result = add_permissions(build_id([table['tableName'] for table in data_dict['tables']]))
     return { "sql_result": sql_result, "track_view_result": track_view_result, "add_permissions_result": add_permissions_result }
 
+
 @toolkit.side_effect_free
 def get_history(context, data_dict):
     package = toolkit.get_action("package_show")(
@@ -120,10 +123,12 @@ def get_history(context, data_dict):
     add_permissions(package['name'].lower() + '_history')
     return package['name'].lower() + '_history'
 
+
 @toolkit.side_effect_free
 def search_package_list(context, data_dict):
     packages = toolkit.get_action('package_search')(None, { 'q': data_dict['q']})
     return [package['name'] for package in packages['results']]
+
 
 def get_related_tags(tag, base_terms, alias_terms):
     base_term = list(
@@ -171,7 +176,15 @@ def package_create(original_action, context, data_dict):
 
 @toolkit.chained_action
 def package_update(original_action, context, data_dict):
-    log.error(data_dict)
+    resources = data_dict.get("resources", [])
+
+    for resource in resources:
+        if resource.get('publish_date_date'):
+            date = resource['publish_date_date']
+            time = resource['publish_date_time']
+            dt = datetime.datetime.strptime(date + ' ' + time, '%Y-%m-%d %H:%M')
+            resource['publish_date'] = dt.isoformat()
+
     base_terms = json.load(
         open(str(pathlib.Path(__file__).parent.resolve()) + "/base_term_thesauros.json")
     )
@@ -194,32 +207,77 @@ def package_update(original_action, context, data_dict):
 
 
 @toolkit.chained_action
-def resource_show(original_action, context, data_dict):
-    log.error('resource_show')
-    log.error(data_dict)
+def resource_update(original_action, context, data_dict):
     result = original_action(context, data_dict)
+
     return result
 
 
 @toolkit.chained_action
+@toolkit.side_effect_free
+def resource_show(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    # TODO: check if user has permission to view unpublished resources
+    # This is currently working properly though. The API doesn't seem
+    # to use this function for the auth/permissions check.
+
+    return result
+
+
+@toolkit.chained_action
+@toolkit.side_effect_free
 def package_show(original_action, context, data_dict):
     result = original_action(context, data_dict)
-    log.error(result)
-
-    user = context.get('auth_user_obj')
-    log.error(user)
-    log.error(user.sysadmin)
-
-    if user and user.sysadmin:
-        return result
-
-    filtered_result = boe_helpers.filter_unpublished_resources(result)
+    filtered_result = filter_unpublished_resources(result, single=True)
 
     return filtered_result
 
 
 @toolkit.chained_action
+@toolkit.side_effect_free
 def package_search(original_action, context, data_dict):
-    log.error('package_search')
     result = original_action(context, data_dict)
-    return result
+    filtered_result = filter_unpublished_resources(result)
+
+    return filtered_result
+
+
+def filter_unpublished_resources(result, single=False):
+    user = c.userobj
+    filtered_result = result
+
+    organizations_available = h.organizations_available(permission='manage_group')
+    org_permissions = {}
+
+    if organizations_available:
+        for org in organizations_available:
+            org_permissions[org['name']] = org['capacity']
+
+    if user and user.sysadmin:
+        return filtered_result
+
+    if single:
+        package_org = result.get('organization', {})
+        org_name = package_org.get('name')
+
+        if org_name in org_permissions and org_permissions[org_name] in ['admin', 'editor']:
+            return filtered_result
+
+        filtered_result = boe_helpers.filter_unpublished_resources(result)
+    else:
+        filtered_tmp = []
+
+        for package in result.get('results', []):
+            package_org = package.get('organization', {})
+            org_name = package_org.get('name')
+
+            if org_name not in org_permissions or org_permissions[org_name] not in ['admin', 'editor']:
+                filtered_package = boe_helpers.filter_unpublished_resources(package)
+            else:
+                filtered_package = package
+
+            filtered_tmp.append(filtered_package)
+
+        filtered_result['results'] = filtered_tmp
+
+    return filtered_result

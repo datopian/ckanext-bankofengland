@@ -105,6 +105,5 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         return {
             'get_current_date': helpers.get_current_date,
             'get_current_datetime': helpers.get_current_datetime,
-            'get_resource_publish_date': helpers.get_resource_publish_date,
             'filter_unpublished_resources': helpers.filter_unpublished_resources,
         }

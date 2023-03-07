@@ -121,17 +121,19 @@
       }
     },
     {
-      "preset_name": "datetime-date",
+      "preset_name": "datetime",
       "values": {
-        "form_snippet": "datetime-date.html",
-        "display_snippet": "datetime-date.html"
+        "form_snippet": "datetime.html",
+        "display_snippet": "datetime.html",
+        "validators": "scheming_isodatetime convert_to_json_if_datetime"
       }
     },
     {
-      "preset_name": "datetime-time",
+      "preset_name": "boe_datetime",
       "values": {
-        "form_snippet": "datetime-time.html",
-        "display_snippet": "datetime-time.html"
+        "form_snippet": "boe-datetime.html",
+        "display_snippet": "datetime.html",
+        "validators": "scheming_isodatetime convert_to_json_if_datetime"
       }
     },
     {

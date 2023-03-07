@@ -280,11 +280,5 @@ resource_fields:
 
 - field_name: publish_date
   label: Publish date
-  preset: datetime-date
-  required: true
-  validators: only_future_date
-
-- field_name: publish_time
-  label: Publish time
-  preset: datetime-time
+  preset: boe_datetime
   required: true
