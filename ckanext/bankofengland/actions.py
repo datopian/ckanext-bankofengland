@@ -207,6 +207,7 @@ def package_update(original_action, context, data_dict):
 
 
 @toolkit.chained_action
+@toolkit.side_effect_free
 def resource_update(original_action, context, data_dict):
     result = original_action(context, data_dict)
 
