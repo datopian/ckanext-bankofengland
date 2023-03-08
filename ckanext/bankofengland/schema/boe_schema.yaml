@@ -279,6 +279,5 @@ resource_fields:
   preset: resource_format_autocomplete
 
 - field_name: publish_date
-  label: Published date
-  preset: datetime
-  required: true
+  label: Publish date
+  preset: boe_datetime

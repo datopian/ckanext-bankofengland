@@ -1,16 +1,20 @@
 import requests
+import json
+import pathlib
+import logging
+import json
+import datetime
+
 import ckan.plugins.toolkit as toolkit
 from ckan.common import config
-import ckan.model as model
 import ckan.logic as logic
-import ckan.lib.dictization.model_dictize as model_dictize
-from datetime import datetime, timezone
-from typing import cast
-import json
-import pytz
-import pathlib
 
-_check_access = logic.check_access
+import ckanext.bankofengland.helpers as boe_helpers
+
+
+log = logging.getLogger(__name__)
+
+
 def build_id(input):
     return "_".join(sorted(input))
 
@@ -102,6 +106,7 @@ def create_view(context, data_dict):
     add_permissions_result = add_permissions(build_id([table['tableName'] for table in data_dict['tables']]))
     return { "sql_result": sql_result, "track_view_result": track_view_result, "add_permissions_result": add_permissions_result }
 
+
 @toolkit.side_effect_free
 def get_history(context, data_dict):
     package = toolkit.get_action("package_show")(
@@ -118,10 +123,12 @@ def get_history(context, data_dict):
     add_permissions(package['name'].lower() + '_history')
     return package['name'].lower() + '_history'
 
+
 @toolkit.side_effect_free
 def search_package_list(context, data_dict):
     packages = toolkit.get_action('package_search')(None, { 'q': data_dict['q']})
     return [package['name'] for package in packages['results']]
+
 
 def get_related_tags(tag, base_terms, alias_terms):
     base_term = list(
@@ -169,6 +176,24 @@ def package_create(original_action, context, data_dict):
 
 @toolkit.chained_action
 def package_update(original_action, context, data_dict):
+    resources = data_dict.get("resources", [])
+
+    for resource in resources:
+        if resource.get('publish_date_date') or resource.get('publish_date_time'):
+            date = resource['publish_date_date']
+            time = resource['publish_date_time']
+
+            if date and not time:
+                time = '00:00'
+                resource['publish_date_time'] = time
+
+            if time and not date:
+                date = datetime.datetime.now().strftime('%Y-%m-%d')
+                resource['publish_date_date'] = date
+
+            dt = datetime.datetime.strptime(date + ' ' + time, '%Y-%m-%d %H:%M')
+            resource['publish_date'] = dt.isoformat()
+
     base_terms = json.load(
         open(str(pathlib.Path(__file__).parent.resolve()) + "/base_term_thesauros.json")
     )
@@ -189,20 +214,63 @@ def package_update(original_action, context, data_dict):
     result = original_action(context, data_dict)
     return result
 
+
+@toolkit.chained_action
 @toolkit.side_effect_free
-def resource_show(context, data_dict):
-    utc=pytz.UTC
-    resource = model.Resource.get(data_dict['id'])
-    if not resource:
-        raise toolkit.ObjectNotFound
-    resource = model_dictize.resource_dictize(resource, context)
-    resource_date = datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
-    if datetime.now(timezone.utc) > utc.localize(resource_date):
-        return resource
+def package_show(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    filtered_result = filter_unpublished_resources(context, result, single=True)
+
+    return filtered_result
+
+
+@toolkit.chained_action
+@toolkit.side_effect_free
+def package_search(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+    filtered_result = filter_unpublished_resources(context, result)
+
+    return filtered_result
+
+
+def filter_unpublished_resources(context, result, single=False):
+    user = context.get('auth_user_obj')
+    filtered_result = result
+
+    organizations_available = logic.get_action('organization_list_for_user')(
+        context, {}
+    )
+    org_permissions = {}
+
+    if organizations_available:
+        for org in organizations_available:
+            org_permissions[org['name']] = org['capacity']
+
+    if user and user.sysadmin:
+        return filtered_result
+
+    if single:
+        package_org = result.get('organization', {})
+        org_name = package_org.get('name')
+
+        if org_name in org_permissions and org_permissions[org_name] in ['admin', 'editor']:
+            return filtered_result
+
+        filtered_result = boe_helpers.filter_unpublished_resources(result)
     else:
-        try:
-            access = toolkit.check_access('resource_update', context, data_dict)
-            if access:
-                return resource
-        except:
-            raise toolkit.NotAuthorized("This resource has not been published yet")
+        filtered_tmp = []
+
+        for package in result.get('results', []):
+            package_org = package.get('organization', {})
+            org_name = package_org.get('name')
+
+            if org_name not in org_permissions or org_permissions[org_name] not in ['admin', 'editor']:
+                filtered_package = boe_helpers.filter_unpublished_resources(package)
+            else:
+                filtered_package = package
+
+            filtered_tmp.append(filtered_package)
+
+        filtered_result['results'] = filtered_tmp
+
+    return filtered_result
