@@ -281,4 +281,3 @@ resource_fields:
 - field_name: publish_date
   label: Publish date
   preset: boe_datetime
-  required: true

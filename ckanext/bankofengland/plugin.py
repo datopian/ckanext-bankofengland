@@ -97,7 +97,6 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'search_package_list': actions.search_package_list,
             'package_show': actions.package_show,
             'package_search': actions.package_search,
-            'resource_show': actions.resource_show,
         }
 
     # ITemplateHelpers

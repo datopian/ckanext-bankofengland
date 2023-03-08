@@ -6,10 +6,10 @@ import json
 import datetime
 
 import ckan.plugins.toolkit as toolkit
-from ckan.common import config, c
+from ckan.common import config
+import ckan.logic as logic
 
 import ckanext.bankofengland.helpers as boe_helpers
-import ckan.lib.helpers as h
 
 
 log = logging.getLogger(__name__)
@@ -179,9 +179,18 @@ def package_update(original_action, context, data_dict):
     resources = data_dict.get("resources", [])
 
     for resource in resources:
-        if resource.get('publish_date_date'):
+        if resource.get('publish_date_date') or resource.get('publish_date_time'):
             date = resource['publish_date_date']
             time = resource['publish_date_time']
+
+            if date and not time:
+                time = '00:00'
+                resource['publish_date_time'] = time
+
+            if time and not date:
+                date = datetime.datetime.now().strftime('%Y-%m-%d')
+                resource['publish_date_date'] = date
+
             dt = datetime.datetime.strptime(date + ' ' + time, '%Y-%m-%d %H:%M')
             resource['publish_date'] = dt.isoformat()
 
@@ -208,25 +217,6 @@ def package_update(original_action, context, data_dict):
 
 @toolkit.chained_action
 @toolkit.side_effect_free
-def resource_update(original_action, context, data_dict):
-    result = original_action(context, data_dict)
-
-    return result
-
-
-@toolkit.chained_action
-@toolkit.side_effect_free
-def resource_show(original_action, context, data_dict):
-    result = original_action(context, data_dict)
-    # TODO: check if user has permission to view unpublished resources
-    # This is currently working properly though. The API doesn't seem
-    # to use this function for the auth/permissions check.
-
-    return result
-
-
-@toolkit.chained_action
-@toolkit.side_effect_free
 def package_show(original_action, context, data_dict):
     result = original_action(context, data_dict)
     filtered_result = filter_unpublished_resources(context, result, single=True)
@@ -247,7 +237,9 @@ def filter_unpublished_resources(context, result, single=False):
     user = context.get('auth_user_obj')
     filtered_result = result
 
-    organizations_available = h.organizations_available(permission='manage_group')
+    organizations_available = logic.get_action('organization_list_for_user')(
+        context, {}
+    )
     org_permissions = {}
 
     if organizations_available:
