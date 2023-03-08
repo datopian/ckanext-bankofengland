@@ -285,6 +285,8 @@ def resource_show_by_name(context, data_dict):
     if not resource:
         raise toolkit.ObjectNotFound
     resource = model_dictize.resource_dictize(resource, context)
+    if 'publish_date' not in resource:
+        return resource
     resource_date = datetime.datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
     if datetime.datetime.now(datetime.timezone.utc) > utc.localize(resource_date):
         return resource
