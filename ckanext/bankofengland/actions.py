@@ -8,6 +8,9 @@ import datetime
 import ckan.plugins.toolkit as toolkit
 from ckan.common import config
 import ckan.logic as logic
+import ckan.model as model
+import ckan.lib.dictization.model_dictize as model_dictize
+import pytz
 
 import ckanext.bankofengland.helpers as boe_helpers
 
@@ -274,3 +277,21 @@ def filter_unpublished_resources(context, result, single=False):
         filtered_result['results'] = filtered_tmp
 
     return filtered_result
+
+@toolkit.side_effect_free
+def resource_show_by_name(context, data_dict):
+    utc=pytz.UTC
+    resource = model.Resource.get(data_dict['id'])
+    if not resource:
+        raise toolkit.ObjectNotFound
+    resource = model_dictize.resource_dictize(resource, context)
+    resource_date = datetime.datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
+    if datetime.datetime.now(datetime.timezone.utc) > utc.localize(resource_date):
+        return resource
+    else:
+        try:
+            access = toolkit.check_access('resource_update', context, data_dict)
+            if access:
+                return resource
+        except:
+            raise toolkit.NotAuthorized("This resource has not been published yet")
