@@ -31,6 +31,8 @@ def filter_unpublished_resources(data_dict):
 
             if publish_date <= current_date:
                 public_resources.append(resource)
+        else:
+            public_resources.append(resource)
 
     data_dict['resources'] = public_resources
 
