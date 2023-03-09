@@ -237,11 +237,11 @@ def package_search(original_action, context, data_dict):
 
 
 def filter_unpublished_resources(context, result, single=False):
-    user = context.get('auth_user_obj')
+    user = context.get('name')
     filtered_result = result
 
     organizations_available = logic.get_action('organization_list_for_user')(
-        context, {}
+        {'user': user}, {}
     )
     org_permissions = {}
 
