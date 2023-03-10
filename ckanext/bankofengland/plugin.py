@@ -4,6 +4,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
 from ckanext.bankofengland import actions, validators, helpers
+from ckanext.bankofengland import cli
 
 log = logging.getLogger(__name__)
 
@@ -15,6 +16,13 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IClick)
+
+
+    # IClick
+
+    def get_commands(self):
+        return cli.get_commands()
 
     # IConfigurer
 
@@ -98,6 +106,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'package_show': actions.package_show,
             'package_search': actions.package_search,
             'resource_show_by_name': actions.resource_show_by_name,
+            'resource_show': actions.resource_show,
         }
 
     # ITemplateHelpers
