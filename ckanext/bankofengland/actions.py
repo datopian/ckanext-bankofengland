@@ -222,6 +222,10 @@ def package_update(original_action, context, data_dict):
 @toolkit.side_effect_free
 def package_show(original_action, context, data_dict):
     result = original_action(context, data_dict)
+
+    if context.get('creating_alias', False):
+        return result
+
     filtered_result = filter_unpublished_resources(context, result, single=True)
 
     return filtered_result
@@ -237,7 +241,8 @@ def package_search(original_action, context, data_dict):
 
 
 def filter_unpublished_resources(context, result, single=False):
-    user = context.get('name')
+    user = context.get('user')
+    auth_user_obj = context.get('auth_user_obj')
     filtered_result = result
 
     organizations_available = logic.get_action('organization_list_for_user')(
@@ -249,7 +254,7 @@ def filter_unpublished_resources(context, result, single=False):
         for org in organizations_available:
             org_permissions[org['name']] = org['capacity']
 
-    if user and user.sysadmin:
+    if auth_user_obj and auth_user_obj.sysadmin:
         return filtered_result
 
     if single:
