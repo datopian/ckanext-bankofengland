@@ -13,6 +13,7 @@ import ckan.lib.dictization.model_dictize as model_dictize
 import pytz
 
 import ckanext.bankofengland.helpers as boe_helpers
+import ckanext.bankofengland.model as boe_model
 
 
 log = logging.getLogger(__name__)
@@ -233,6 +234,17 @@ def package_show(original_action, context, data_dict):
 
 @toolkit.chained_action
 @toolkit.side_effect_free
+def resource_show(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+
+    footnotes = boe_model.get_footnotes(result['name'])
+    result['footnotes'] = footnotes
+
+    return result
+
+
+@toolkit.chained_action
+@toolkit.side_effect_free
 def package_search(original_action, context, data_dict):
     result = original_action(context, data_dict)
     filtered_result = filter_unpublished_resources(context, result)
@@ -241,8 +253,12 @@ def package_search(original_action, context, data_dict):
 
 
 def filter_unpublished_resources(context, result, single=False):
-    user = context.get('user')
     auth_user_obj = context.get('auth_user_obj')
+
+    if auth_user_obj and auth_user_obj.sysadmin:
+        return result
+
+    user = context.get('user')
     filtered_result = result
 
     organizations_available = logic.get_action('organization_list_for_user')(
@@ -253,9 +269,6 @@ def filter_unpublished_resources(context, result, single=False):
     if organizations_available:
         for org in organizations_available:
             org_permissions[org['name']] = org['capacity']
-
-    if auth_user_obj and auth_user_obj.sysadmin:
-        return filtered_result
 
     if single:
         package_org = result.get('organization', {})
@@ -283,6 +296,7 @@ def filter_unpublished_resources(context, result, single=False):
 
     return filtered_result
 
+
 @toolkit.side_effect_free
 def resource_show_by_name(context, data_dict):
     utc=pytz.UTC
@@ -302,3 +316,8 @@ def resource_show_by_name(context, data_dict):
                 return resource
         except:
             raise toolkit.NotAuthorized("This resource has not been published yet")
+
+
+@toolkit.side_effect_free
+def footnotes_show(context, data_dict):
+    return boe_model.get_footnotes(data_dict['name'])
