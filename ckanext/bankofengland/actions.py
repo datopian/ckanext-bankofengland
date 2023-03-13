@@ -296,6 +296,7 @@ def filter_unpublished_resources(context, result, single=False):
 
     return filtered_result
 
+
 @toolkit.side_effect_free
 def resource_show_by_name(context, data_dict):
     utc=pytz.UTC
@@ -315,3 +316,8 @@ def resource_show_by_name(context, data_dict):
                 return resource
         except:
             raise toolkit.NotAuthorized("This resource has not been published yet")
+
+
+@toolkit.side_effect_free
+def footnotes_show(context, data_dict):
+    return boe_model.get_footnotes(data_dict['name'])

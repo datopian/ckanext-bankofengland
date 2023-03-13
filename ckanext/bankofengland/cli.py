@@ -1,5 +1,9 @@
 import click
-from ckanext.bankofengland.model import init_footnotes_table, remove_footnotes_table, get_footnotes, add_footnote
+import logging
+
+import ckanext.bankofengland.model as boe_model
+
+log = logging.getLogger(__name__)
 
 
 @click.group()
@@ -15,7 +19,7 @@ def initdb():
     """
     Initialize the Bank of England custom tables
     """
-    init_footnotes_table()
+    boe_model.init_footnotes_table()
 
 
 @boe.command()
@@ -28,21 +32,44 @@ def dropdb():
     confirmation = click.prompt('Are you sure you want to drop the database? (y/n)')
 
     if confirmation.lower() == 'y':
-        remove_footnotes_table()
+        boe_model.remove_footnotes_table()
     else:
         click.echo('Database not dropped')
 
 
 @boe.command()
 @click.argument('resource_name')
-def footnotes(resource_name):
+def getfootnotes(resource_name):
     """
     Get the footnotes for a resource
     """
-    footnotes = get_footnotes(resource_name)
+    footnotes = boe_model.get_footnotes(resource_name)
 
     for footnote in footnotes:
         click.echo(footnote)
+
+
+@boe.command()
+@click.option('--footnote_id', required=False)
+@click.option('--row', required=False)
+@click.option('--column', required=False)
+def updatefootnote(footnote_id, row, column):
+    """
+    Update a footnote
+    """
+
+    if not footnote_id and (not row or not column):
+        click.echo('Either a footnote_id or a row and column must be provided')
+        return
+
+    footnote_text = click.prompt('Enter the footnote text')
+    log.error(row)
+    log.error(column)
+
+    if footnote_id:
+        boe_model.update_footnote(footnote_id, footnote=footnote_text)
+    else:
+        boe_model.update_footnote(row=row, column=column, footnote=footnote_text)
 
 
 @boe.command()
@@ -59,7 +86,7 @@ def addfootnote():
     column = None
     footnote_text = None
 
-    add_footnote(row, column, footnote_text)
+    boe_model.add_footnote(row, column, footnote_text)
 
 
 def get_commands():

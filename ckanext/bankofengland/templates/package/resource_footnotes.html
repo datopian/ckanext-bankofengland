@@ -1,0 +1,49 @@
+{% extends "package/resource_edit_base.html" %}
+
+
+{% block primary_content_inner %}
+  <button id="add-footnote" class="btn btn-primary">Add footnote</button></br></br>
+
+  <input type="hidden" id="footnote-rows-list" value="{{ js_row_values }}">
+
+  <form id="footnote-form">
+    {% block scripts %}
+      {% asset 'bankofengland/bankofengland-js' %}
+    {% endblock %}
+
+    <table id="footnote-table" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Row</th>
+          <th>Column</th>
+          <th>Footnote Text</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if footnotes %}
+        {% for footnote in footnotes %}
+          <tr>
+            {# Add a dropdown select for "Row". The options should be the values from "row_values" #}
+            <td>
+              <select class="footnote-row" name="footnote-row">
+              {% for row_value in row_values %}
+                <option value="{{ row_value }}" {% if row_value == footnote.row %}selected{% endif %}>{{ row_value }}</option>
+              {% endfor %}
+              </select>
+            </td>
+            <td><input type="text" name="column" value="{{ footnote.column }}"></td>
+            <td><textarea name="footnote-text" rows="2">{{ footnote.footnote }}</textarea></td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+      </tbody>
+
+    </table>
+
+    <button id="save-footnotes" class="btn btn-primary">Save</button>
+
+  </form>
+
+{% endblock %}
+

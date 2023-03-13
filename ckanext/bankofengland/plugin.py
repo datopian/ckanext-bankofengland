@@ -5,6 +5,7 @@ import ckan.plugins.toolkit as toolkit
 
 from ckanext.bankofengland import actions, validators, helpers
 from ckanext.bankofengland import cli
+from ckanext.bankofengland.views.resource_footnotes import boe_resource
 
 log = logging.getLogger(__name__)
 
@@ -17,7 +18,12 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IValidators)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IClick)
+    plugins.implements(plugins.IBlueprint)
 
+
+    # IBlueprint
+    def get_blueprint(self):
+        return [boe_resource]
 
     # IClick
 
@@ -29,7 +35,9 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'bankofengland')
+        toolkit.add_resource('assets', 'bankofengland')
+        toolkit.add_resource('assets/js', 'bankofengland')
+        toolkit.add_resource('assets/css', 'bankofengland')
 
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['market_value_by'] = plugins.toolkit._('Market Value By')
@@ -107,6 +115,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'package_search': actions.package_search,
             'resource_show_by_name': actions.resource_show_by_name,
             'resource_show': actions.resource_show,
+            'footnotes_show': actions.footnotes_show,
         }
 
     # ITemplateHelpers
@@ -115,4 +124,5 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'get_current_date': helpers.get_current_date,
             'get_current_datetime': helpers.get_current_datetime,
             'filter_unpublished_resources': helpers.filter_unpublished_resources,
+            'get_footnote_rows': helpers.get_footnote_rows,
         }

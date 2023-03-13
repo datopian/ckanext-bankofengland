@@ -1,14 +1,14 @@
-# bankofengland-js:
-#   filter: rjsmin
-#   output: ckanext-bankofengland/%(version)s-bankofengland.js
-#   contents:
-#     - js/bankofengland.js
-#   extra:
-#     preload:
-#       - base/main
+bankofengland-js:
+  filter: rjsmin
+  output: bankofengland/%(version)s-bankofengland.js
+  contents:
+    - js/bankofengland.js
+  extra:
+    preload:
+      - base/main
 
-# bankofengland-css:
-#   filter: cssrewrite
-#   output: ckanext-bankofengland/%(version)s-bankofengland.css
-#   contents:
-#     - css/bankofengland.css
+boe-css:
+  filter: cssrewrite
+  output: bankofengland/%(version)s-bankofengland.css
+  contents:
+    - css/bankofengland.css

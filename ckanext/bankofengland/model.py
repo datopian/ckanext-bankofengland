@@ -32,15 +32,16 @@ def get_footnotes(resource_name):
     table = get_table('resource_footnotes')
     query = table.select(table.c.column == resource_name)
     result = model.meta.engine.execute(query)
-    # Convert to a list of dicts
     result = [dict(row) for row in result]
+
     return result
 
 
 def add_footnote(row, column, footnote):
     table = get_table('resource_footnotes')
+    # FOR TESTING
     row_string = "30 Sep 19"
-    row = datetime.datetime.strptime(row_string, '%d %b %y')
+    row = datetime.datetime.strptime('2021-06-30T00:00:00', '%Y-%m-%dT%H:%M:%S')
     column = 'DPQTADJ'
     footnote = 'This is a test'
 
@@ -78,6 +79,38 @@ def delete_footnote(footnote_id, row=None, column=None):
         log.error('Error deleting footnote: {}'.format(e))
 
 
+def update_footnote(footnote_id=None, row=None, column=None, footnote=None):
+    table = get_table('resource_footnotes')
+
+    if row:
+        try:
+            row = datetime.datetime.strptime(row, '%Y-%m-%dT%H:%M:%S')
+        except:
+            pass
+
+    try:
+        if footnote_id:
+            query = table.update().where(
+                table.c.id == footnote_id
+            ).values(
+                footnote=footnote
+            )
+        elif row and column:
+            query = table.update().where(
+                (table.c.row == row) & (table.c.column == column)
+            ).values(
+                footnote=footnote
+            )
+        else:
+            raise Exception('Must provide either a footnote_id or a row and column')
+
+        model.meta.engine.execute(query)
+
+        log.info('Updated footnote in resource_footnotes table')
+    except Exception as e:
+        log.error('Error updating footnote: {}'.format(e))
+
+
 def get_table(table_name):
     metadata = MetaData()
     metadata.reflect(bind=model.meta.engine)
@@ -85,6 +118,7 @@ def get_table(table_name):
     return table
 
 
+# Note: this is currently only for testing purposes
 def remove_footnotes_table():
     if model.meta.engine.has_table('resource_footnotes'):
         metadata = MetaData()
