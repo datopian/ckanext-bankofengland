@@ -2,6 +2,7 @@ import datetime
 import logging
 import pytz
 import json
+import uuid
 
 import ckan.plugins.toolkit as toolkit
 import ckan.logic as logic
@@ -68,3 +69,11 @@ def get_footnote_rows(resource_id):
                 ))
 
     return row_values
+
+
+def generate_uuid():
+    return str(uuid.uuid4())
+
+
+def to_json(data):
+    return json.dumps(data)

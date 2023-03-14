@@ -63,8 +63,6 @@ def updatefootnote(footnote_id, row, column):
         return
 
     footnote_text = click.prompt('Enter the footnote text')
-    log.error(row)
-    log.error(column)
 
     if footnote_id:
         boe_model.update_footnote(footnote_id, footnote=footnote_text)
@@ -82,11 +80,12 @@ def addfootnote():
     #column = click.prompt('Enter the column name')
     #footnote_text = click.prompt('Enter the footnote text')
     #footnote_type = click.prompt('Enter the footnote type')
+    resource_id = None
     row = None
     column = None
-    footnote_text = None
+    footnote = None
 
-    boe_model.add_footnote(row, column, footnote_text)
+    boe_model.add_footnote(resource_id, row, column, footnote)
 
 
 def get_commands():

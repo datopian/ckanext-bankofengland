@@ -116,6 +116,9 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'resource_show_by_name': actions.resource_show_by_name,
             'resource_show': actions.resource_show,
             'footnotes_show': actions.footnotes_show,
+            'create_footnote': actions.create_footnote,
+            'update_footnote': actions.update_footnote,
+            'delete_footnote': actions.delete_footnote,
         }
 
     # ITemplateHelpers
@@ -125,4 +128,6 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'get_current_datetime': helpers.get_current_datetime,
             'filter_unpublished_resources': helpers.filter_unpublished_resources,
             'get_footnote_rows': helpers.get_footnote_rows,
+            'generate_uuid': helpers.generate_uuid,
+            'to_json': helpers.to_json,
         }

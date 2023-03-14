@@ -16,6 +16,7 @@ def init_footnotes_table():
             Column('id', types.UnicodeText,
                 primary_key=True, default=_types.make_uuid,
                 nullable=False, unique=True),
+            Column('resource_id', types.UnicodeText, nullable=False),
             Column('row', types.DateTime, nullable=False),
             Column('column', types.UnicodeText, nullable=False),
             Column('footnote', types.UnicodeText, nullable=False)
@@ -28,25 +29,45 @@ def init_footnotes_table():
         log.info('Table resource_footnotes already exists')
 
 
-def get_footnotes(resource_name):
+def get_footnotes(resource_name=None, resource_id=None):
     table = get_table('resource_footnotes')
-    query = table.select(table.c.column == resource_name)
+
+    if resource_id:
+        query = table.select(table.c.resource_id == resource_id)
+    elif resource_name:
+        query = table.select(table.c.column == resource_name)
+    else:
+        log.error('No resource name or id provided')
+        return []
+
     result = model.meta.engine.execute(query)
     result = [dict(row) for row in result]
 
     return result
 
 
-def add_footnote(row, column, footnote):
+def create_footnote(resource_id, row, column, footnote):
     table = get_table('resource_footnotes')
-    # FOR TESTING
-    row_string = "30 Sep 19"
-    row = datetime.datetime.strptime('2021-06-30T00:00:00', '%Y-%m-%dT%H:%M:%S')
-    column = 'DPQTADJ'
-    footnote = 'This is a test'
+
+    if not isinstance(row, datetime.datetime):
+        row = datetime.datetime.strptime(row, '%Y-%m-%d %H:%M:%S')
+
+    existing_footnotes = get_footnotes(resource_id=resource_id)
+
+    if existing_footnotes:
+        for existing_footnote in existing_footnotes:
+            log.error(existing_footnote['row'])
+            log.error(row)
+            log.error(type(existing_footnote['row']))
+            log.error(type(row))
+            log.error(existing_footnote['row'] == row)
+            if existing_footnote['row'] == row:
+                log.info('Footnote already exists for this row and column')
+                return
 
     query = table.insert().values(
         id=_types.make_uuid(),
+        resource_id=resource_id,
         row=row,
         column=column,
         footnote=footnote
@@ -56,21 +77,34 @@ def add_footnote(row, column, footnote):
     log.info('Added footnote to resource_footnotes table')
 
 
-def delete_footnote(footnote_id, row=None, column=None):
+def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
     table = get_table('resource_footnotes')
+    log.error(footnote_id)
+    log.error(resource_id)
+    log.error(row)
+    log.error(column)
 
     try:
         if footnote_id:
             query = table.delete().where(
                 table.c.id == footnote_id
             )
+        elif resource_id and row:
+            query = table.delete().where(
+                (table.c.resource_id == resource_id) & (table.c.row == row)
+            )
         elif row and column:
             query = table.delete().where(
-                table.c.row == row,
-                table.c.column == column
+                (table.c.row == row) & (table.c.column == column)
             )
         else:
-            raise Exception('Must provide either a footnote_id or a row and column')
+            raise Exception(
+                'Failed to delete footnote from resource_footnotes table.\n'
+                'You must provide one of the following:\n'
+                '- footnote_id\n'
+                '- resource_id and row\n'
+                '- row and column'
+            )
 
         model.meta.engine.execute(query)
 
@@ -79,8 +113,12 @@ def delete_footnote(footnote_id, row=None, column=None):
         log.error('Error deleting footnote: {}'.format(e))
 
 
-def update_footnote(footnote_id=None, row=None, column=None, footnote=None):
+def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, footnote=None):
     table = get_table('resource_footnotes')
+
+    if not footnote:
+        log.error('Update failed: no footnote provided')
+        return
 
     if row:
         try:
@@ -95,6 +133,12 @@ def update_footnote(footnote_id=None, row=None, column=None, footnote=None):
             ).values(
                 footnote=footnote
             )
+        elif resource_id and row:
+            query = table.update().where(
+                (table.c.resource_id == resource_id) & (table.c.row == row)
+            ).values(
+                footnote=footnote
+            )
         elif row and column:
             query = table.update().where(
                 (table.c.row == row) & (table.c.column == column)
@@ -102,7 +146,13 @@ def update_footnote(footnote_id=None, row=None, column=None, footnote=None):
                 footnote=footnote
             )
         else:
-            raise Exception('Must provide either a footnote_id or a row and column')
+            raise Exception(
+                'Failed to update footnote in resource_footnotes table.\n'
+                'You must provide one of the following:\n'
+                '- footnote_id\n'
+                '- resource_id and row\n'
+                '- row and column'
+            )
 
         model.meta.engine.execute(query)
 

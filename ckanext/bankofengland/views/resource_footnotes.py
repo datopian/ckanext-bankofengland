@@ -28,23 +28,87 @@ def _get_context():
 
 
 def footnotes(id, resource_id):
-    context = _get_context()
-
+    log.error(request.args)
     log.error(request.form)
+    log.error(request.method)
+    log.error(request.data)
+    context = _get_context()
+    log.error(resource_id)
+
     pkg_dict = logic.get_action('package_show')(context, {'id': id})
     resource = logic.get_action('resource_show')(context, {'id': resource_id})
     req_args = request.args
+
+    if request.method == 'POST':
+        req_form = request.form
+        footnotes_deleted = req_form.get('footnote-rows-deleted')
+
+        if footnotes_deleted:
+            footnotes_deleted = json.loads(footnotes_deleted)
+
+            for footnote in footnotes_deleted:
+                try:
+                    logic.get_action('delete_footnote')(
+                        context,
+                        {
+                            'resource_id': resource_id,
+                            'row': datetime.datetime.strptime(
+                                footnote['row'], '%Y-%m-%d %H:%M:%S'
+                            ),
+                            'column': resource.get('name')
+                        }
+                    )
+                except Exception as e:
+                    log.error(e)
+
+        def _check_if_key_exists(key, dictionary):
+            if key not in dictionary:
+                dictionary[key] = {}
+
+        footnotes = {}
+
+        for key, value in req_form.items():
+            if key.startswith('footnote-row-'):
+                key = key.replace('footnote-row-', '')
+                _check_if_key_exists(key, footnotes)
+                footnotes[key]['row'] = value
+            elif key.startswith('footnote-text-'):
+                key = key.replace('footnote-text-', '')
+                _check_if_key_exists(key, footnotes)
+                footnotes[key]['text'] = value
+
+        for key, value in footnotes.items():
+            footnote = {
+                'resource_id': resource_id,
+                'row': value['row'],
+                'column': resource.get('name'),
+                'footnote': value['text']
+            }
+
+            try:
+                logic.get_action('update_footnote')(
+                    context, footnote
+                )
+            except Exception as e:
+                log.error(e)
+                try:
+                    logic.get_action('create_footnote')(
+                        context, footnote
+                    )
+                except Exception as e:
+                    log.error(e)
+
     resource_name = req_args.get('resource_name', resource.get('name'))
 
     if not resource_name:
         resource_name = resource_id
     else:
-        resource_name = resource_name.lower()
+        resource_name = resource_name
 
-    row_values = boe_helpers.get_footnote_rows(resource_name)
+    row_values = boe_helpers.get_footnote_rows(resource_id)
 
     existing_footnotes = logic.get_action('footnotes_show')(
-        context, {'name': resource_name.upper()}
+        context, {'resource_id': resource_id}
     )
     js_row_values = json.dumps([
         row_value.strftime('%Y-%m-%d %H:%M:%S') for row_value in row_values

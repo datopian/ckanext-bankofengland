@@ -320,4 +320,91 @@ def resource_show_by_name(context, data_dict):
 
 @toolkit.side_effect_free
 def footnotes_show(context, data_dict):
-    return boe_model.get_footnotes(data_dict['name'])
+    resource_id = data_dict.get('resource_id')
+    resource_name = data_dict.get('resource_name')
+
+    if resource_id:
+        return boe_model.get_footnotes(resource_id=resource_id)
+    elif resource_name:
+        return boe_model.get_footnotes(resource_name=resource_name)
+    else:
+        log.error('No resource_id or resource_name provided')
+        return []
+
+
+@toolkit.side_effect_free
+def update_footnote(context, data_dict):
+    resource_id = data_dict.get('id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+    footnote = data_dict.get('footnote')
+    footnote_id = data_dict.get('footnote_id')
+
+    if not footnote:
+        log.error('Failed to update footnote. No footnote provided')
+        return []
+
+    if footnote_id:
+        return boe_model.update_footnote(
+            footnote_id=footnote_id, footnote=footnote
+        )
+
+    if not resource_id and column:
+        resource_id = toolkit.get_action('resource_show_by_name')(
+            context, {'id': column}
+        )['id']
+
+    if not all([resource_id, row, column]):
+        log.error(
+            'Failed to update footnote. Missing parameters.\n'
+            'Must include resource_id, row, column, and footnote'
+        )
+        return []
+
+    return boe_model.update_footnote(
+        resource_id=resource_id, row=row, column=column, footnote=footnote
+    )
+
+
+@toolkit.side_effect_free
+def create_footnote(context, data_dict):
+    resource_id = data_dict.get('resource_id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+    footnote = data_dict.get('footnote')
+
+    if not resource_id and column:
+        resource_id = toolkit.get_action('resource_show_by_name')(
+            context, {'id': column.lower()}
+        )['id']
+
+    if not all([resource_id, row, column, footnote]):
+        log.error(
+            'Failed to create footnote. Missing parameters.\n'
+            'Must include resource_id, row, column, and footnote'
+        )
+        return []
+
+    return boe_model.create_footnote(
+        resource_id=resource_id, row=row, column=column, footnote=footnote
+    )
+
+
+@toolkit.side_effect_free
+def delete_footnote(context, data_dict):
+    footnote_id = data_dict.get('footnote_id')
+    resource_id = data_dict.get('resource_id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+
+    if not footnote_id and not all([resource_id, row]):
+        log.error(
+            'Failed to delete footnote. Missing parameters.\n'
+            'Must include footnote_id or resource_id, row, column'
+        )
+        return []
+
+    return boe_model.delete_footnote(
+        footnote_id=footnote_id, resource_id=resource_id,
+        row=row, column=column
+    )
