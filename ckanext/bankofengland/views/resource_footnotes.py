@@ -86,13 +86,13 @@ def footnotes(id, resource_id):
             }
 
             try:
-                logic.get_action('update_footnote')(
+                logic.get_action('create_footnote')(
                     context, footnote
                 )
             except Exception as e:
                 log.error(e)
                 try:
-                    logic.get_action('create_footnote')(
+                    logic.get_action('update_footnote')(
                         context, footnote
                     )
                 except Exception as e:

@@ -56,14 +56,9 @@ def create_footnote(resource_id, row, column, footnote):
 
     if existing_footnotes:
         for existing_footnote in existing_footnotes:
-            log.error(existing_footnote['row'])
-            log.error(row)
-            log.error(type(existing_footnote['row']))
-            log.error(type(row))
-            log.error(existing_footnote['row'] == row)
             if existing_footnote['row'] == row:
                 log.info('Footnote already exists for this row and column')
-                return
+                raise Exception('Footnote already exists for this row and column')
 
     query = table.insert().values(
         id=_types.make_uuid(),
@@ -79,10 +74,6 @@ def create_footnote(resource_id, row, column, footnote):
 
 def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
     table = get_table('resource_footnotes')
-    log.error(footnote_id)
-    log.error(resource_id)
-    log.error(row)
-    log.error(column)
 
     try:
         if footnote_id:
@@ -115,6 +106,10 @@ def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
 
 def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, footnote=None):
     table = get_table('resource_footnotes')
+    log.error(resource_id)
+    log.error(row)
+    log.error(column)
+    log.error(footnote)
 
     if not footnote:
         log.error('Update failed: no footnote provided')

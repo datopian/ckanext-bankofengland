@@ -237,7 +237,7 @@ def package_show(original_action, context, data_dict):
 def resource_show(original_action, context, data_dict):
     result = original_action(context, data_dict)
 
-    footnotes = boe_model.get_footnotes(result['name'])
+    footnotes = boe_model.get_footnotes(resource_id=result['id'])
     result['footnotes'] = footnotes
 
     return result
@@ -304,6 +304,10 @@ def resource_show_by_name(context, data_dict):
     if not resource:
         raise toolkit.ObjectNotFound
     resource = model_dictize.resource_dictize(resource, context)
+
+    footnotes = boe_model.get_footnotes(resource_id=resource['id'])
+    resource['footnotes'] = footnotes
+
     if 'publish_date' not in resource:
         return resource
     resource_date = datetime.datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
