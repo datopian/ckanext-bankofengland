@@ -37,7 +37,6 @@ def footnotes(id, resource_id):
 
     if request.method == 'POST':
         req_form = request.form
-        log.error(req_form)
         footnotes_deleted = req_form.get('footnote-rows-deleted')
 
         if footnotes_deleted:
@@ -57,7 +56,6 @@ def footnotes(id, resource_id):
                     )
                 except Exception as e:
                     log.error(e)
-
 
         def _check_if_key_exists(key, dictionary):
             if key not in dictionary:
@@ -125,7 +123,6 @@ def footnotes(id, resource_id):
     existing_footnotes = logic.get_action('footnotes_show')(
         context, {'resource_id': resource_id}
     )
-
     js_row_values = json.dumps([
         row_value.strftime('%Y-%m-%d %H:%M:%S') for row_value in row_values
     ])
