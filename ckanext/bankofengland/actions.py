@@ -299,6 +299,7 @@ def filter_unpublished_resources(context, result, single=False):
 
 @toolkit.side_effect_free
 def resource_show_by_name(context, data_dict):
+    log.error('resource_show_by_name')
     utc=pytz.UTC
     resource = model.Resource.get(data_dict['id'])
     if not resource:
@@ -338,7 +339,7 @@ def footnotes_show(context, data_dict):
 
 @toolkit.side_effect_free
 def update_footnote(context, data_dict):
-    resource_id = data_dict.get('id')
+    resource_id = data_dict.get('resource_id')
     row = data_dict.get('row')
     column = data_dict.get('column')
     footnote = data_dict.get('footnote')
@@ -401,10 +402,15 @@ def delete_footnote(context, data_dict):
     row = data_dict.get('row')
     column = data_dict.get('column')
 
-    if not footnote_id and not all([resource_id, row]):
+    if not resource_id and column:
+        resource_id = toolkit.get_action('resource_show_by_name')(
+            context, {'id': column}
+        )['id']
+
+    if not all([resource_id, row, column]):
         log.error(
             'Failed to delete footnote. Missing parameters.\n'
-            'Must include footnote_id or resource_id, row, column'
+            'Must include resource_id, row, column, and footnote_id'
         )
         return []
 

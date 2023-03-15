@@ -7,6 +7,13 @@ $('#footnote-table').change(function() {
     disableRows();
 });
 
+$('#save-footnotes').click(function() {
+    $('#save-footnotes').prop('disabled', true);
+    $('[id^=delete-footnote-row-]').prop('disabled', true);
+    $('#save-footnotes').html('Saving...');
+    $('#footnote-form').submit();
+});
+
 $('#add-footnote').click(function() {
     var rowValues = get_footnote_dropdown_options();
     var newUUID = uuidv4();
@@ -14,8 +21,8 @@ $('#add-footnote').click(function() {
     var newRow = $('<tr>');
     var newSelect = $('<select>', {
         class: 'footnote-row',
-        name: 'footnote-row-' + newUUID,
-        id: 'footnote-row-' + newUUID
+        name: 'footnote-row-' + newUUID + '-new',
+        id: 'footnote-row-' + newUUID + '-new',
     });
 
     for (var i = 0; i < rowValues.length; i++) {
@@ -38,8 +45,8 @@ $('#add-footnote').click(function() {
         class: 'footnote-text',
         value: '',
         rows: 2,
-        name: 'footnote-text-' + newUUID,
-        id: 'footnote-text-' + newUUID
+        name: 'footnote-text-' + newUUID + '-new',
+        id: 'footnote-text-' + newUUID + '-new',
     }));
 
     var newDeleteButton = $('<td>').append($('<button>', {
@@ -57,7 +64,7 @@ $('#add-footnote').click(function() {
     newRow.append(newFootnote);
     newRow.append(newDeleteButton);
 
-    $('table > tbody').append(newRow);
+    $('table > tbody').prepend(newRow);
 
     disableRows();
 });
@@ -80,6 +87,13 @@ function deleteRow(row) {
 
     if (rowFullID == undefined) {
         return;
+    }
+
+    var newRow = false;
+
+    if (rowFullID.endsWith('-new')) {
+        newRow = true;
+        row = row.replace('-new', '');
     }
 
     var rowID = row.attr('id').replace('delete-footnote-row-', '');

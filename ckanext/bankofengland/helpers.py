@@ -45,13 +45,24 @@ def filter_unpublished_resources(data_dict):
 
 
 def get_footnote_rows(resource_id):
-    rows = []
+    rows = {'records': []}
 
     try:
-        rows = logic.get_action('datastore_search')({}, {
-            'resource_id': resource_id,
-            'limit': 32000
-        })
+        start = 0
+        limit = 30000
+
+        while True:
+            rows_page = logic.get_action('datastore_search')({}, {
+                'resource_id': resource_id,
+                'limit': limit,
+                'offset': start
+            })
+
+            rows['records'] += rows_page['records']
+
+            if len(rows_page['records']) < limit:
+                break
+
     except logic.NotFound:
         log.error('No resource found with name: {}'.format(resource_id))
 

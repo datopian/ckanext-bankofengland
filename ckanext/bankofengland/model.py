@@ -35,7 +35,7 @@ def get_footnotes(resource_name=None, resource_id=None):
     if resource_id:
         query = table.select(table.c.resource_id == resource_id)
     elif resource_name:
-        query = table.select(table.c.column == resource_name)
+        query = table.select(table.c.column == resource_name.lower())
     else:
         log.error('No resource name or id provided')
         return []
@@ -49,22 +49,24 @@ def get_footnotes(resource_name=None, resource_id=None):
 def create_footnote(resource_id, row, column, footnote):
     table = get_table('resource_footnotes')
 
+    if not all([resource_id, row, column, footnote]):
+        log.error('Failed to create footnote. Missing required fields.')
+        return
+
     if not isinstance(row, datetime.datetime):
         row = datetime.datetime.strptime(row, '%Y-%m-%d %H:%M:%S')
 
-    existing_footnotes = get_footnotes(resource_id=resource_id)
-
-    if existing_footnotes:
-        for existing_footnote in existing_footnotes:
-            if existing_footnote['row'] == row:
-                log.info('Footnote already exists for this row and column')
-                raise Exception('Footnote already exists for this row and column')
+    if footnote_exists(
+       resource_id=resource_id, row=row,
+       column=column.lower(), footnote=footnote):
+        log.info('Footnote already exists')
+        return
 
     query = table.insert().values(
         id=_types.make_uuid(),
         resource_id=resource_id,
         row=row,
-        column=column,
+        column=column.lower(),
         footnote=footnote
     )
 
@@ -82,11 +84,13 @@ def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
             )
         elif resource_id and row:
             query = table.delete().where(
-                (table.c.resource_id == resource_id) & (table.c.row == row)
+                (table.c.resource_id == resource_id) &
+                (table.c.row == row)
             )
         elif row and column:
             query = table.delete().where(
-                (table.c.row == row) & (table.c.column == column)
+                (table.c.row == row) &
+                (table.c.column == column.lower())
             )
         else:
             raise Exception(
@@ -104,12 +108,46 @@ def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
         log.error('Error deleting footnote: {}'.format(e))
 
 
+def footnote_exists(footnote_id=None, resource_id=None, row=None, column=None, footnote=None):
+    table = get_table('resource_footnotes')
+
+    try:
+        if footnote_id:
+            query = table.select(table.c.id == footnote_id)
+        elif resource_id and row:
+            query = table.select(
+                (table.c.resource_id == resource_id) &
+                (table.c.row == row) &
+                (table.c.footnote == footnote)
+            )
+        elif row and column:
+            query = table.select(
+                (table.c.row == row) &
+                (table.c.column == column.lower()) &
+                (table.c.footnote == footnote)
+            )
+        else:
+            raise Exception(
+                'Failed to check if footnote exists in resource_footnotes table.\n'
+                'You must provide one of the following:\n'
+                '- footnote_id\n'
+                '- resource_id and row\n'
+                '- row and column'
+            )
+
+        result = model.meta.engine.execute(query)
+        result = [dict(row) for row in result]
+
+        if result:
+            return True
+        else:
+            return False
+    except Exception as e:
+        log.error('Error checking if footnote exists: {}'.format(e))
+
+
 def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, footnote=None):
     table = get_table('resource_footnotes')
-    log.error(resource_id)
-    log.error(row)
-    log.error(column)
-    log.error(footnote)
 
     if not footnote:
         log.error('Update failed: no footnote provided')
@@ -117,12 +155,19 @@ def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, f
 
     if row:
         try:
-            row = datetime.datetime.strptime(row, '%Y-%m-%dT%H:%M:%S')
+            row = datetime.datetime.strptime(row, '%Y-%m-%d %H:%M:%S')
         except:
             pass
 
+    if footnote_exists(
+       footnote_id=footnote_id, resource_id=resource_id,
+       row=row, column=column.lower(), footnote=footnote):
+        log.info('Footnote already exists')
+        return
+
     try:
         if footnote_id:
+            # Update only if the footnote has changed
             query = table.update().where(
                 table.c.id == footnote_id
             ).values(
@@ -130,13 +175,15 @@ def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, f
             )
         elif resource_id and row:
             query = table.update().where(
-                (table.c.resource_id == resource_id) & (table.c.row == row)
+                (table.c.resource_id == resource_id) &
+                (table.c.row == row)
             ).values(
                 footnote=footnote
             )
         elif row and column:
             query = table.update().where(
-                (table.c.row == row) & (table.c.column == column)
+                (table.c.row == row) &
+                (table.c.column == column.lower())
             ).values(
                 footnote=footnote
             )
