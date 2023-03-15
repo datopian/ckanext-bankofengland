@@ -88,6 +88,9 @@ setup(
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
+
+        [ckan.cli.command]
+        boe=ckanext.bankofengland.cli:boe
     ''',
 
     # If you are changing from the default layout of your extension, you may

@@ -13,6 +13,7 @@ import ckan.lib.dictization.model_dictize as model_dictize
 import pytz
 
 import ckanext.bankofengland.helpers as boe_helpers
+import ckanext.bankofengland.model as boe_model
 
 
 log = logging.getLogger(__name__)
@@ -233,6 +234,17 @@ def package_show(original_action, context, data_dict):
 
 @toolkit.chained_action
 @toolkit.side_effect_free
+def resource_show(original_action, context, data_dict):
+    result = original_action(context, data_dict)
+
+    footnotes = boe_model.get_footnotes(resource_id=result['id'])
+    result['footnotes'] = footnotes
+
+    return result
+
+
+@toolkit.chained_action
+@toolkit.side_effect_free
 def package_search(original_action, context, data_dict):
     result = original_action(context, data_dict)
     filtered_result = filter_unpublished_resources(context, result)
@@ -241,8 +253,12 @@ def package_search(original_action, context, data_dict):
 
 
 def filter_unpublished_resources(context, result, single=False):
-    user = context.get('user')
     auth_user_obj = context.get('auth_user_obj')
+
+    if auth_user_obj and auth_user_obj.sysadmin:
+        return result
+
+    user = context.get('user')
     filtered_result = result
 
     organizations_available = logic.get_action('organization_list_for_user')(
@@ -253,9 +269,6 @@ def filter_unpublished_resources(context, result, single=False):
     if organizations_available:
         for org in organizations_available:
             org_permissions[org['name']] = org['capacity']
-
-    if auth_user_obj and auth_user_obj.sysadmin:
-        return filtered_result
 
     if single:
         package_org = result.get('organization', {})
@@ -283,6 +296,7 @@ def filter_unpublished_resources(context, result, single=False):
 
     return filtered_result
 
+
 @toolkit.side_effect_free
 def resource_show_by_name(context, data_dict):
     utc=pytz.UTC
@@ -290,6 +304,10 @@ def resource_show_by_name(context, data_dict):
     if not resource:
         raise toolkit.ObjectNotFound
     resource = model_dictize.resource_dictize(resource, context)
+
+    footnotes = boe_model.get_footnotes(resource_id=resource['id'])
+    resource['footnotes'] = footnotes
+
     if 'publish_date' not in resource:
         return resource
     resource_date = datetime.datetime.strptime(resource['publish_date'], '%Y-%m-%dT%H:%M:%S')
@@ -302,3 +320,95 @@ def resource_show_by_name(context, data_dict):
                 return resource
         except:
             raise toolkit.NotAuthorized("This resource has not been published yet")
+
+
+@toolkit.side_effect_free
+def footnotes_show(context, data_dict):
+    resource_id = data_dict.get('resource_id')
+    resource_name = data_dict.get('resource_name')
+
+    if resource_id:
+        return boe_model.get_footnotes(resource_id=resource_id)
+    elif resource_name:
+        return boe_model.get_footnotes(resource_name=resource_name)
+    else:
+        log.error('No resource_id or resource_name provided')
+        return []
+
+
+@toolkit.side_effect_free
+def update_footnote(context, data_dict):
+    resource_id = data_dict.get('id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+    footnote = data_dict.get('footnote')
+    footnote_id = data_dict.get('footnote_id')
+
+    if not footnote:
+        log.error('Failed to update footnote. No footnote provided')
+        return []
+
+    if footnote_id:
+        return boe_model.update_footnote(
+            footnote_id=footnote_id, footnote=footnote
+        )
+
+    if not resource_id and column:
+        resource_id = toolkit.get_action('resource_show_by_name')(
+            context, {'id': column}
+        )['id']
+
+    if not all([resource_id, row, column]):
+        log.error(
+            'Failed to update footnote. Missing parameters.\n'
+            'Must include resource_id, row, column, and footnote'
+        )
+        return []
+
+    return boe_model.update_footnote(
+        resource_id=resource_id, row=row, column=column, footnote=footnote
+    )
+
+
+@toolkit.side_effect_free
+def create_footnote(context, data_dict):
+    resource_id = data_dict.get('resource_id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+    footnote = data_dict.get('footnote')
+
+    if not resource_id and column:
+        resource_id = toolkit.get_action('resource_show_by_name')(
+            context, {'id': column.lower()}
+        )['id']
+
+    if not all([resource_id, row, column, footnote]):
+        log.error(
+            'Failed to create footnote. Missing parameters.\n'
+            'Must include resource_id, row, column, and footnote'
+        )
+        return []
+
+    return boe_model.create_footnote(
+        resource_id=resource_id, row=row, column=column, footnote=footnote
+    )
+
+
+@toolkit.side_effect_free
+def delete_footnote(context, data_dict):
+    footnote_id = data_dict.get('footnote_id')
+    resource_id = data_dict.get('resource_id')
+    row = data_dict.get('row')
+    column = data_dict.get('column')
+
+    if not footnote_id and not all([resource_id, row]):
+        log.error(
+            'Failed to delete footnote. Missing parameters.\n'
+            'Must include footnote_id or resource_id, row, column'
+        )
+        return []
+
+    return boe_model.delete_footnote(
+        footnote_id=footnote_id, resource_id=resource_id,
+        row=row, column=column
+    )

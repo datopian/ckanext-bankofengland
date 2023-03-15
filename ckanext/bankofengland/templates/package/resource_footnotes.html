@@ -1,0 +1,54 @@
+{% extends "package/resource_edit_base.html" %}
+
+
+{% block primary_content_inner %}
+  <button id="add-footnote" class="btn btn-primary">Add footnote</button></br></br>
+
+  <input type="hidden" name="footnote-rows-list" id="footnote-rows-list" value="{{ js_row_values }}">
+
+  <form id="footnote-form" method="post" action="">
+    <input type="hidden" name="footnote-rows-deleted" id="footnote-rows-deleted" value="">
+
+    {% block scripts %}
+      {% asset 'bankofengland/bankofengland-js' %}
+    {% endblock %}
+
+    <table id="footnote-table" class="table table-striped table-bordered footnote-table">
+      <thead>
+        <tr>
+          <th>Row</th>
+          <th>Footnote Text</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if footnotes %}
+        {% for footnote in footnotes %}
+          {# We need distinct ids for each row. We can't use footnotes for this because footnote ids don't exist for new footnotes. Lets generate a random hash #}
+          {% set row_id = h.generate_uuid() %}
+          <tr>
+            {# Add a dropdown select for "Row". The options should be the values from "row_values" #}
+            <td>
+              <select class="footnote-row" name="footnote-row-{{ row_id }}" id="footnote-row-{{ row_id }}">
+              {% for row_value in row_values %}
+                <option class="footnote-row-option" value="{{ row_value }}" {% if row_value == footnote.row %}selected{% endif %}>{{ row_value }}</option>
+              {% endfor %}
+              </select>
+            </td>
+            <td><textarea class="footnote-text" name="footnote-text-{{ row_id }}" id="footnote-text-{{ row_id }}" rows="2">{{ footnote.footnote }}</textarea></td>
+            {% set deleted_footnote = h.to_json({'row_id': row_id, 'footnote': footnote.footnote}) %}
+            <td><button class="btn btn-danger delete-footnote-row" type="button" id="delete-footnote-row-{{ row_id }}" data="{{ deleted_footnote }}">Delete</button></td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+      </tbody>
+
+    </table>
+
+    <button id="save-footnotes" class="btn btn-primary" type="submit">Save</button>
+
+  </form>
+
+{% endblock %}
+
