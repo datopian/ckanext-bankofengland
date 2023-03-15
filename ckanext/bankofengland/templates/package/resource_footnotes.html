@@ -2,12 +2,16 @@
 
 
 {% block primary_content_inner %}
-  <button id="add-footnote" class="btn btn-primary">Add footnote</button></br></br>
 
   <input type="hidden" name="footnote-rows-list" id="footnote-rows-list" value="{{ js_row_values }}">
 
   <form id="footnote-form" method="post" action="">
+
+    <button id="save-footnotes" class="btn btn-primary" type="submit" style="margin-right: 20px;">Save</button>
+    <button id="add-footnote" class="btn btn-default" type="button"><i class="fa fa-plus"></i>Add footnote</button></br></br>
+
     <input type="hidden" name="footnote-rows-deleted" id="footnote-rows-deleted" value="">
+    <input type="hidden" name="footnote-rows-added" id="footnote-rows-added" value="">
 
     {% block scripts %}
       {% asset 'bankofengland/bankofengland-js' %}
@@ -43,11 +47,7 @@
         {% endfor %}
       {% endif %}
       </tbody>
-
     </table>
-
-    <button id="save-footnotes" class="btn btn-primary" type="submit">Save</button>
-
   </form>
 
 {% endblock %}

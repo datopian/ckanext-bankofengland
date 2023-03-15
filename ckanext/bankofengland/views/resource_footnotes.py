@@ -4,6 +4,7 @@ import datetime
 import json
 
 import ckan.lib.base as base
+import ckan.lib.helpers as h
 import ckan.model as model
 import ckan.logic as logic
 from ckan.common import g, request
@@ -28,12 +29,7 @@ def _get_context():
 
 
 def footnotes(id, resource_id):
-    log.error(request.args)
-    log.error(request.form)
-    log.error(request.method)
-    log.error(request.data)
     context = _get_context()
-    log.error(resource_id)
 
     pkg_dict = logic.get_action('package_show')(context, {'id': id})
     resource = logic.get_action('resource_show')(context, {'id': resource_id})
@@ -41,6 +37,7 @@ def footnotes(id, resource_id):
 
     if request.method == 'POST':
         req_form = request.form
+        log.error(req_form)
         footnotes_deleted = req_form.get('footnote-rows-deleted')
 
         if footnotes_deleted:
@@ -61,42 +58,60 @@ def footnotes(id, resource_id):
                 except Exception as e:
                     log.error(e)
 
+
         def _check_if_key_exists(key, dictionary):
             if key not in dictionary:
                 dictionary[key] = {}
 
-        footnotes = {}
 
-        for key, value in req_form.items():
-            if key.startswith('footnote-row-'):
-                key = key.replace('footnote-row-', '')
-                _check_if_key_exists(key, footnotes)
-                footnotes[key]['row'] = value
-            elif key.startswith('footnote-text-'):
-                key = key.replace('footnote-text-', '')
-                _check_if_key_exists(key, footnotes)
-                footnotes[key]['text'] = value
+        def _footnote_action(action, footnote_dict):
+            for key, value in footnote_dict.items():
+                footnote = {
+                    'resource_id': resource_id,
+                    'row': value['row'],
+                    'column': resource.get('name'),
+                    'footnote': value['text']
+                }
 
-        for key, value in footnotes.items():
-            footnote = {
-                'resource_id': resource_id,
-                'row': value['row'],
-                'column': resource.get('name'),
-                'footnote': value['text']
-            }
-
-            try:
-                logic.get_action('create_footnote')(
-                    context, footnote
-                )
-            except Exception as e:
-                log.error(e)
                 try:
-                    logic.get_action('update_footnote')(
-                        context, footnote
-                    )
+                    logic.get_action(action)(context, footnote)
                 except Exception as e:
                     log.error(e)
+
+
+        footnotes = {}
+        new_footnotes = {}
+
+        for key, value in req_form.items():
+            is_new = False
+
+            if key.endswith('-new'):
+                key = key.replace('-new', '')
+                is_new = True
+
+            if key.startswith('footnote-row-'):
+                key = key.replace('footnote-row-', '')
+
+                if is_new:
+                    _check_if_key_exists(key, new_footnotes)
+                    new_footnotes[key]['row'] = value
+                else:
+                    _check_if_key_exists(key, footnotes)
+                    footnotes[key]['row'] = value
+            elif key.startswith('footnote-text-'):
+                key = key.replace('footnote-text-', '')
+
+                if is_new:
+                    _check_if_key_exists(key, new_footnotes)
+                    new_footnotes[key]['text'] = value
+                else:
+                    _check_if_key_exists(key, footnotes)
+                    footnotes[key]['text'] = value
+
+        _footnote_action('create_footnote', new_footnotes)
+        _footnote_action('update_footnote', footnotes)
+
+        h.flash_success('Footnotes successfully updated')
 
     resource_name = req_args.get('resource_name', resource.get('name'))
 
@@ -110,6 +125,7 @@ def footnotes(id, resource_id):
     existing_footnotes = logic.get_action('footnotes_show')(
         context, {'resource_id': resource_id}
     )
+
     js_row_values = json.dumps([
         row_value.strftime('%Y-%m-%d %H:%M:%S') for row_value in row_values
     ])
