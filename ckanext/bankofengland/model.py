@@ -29,13 +29,13 @@ def init_footnotes_table():
         log.info('Table resource_footnotes already exists')
 
 
-def get_footnotes(resource_name=None, resource_id=None):
+def get_footnotes(footnote_id=None, resource_id=None):
     table = get_table('resource_footnotes')
 
     if resource_id:
         query = table.select(table.c.resource_id == resource_id)
-    elif resource_name:
-        query = table.select(table.c.column == resource_name.lower())
+    elif footnote_id:
+        query = table.select(table.c.id == footnote_id)
     else:
         log.error('No resource name or id provided')
         return []
@@ -87,11 +87,6 @@ def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
                 (table.c.resource_id == resource_id) &
                 (table.c.row == row)
             )
-        elif row and column:
-            query = table.delete().where(
-                (table.c.row == row) &
-                (table.c.column == column.lower())
-            )
         else:
             raise Exception(
                 'Failed to delete footnote from resource_footnotes table.\n'
@@ -120,7 +115,7 @@ def footnote_exists(footnote_id=None, resource_id=None, row=None, column=None, f
                 (table.c.row == row) &
                 (table.c.footnote == footnote)
             )
-        elif row and column:
+        elif row and column and footnote:
             query = table.select(
                 (table.c.row == row) &
                 (table.c.column == column.lower()) &
@@ -177,13 +172,6 @@ def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, f
             query = table.update().where(
                 (table.c.resource_id == resource_id) &
                 (table.c.row == row)
-            ).values(
-                footnote=footnote
-            )
-        elif row and column:
-            query = table.update().where(
-                (table.c.row == row) &
-                (table.c.column == column.lower())
             ).values(
                 footnote=footnote
             )

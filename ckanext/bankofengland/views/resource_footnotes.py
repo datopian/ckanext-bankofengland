@@ -14,7 +14,10 @@ from ckanext.bankofengland import helpers as boe_helpers
 log = logging.getLogger(__name__)
 
 
-boe_resource = Blueprint('boe_resource', __name__, url_prefix='/dataset/<id>/resource/<resource_id>')
+boe_resource = Blueprint(
+    'boe_resource', __name__,
+    url_prefix='/dataset/<id>/resource/<resource_id>'
+)
 
 
 def _get_context():
@@ -31,8 +34,12 @@ def _get_context():
 def footnotes(id, resource_id):
     context = _get_context()
 
-    pkg_dict = logic.get_action('package_show')(context, {'id': id})
-    resource = logic.get_action('resource_show')(context, {'id': resource_id})
+    pkg_dict = logic.get_action('package_show')(
+        context, {'id': id}
+    )
+    resource = logic.get_action('resource_show')(
+        context, {'id': resource_id}
+    )
     req_args = request.args
 
     if request.method == 'POST':

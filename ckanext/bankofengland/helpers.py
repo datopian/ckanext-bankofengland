@@ -87,4 +87,7 @@ def generate_uuid():
 
 
 def to_json(data):
+    if isinstance(data.get('row'), datetime.datetime):
+        data['row'] = data['row'].strftime('%Y-%m-%d %H:%M:%S')
+
     return json.dumps(data)
