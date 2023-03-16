@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 
 
 def build_id(input):
-    return "_".join(sorted(input))
+    return "__".join(sorted(input))
 
 
 def build_joins(input):
