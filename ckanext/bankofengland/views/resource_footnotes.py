@@ -58,7 +58,7 @@ def footnotes(id, resource_id):
                             'row': datetime.datetime.strptime(
                                 footnote['row'], '%Y-%m-%d %H:%M:%S'
                             ),
-                            'column': resource.get('name')
+                            'column': footnote['column']
                         }
                     )
                 except Exception as e:
@@ -74,7 +74,7 @@ def footnotes(id, resource_id):
                 footnote = {
                     'resource_id': resource_id,
                     'row': value['row'],
-                    'column': resource.get('name'),
+                    'column': value['column'],
                     'footnote': value['text']
                 }
 
@@ -103,6 +103,15 @@ def footnotes(id, resource_id):
                 else:
                     _check_if_key_exists(key, footnotes)
                     footnotes[key]['row'] = value
+            elif key.startswith('footnote-column-'):
+                key = key.replace('footnote-column-', '')
+
+                if is_new:
+                    _check_if_key_exists(key, new_footnotes)
+                    new_footnotes[key]['column'] = value
+                else:
+                    _check_if_key_exists(key, footnotes)
+                    footnotes[key]['column'] = value
             elif key.startswith('footnote-text-'):
                 key = key.replace('footnote-text-', '')
 

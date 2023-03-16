@@ -7,7 +7,38 @@ $('#footnote-table').change(function() {
     disableRows();
 });
 
-$('#save-footnotes').click(function() {
+$('#save-footnotes').click(function(e) {
+    e.preventDefault();
+    var allFilled = false;
+    var allRows = $('.footnote-row');
+    var allColumns = $('.footnote-column');
+    var allFootnotes = $('.footnote-text');
+    var tableRows = $('#footnote-table > tbody > tr');
+
+    for (var i = 0; i < tableRows.length; i++) {
+        if (allRows[i].value == '' || allColumns[i].value == '' || allFootnotes[i].value == '') {
+            allFilled = false;
+
+            if (allRows[i].value == '') {
+                $(allRows[i]).css('border', '1px solid red');
+                $(allRows[i]).css('background-color', 'white');
+            }
+            if (allColumns[i].value == '') {
+                $(allColumns[i]).css('border', '1px solid red');
+            }
+            if (allFootnotes[i].value == '') {
+                $(allFootnotes[i]).css('border', '1px solid red');
+            }
+            break;
+        } else {
+            allFilled = true;
+        }
+    }
+
+    if (!allFilled) {
+        return;
+    }
+
     $('#save-footnotes').prop('disabled', true);
     $('[id^=delete-footnote-row-]').prop('disabled', true);
     $('#save-footnotes').html('Saving...');
@@ -89,6 +120,18 @@ $('[id^=delete-footnote-row-]').click(function() {
 
 $('#footnote-table').click(function() {
     var sourceID = event.target.id;
+
+    // If the user clicked on a row, column or footnote, remove the border (back to normal)
+    if (sourceID.includes('footnote-row-')) {
+        $('#' + sourceID).css('border', '1px solid #ccc');
+        $('#' + sourceID).css('background-color', 'white');
+    }
+    if (sourceID.includes('footnote-column-')) {
+        $('#' + sourceID).css('border', '1px solid #ccc');
+    }
+    if (sourceID.includes('footnote-text-')) {
+        $('#' + sourceID).css('border', '1px solid #ccc');
+    }
 
     if (sourceID.includes('delete-footnote-row-')) {
         deleteRow($('#' + sourceID));
