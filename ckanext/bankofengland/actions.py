@@ -301,7 +301,6 @@ def filter_unpublished_resources(context, result, single=False):
 
 @toolkit.side_effect_free
 def resource_show_by_name(context, data_dict):
-    log.error('resource_show_by_name')
     utc=pytz.UTC
     resource = model.Resource.get(data_dict['id'])
     if not resource:
@@ -330,12 +329,9 @@ def resource_show_by_name(context, data_dict):
 @toolkit.side_effect_free
 def footnotes_show(context, data_dict):
     resource_id = data_dict.get('resource_id')
-    resource_name = data_dict.get('resource_name')
 
     if resource_id:
         return boe_model.get_footnotes(resource_id=resource_id)
-    elif resource_name:
-        return boe_model.get_footnotes(resource_name=resource_name)
     else:
         log.error('No resource_id or resource_name provided')
         return []
@@ -358,11 +354,6 @@ def update_footnote(context, data_dict):
             footnote_id=footnote_id, footnote=footnote
         )
 
-    if not resource_id and column:
-        resource_id = toolkit.get_action('resource_show_by_name')(
-            context, {'id': column}
-        )['id']
-
     if not all([resource_id, row, column]):
         log.error(
             'Failed to update footnote. Missing parameters.\n'
@@ -371,7 +362,8 @@ def update_footnote(context, data_dict):
         return []
 
     return boe_model.update_footnote(
-        resource_id=resource_id, row=row, column=column, footnote=footnote
+        resource_id=resource_id, row=row,
+        column=column, footnote=footnote
     )
 
 
@@ -382,11 +374,6 @@ def create_footnote(context, data_dict):
     column = data_dict.get('column')
     footnote = data_dict.get('footnote')
 
-    if not resource_id and column:
-        resource_id = toolkit.get_action('resource_show_by_name')(
-            context, {'id': column.lower()}
-        )['id']
-
     if not all([resource_id, row, column, footnote]):
         log.error(
             'Failed to create footnote. Missing parameters.\n'
@@ -395,7 +382,8 @@ def create_footnote(context, data_dict):
         return []
 
     return boe_model.create_footnote(
-        resource_id=resource_id, row=row, column=column, footnote=footnote
+        resource_id=resource_id, row=row,
+        column=column, footnote=footnote
     )
 
 
@@ -405,11 +393,6 @@ def delete_footnote(context, data_dict):
     resource_id = data_dict.get('resource_id')
     row = data_dict.get('row')
     column = data_dict.get('column')
-
-    if not resource_id and column:
-        resource_id = toolkit.get_action('resource_show_by_name')(
-            context, {'id': column}
-        )['id']
 
     if not all([resource_id, row, column]):
         log.error(

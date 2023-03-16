@@ -12,6 +12,7 @@
 
     <input type="hidden" name="footnote-rows-deleted" id="footnote-rows-deleted" value="">
     <input type="hidden" name="footnote-rows-added" id="footnote-rows-added" value="">
+    <input type="hidden" name="pkg-name" id="pkg-name" value="{{ pkg.name }}">
 
     {% block scripts %}
       {% asset 'bankofengland/bankofengland-js' %}
@@ -21,8 +22,9 @@
       <thead>
         <tr>
           <th>Row</th>
+          <th>Column</th>
           <th>Footnote Text</th>
-          <th>Delete</th>
+          <th style="width: 100px;">Delete</th>
         </tr>
       </thead>
 
@@ -34,14 +36,15 @@
           <tr>
             {# Add a dropdown select for "Row". The options should be the values from "row_values" #}
             <td>
-              <select class="footnote-row" name="footnote-row-{{ row_id }}" id="footnote-row-{{ row_id }}">
+              <select class="footnote-row" name="footnote-row-{{ row_id }}" id="footnote-row-{{ row_id }}" style="max-width: 100%; border: 1px solid #ccc; background-color: white;">
               {% for row_value in row_values %}
                 <option class="footnote-row-option" value="{{ row_value }}" {% if row_value == footnote.row %}selected{% endif %}>{{ row_value }}</option>
               {% endfor %}
               </select>
             </td>
-            <td><textarea class="footnote-text" name="footnote-text-{{ row_id }}" id="footnote-text-{{ row_id }}" rows="2">{{ footnote.footnote }}</textarea></td>
-            {% set deleted_footnote = h.to_json({'row_id': row_id, 'footnote': footnote.footnote}) %}
+            <td><input class="footnote-column" name="footnote-column-{{ row_id }}" id="footnote-column-{{ row_id }}" type="text" value="{{ footnote.column }}" style="max-width: 100%; border: 1px solid #ccc;"></td>
+            <td><textarea class="footnote-text" name="footnote-text-{{ row_id }}" id="footnote-text-{{ row_id }}" rows="2" style="width: 100%; border: 1px solid #ccc;">{{ footnote.footnote }}</textarea></td>
+            {% set deleted_footnote = h.to_json({'row_id': row_id, 'column': footnote.footnote, 'footnote': footnote.footnote}) %}
             <td><button class="btn btn-danger delete-footnote-row" type="button" id="delete-footnote-row-{{ row_id }}" data="{{ deleted_footnote }}">Delete</button></td>
           </tr>
         {% endfor %}

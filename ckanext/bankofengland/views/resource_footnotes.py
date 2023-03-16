@@ -14,7 +14,10 @@ from ckanext.bankofengland import helpers as boe_helpers
 log = logging.getLogger(__name__)
 
 
-boe_resource = Blueprint('boe_resource', __name__, url_prefix='/dataset/<id>/resource/<resource_id>')
+boe_resource = Blueprint(
+    'boe_resource', __name__,
+    url_prefix='/dataset/<id>/resource/<resource_id>'
+)
 
 
 def _get_context():
@@ -31,8 +34,12 @@ def _get_context():
 def footnotes(id, resource_id):
     context = _get_context()
 
-    pkg_dict = logic.get_action('package_show')(context, {'id': id})
-    resource = logic.get_action('resource_show')(context, {'id': resource_id})
+    pkg_dict = logic.get_action('package_show')(
+        context, {'id': id}
+    )
+    resource = logic.get_action('resource_show')(
+        context, {'id': resource_id}
+    )
     req_args = request.args
 
     if request.method == 'POST':
@@ -51,7 +58,7 @@ def footnotes(id, resource_id):
                             'row': datetime.datetime.strptime(
                                 footnote['row'], '%Y-%m-%d %H:%M:%S'
                             ),
-                            'column': resource.get('name')
+                            'column': footnote['column']
                         }
                     )
                 except Exception as e:
@@ -67,7 +74,7 @@ def footnotes(id, resource_id):
                 footnote = {
                     'resource_id': resource_id,
                     'row': value['row'],
-                    'column': resource.get('name'),
+                    'column': value['column'],
                     'footnote': value['text']
                 }
 
@@ -96,6 +103,15 @@ def footnotes(id, resource_id):
                 else:
                     _check_if_key_exists(key, footnotes)
                     footnotes[key]['row'] = value
+            elif key.startswith('footnote-column-'):
+                key = key.replace('footnote-column-', '')
+
+                if is_new:
+                    _check_if_key_exists(key, new_footnotes)
+                    new_footnotes[key]['column'] = value
+                else:
+                    _check_if_key_exists(key, footnotes)
+                    footnotes[key]['column'] = value
             elif key.startswith('footnote-text-'):
                 key = key.replace('footnote-text-', '')
 
