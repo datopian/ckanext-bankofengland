@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 
 
 def build_id(input):
-    return "_".join(sorted(input))
+    return "__".join(sorted(input))
 
 
 def build_joins(input):
@@ -239,6 +239,8 @@ def resource_show(original_action, context, data_dict):
 
     footnotes = boe_model.get_footnotes(resource_id=result['id'])
     result['footnotes'] = footnotes
+    for footnote in result['footnotes']:
+        footnote['row'] = footnote['row'].isoformat()
 
     return result
 
@@ -308,6 +310,8 @@ def resource_show_by_name(context, data_dict):
 
     footnotes = boe_model.get_footnotes(resource_id=resource['id'])
     resource['footnotes'] = footnotes
+    for footnote in resource['footnotes']:
+        footnote['row'] = footnote['row'].isoformat()
 
     if 'publish_date' not in resource:
         return resource
