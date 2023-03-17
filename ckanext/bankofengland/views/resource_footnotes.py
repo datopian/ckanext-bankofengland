@@ -40,10 +40,12 @@ def footnotes(id, resource_id):
     resource = logic.get_action('resource_show')(
         context, {'id': resource_id}
     )
+
     req_args = request.args
 
     if request.method == 'POST':
         req_form = request.form
+
         footnotes_deleted = req_form.get('footnote-rows-deleted')
 
         if footnotes_deleted:
@@ -54,11 +56,7 @@ def footnotes(id, resource_id):
                     logic.get_action('delete_footnote')(
                         context,
                         {
-                            'resource_id': resource_id,
-                            'row': datetime.datetime.strptime(
-                                footnote['row'], '%Y-%m-%d %H:%M:%S'
-                            ),
-                            'column': footnote['column']
+                            'footnote_id': footnote.get('footnote_id'),
                         }
                     )
                 except Exception as e:
@@ -72,10 +70,11 @@ def footnotes(id, resource_id):
         def _footnote_action(action, footnote_dict):
             for key, value in footnote_dict.items():
                 footnote = {
+                    'footnote_id': value.get('id'),
                     'resource_id': resource_id,
-                    'row': value['row'],
-                    'column': value['column'],
-                    'footnote': value['text']
+                    'row': value.get('row'),
+                    'column': value.get('column'),
+                    'footnote': value.get('footnote')
                 }
 
                 try:
@@ -89,6 +88,7 @@ def footnotes(id, resource_id):
 
         for key, value in req_form.items():
             is_new = False
+            value = value if value else ''
 
             if key.endswith('-new'):
                 key = key.replace('-new', '')
@@ -103,7 +103,16 @@ def footnotes(id, resource_id):
                 else:
                     _check_if_key_exists(key, footnotes)
                     footnotes[key]['row'] = value
-            elif key.startswith('footnote-column-'):
+            if key.startswith('footnote-id-'):
+                key = key.replace('footnote-id-', '')
+
+                if is_new:
+                    _check_if_key_exists(key, new_footnotes)
+                    new_footnotes[key]['id'] = value
+                else:
+                    _check_if_key_exists(key, footnotes)
+                    footnotes[key]['id'] = value
+            if key.startswith('footnote-column-'):
                 key = key.replace('footnote-column-', '')
 
                 if is_new:
@@ -112,15 +121,15 @@ def footnotes(id, resource_id):
                 else:
                     _check_if_key_exists(key, footnotes)
                     footnotes[key]['column'] = value
-            elif key.startswith('footnote-text-'):
+            if key.startswith('footnote-text-'):
                 key = key.replace('footnote-text-', '')
 
                 if is_new:
                     _check_if_key_exists(key, new_footnotes)
-                    new_footnotes[key]['text'] = value
+                    new_footnotes[key]['footnote'] = value
                 else:
                     _check_if_key_exists(key, footnotes)
-                    footnotes[key]['text'] = value
+                    footnotes[key]['footnote'] = value
 
         _footnote_action('create_footnote', new_footnotes)
         _footnote_action('update_footnote', footnotes)
@@ -139,9 +148,8 @@ def footnotes(id, resource_id):
     existing_footnotes = logic.get_action('footnotes_show')(
         context, {'resource_id': resource_id}
     )
-    js_row_values = json.dumps([
-        row_value.strftime('%Y-%m-%d %H:%M:%S') for row_value in row_values
-    ])
+
+    js_row_values = json.dumps(row_values)
 
     extra_vars = {
         'pkg_dict': pkg_dict,

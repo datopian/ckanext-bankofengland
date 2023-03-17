@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+    alternateTableRowColors();
     disableRows();
 });
 
@@ -16,13 +17,9 @@ $('#save-footnotes').click(function(e) {
     var tableRows = $('#footnote-table > tbody > tr');
 
     for (var i = 0; i < tableRows.length; i++) {
-        if (allRows[i].value == '' || allColumns[i].value == '' || allFootnotes[i].value == '') {
+        if (allColumns[i].value == '' || allFootnotes[i].value == '') {
             allFilled = false;
 
-            if (allRows[i].value == '') {
-                $(allRows[i]).css('border', '1px solid red');
-                $(allRows[i]).css('background-color', 'white');
-            }
             if (allColumns[i].value == '') {
                 $(allColumns[i]).css('border', '1px solid red');
             }
@@ -54,7 +51,7 @@ $('#add-footnote').click(function() {
         class: 'footnote-row',
         name: 'footnote-row-' + newUUID + '-new',
         id: 'footnote-row-' + newUUID + '-new',
-        style: 'max-width: 100%;'
+        style: 'max-width: 100%; border: 1px solid #ccc; background-color: #fff;'
     });
 
     for (var i = 0; i < rowValues.length; i++) {
@@ -62,6 +59,7 @@ $('#add-footnote').click(function() {
             class: 'footnote-row-option',
             value: rowValues[i],
             text: rowValues[i],
+            style: 'background-color: #fff;'
         });
         newSelect.append(newOption);
     }
@@ -71,6 +69,7 @@ $('#add-footnote').click(function() {
         value: '',
         text: '',
         selected: true,
+        style: 'border: 1px solid #ccc;'
     }));
 
     var pkgName = $('#pkg-name').val();
@@ -81,7 +80,7 @@ $('#add-footnote').click(function() {
         name: 'footnote-column-' + newUUID + '-new',
         id: 'footnote-column-' + newUUID + '-new',
         value: pkgName,
-        style: 'max-width: 100%;'
+        style: 'max-width: 100%; border: 1px solid #ccc;'
     }));
 
     var newFootnote = $('<td>').append($('<textarea>', {
@@ -90,7 +89,7 @@ $('#add-footnote').click(function() {
         rows: 2,
         name: 'footnote-text-' + newUUID + '-new',
         id: 'footnote-text-' + newUUID + '-new',
-        style: 'width: 100%;'
+        style: 'width: 100%; border: 1px solid #ccc;'
     }));
 
     var newDeleteButton = $('<td>').append($('<button>', {
@@ -112,6 +111,7 @@ $('#add-footnote').click(function() {
     $('table > tbody').prepend(newRow);
 
     disableRows();
+    alternateTableRowColors();
 });
 
 $('[id^=delete-footnote-row-]').click(function() {
@@ -121,11 +121,6 @@ $('[id^=delete-footnote-row-]').click(function() {
 $('#footnote-table').click(function() {
     var sourceID = event.target.id;
 
-    // If the user clicked on a row, column or footnote, remove the border (back to normal)
-    if (sourceID.includes('footnote-row-')) {
-        $('#' + sourceID).css('border', '1px solid #ccc');
-        $('#' + sourceID).css('background-color', 'white');
-    }
     if (sourceID.includes('footnote-column-')) {
         $('#' + sourceID).css('border', '1px solid #ccc');
     }
@@ -180,6 +175,7 @@ function deleteRow(row) {
     }
 
     $('#footnote-row-' + rowID).parent().parent().remove();
+    alternateTableRowColors();
 }
 
 function disableRows() {
@@ -198,6 +194,17 @@ function disableRows() {
             }
         });
     });
+}
+
+function alternateTableRowColors() {
+    var tableRows = $('#footnote-table > tbody > tr');
+    for (var i = 0; i < tableRows.length; i++) {
+        if (i % 2 == 0) {
+            $(tableRows[i]).css('background-color', '#f9f9f9');
+        } else {
+            $(tableRows[i]).css('background-color', '#fff');
+        }
+    }
 }
 
 function get_footnote_dropdown_options() {

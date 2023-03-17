@@ -73,11 +73,10 @@ def get_footnote_rows(resource_id):
 
         for row in records:
             row_date = row.get('Date')
+            row_date = row_date.split('T')[0]
 
             if row_date:
-                row_values.append(datetime.datetime.strptime(
-                    row_date, '%Y-%m-%dT%H:%M:%S'
-                ))
+                row_values.append(row_date)
 
     return row_values
 
@@ -87,7 +86,4 @@ def generate_uuid():
 
 
 def to_json(data):
-    if isinstance(data.get('row'), datetime.datetime):
-        data['row'] = data['row'].strftime('%Y-%m-%d %H:%M:%S')
-
     return json.dumps(data)
