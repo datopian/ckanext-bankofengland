@@ -240,16 +240,6 @@ def resource_show(original_action, context, data_dict):
     footnotes = boe_model.get_footnotes(resource_id=result['id'])
     result['footnotes'] = footnotes
 
-    for footnote in result['footnotes']:
-        current_row = footnote['row']
-
-        if isinstance(current_row, str) and len(current_row) > 0:
-            try:
-                current_row = datetime.datetime.strptime(current_row, '%Y-%m-%d %H:%M:%S')
-                footnote['row'] = current_row.isoformat()
-            except ValueError:
-                pass
-
     return result
 
 
