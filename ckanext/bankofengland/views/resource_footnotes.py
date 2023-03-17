@@ -40,7 +40,6 @@ def footnotes(id, resource_id):
     resource = logic.get_action('resource_show')(
         context, {'id': resource_id}
     )
-
     req_args = request.args
 
     if request.method == 'POST':

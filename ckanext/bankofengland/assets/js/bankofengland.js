@@ -83,6 +83,17 @@ $('#add-footnote').click(function() {
         style: 'max-width: 100%; border: 1px solid #ccc;'
     }));
 
+    var pkgName = $('#pkg-name').val();
+
+    newColumn = $('<td>').append($('<input>', {
+        class: 'footnote-column',
+        type: 'text',
+        name: 'footnote-column-' + newUUID + '-new',
+        id: 'footnote-column-' + newUUID + '-new',
+        value: pkgName,
+        style: 'max-width: 100%;'
+    }));
+
     var newFootnote = $('<td>').append($('<textarea>', {
         class: 'footnote-text',
         value: '',
