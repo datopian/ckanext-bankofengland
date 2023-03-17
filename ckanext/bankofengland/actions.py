@@ -239,8 +239,6 @@ def resource_show(original_action, context, data_dict):
 
     footnotes = boe_model.get_footnotes(resource_id=result['id'])
     result['footnotes'] = footnotes
-    for footnote in result['footnotes']:
-        footnote['row'] = footnote['row'].isoformat()
 
     return result
 
@@ -309,8 +307,6 @@ def resource_show_by_name(context, data_dict):
 
     footnotes = boe_model.get_footnotes(resource_id=resource['id'])
     resource['footnotes'] = footnotes
-    for footnote in resource['footnotes']:
-        footnote['row'] = footnote['row'].isoformat()
 
     if 'publish_date' not in resource:
         return resource
@@ -329,16 +325,20 @@ def resource_show_by_name(context, data_dict):
 @toolkit.side_effect_free
 def footnotes_show(context, data_dict):
     resource_id = data_dict.get('resource_id')
+    footnote_id = data_dict.get('footnote_id')
 
     if resource_id:
         return boe_model.get_footnotes(resource_id=resource_id)
+    elif footnote_id:
+        return boe_model.get_footnotes(footnote_id=footnote_id)
     else:
-        log.error('No resource_id or resource_name provided')
-        return []
+        log.error('No resource_id or footnote_id provided')
+        raise toolkit.ValidationError('No resource_id or footnote_id provided')
 
 
 @toolkit.side_effect_free
 def update_footnote(context, data_dict):
+    log.error(data_dict)
     resource_id = data_dict.get('resource_id')
     row = data_dict.get('row')
     column = data_dict.get('column')
@@ -347,24 +347,16 @@ def update_footnote(context, data_dict):
 
     if not footnote:
         log.error('Failed to update footnote. No footnote provided')
-        return []
+        raise toolkit.ValidationError('No footnote provided')
 
     if footnote_id:
         return boe_model.update_footnote(
-            footnote_id=footnote_id, footnote=footnote
+            footnote_id=footnote_id, row=row, column=column,
+            footnote=footnote, resource_id=resource_id
         )
-
-    if not all([resource_id, row, column]):
-        log.error(
-            'Failed to update footnote. Missing parameters.\n'
-            'Must include resource_id, row, column, and footnote'
-        )
-        return []
-
-    return boe_model.update_footnote(
-        resource_id=resource_id, row=row,
-        column=column, footnote=footnote
-    )
+    else:
+        log.error('Failed to update footnote. No footnote_id provided')
+        raise toolkit.ValidationError('No footnote_id provided')
 
 
 @toolkit.side_effect_free
@@ -374,12 +366,15 @@ def create_footnote(context, data_dict):
     column = data_dict.get('column')
     footnote = data_dict.get('footnote')
 
-    if not all([resource_id, row, column, footnote]):
+    if not all([resource_id, column, footnote]):
         log.error(
             'Failed to create footnote. Missing parameters.\n'
-            'Must include resource_id, row, column, and footnote'
+            'Must include resource_id, column, and footnote (optional: row))'
         )
-        return []
+        raise toolkit.ValidationError(
+            'Failed to create footnote. Missing parameters.\n'
+            'Must include resource_id, column, and footnote (optional: row))'
+        )
 
     return boe_model.create_footnote(
         resource_id=resource_id, row=row,
@@ -390,18 +385,17 @@ def create_footnote(context, data_dict):
 @toolkit.side_effect_free
 def delete_footnote(context, data_dict):
     footnote_id = data_dict.get('footnote_id')
-    resource_id = data_dict.get('resource_id')
-    row = data_dict.get('row')
-    column = data_dict.get('column')
 
-    if not all([resource_id, row, column]):
+    if not footnote_id:
         log.error(
             'Failed to delete footnote. Missing parameters.\n'
-            'Must include resource_id, row, column, and footnote_id'
+            'Must include footnote_id'
         )
-        return []
+        raise toolkit.ValidationError(
+            'Failed to delete footnote. Missing parameters.\n'
+            'Must include footnote_id'
+        )
 
     return boe_model.delete_footnote(
-        footnote_id=footnote_id, resource_id=resource_id,
-        row=row, column=column
+        footnote_id=footnote_id
     )

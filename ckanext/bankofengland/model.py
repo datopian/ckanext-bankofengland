@@ -1,7 +1,7 @@
 import logging
 from sqlalchemy import MetaData, Table, Column, types
 import ckan.model as model
-from ckan.model import meta, types as _types, User
+from ckan.model import types as _types
 import datetime
 
 
@@ -17,7 +17,7 @@ def init_footnotes_table():
                 primary_key=True, default=_types.make_uuid,
                 nullable=False, unique=True),
             Column('resource_id', types.UnicodeText, nullable=False),
-            Column('row', types.DateTime, nullable=False),
+            Column('row', types.UnicodeText, nullable=True),
             Column('column', types.UnicodeText, nullable=False),
             Column('footnote', types.UnicodeText, nullable=False)
         )
@@ -49,16 +49,13 @@ def get_footnotes(footnote_id=None, resource_id=None):
 def create_footnote(resource_id, row, column, footnote):
     table = get_table('resource_footnotes')
 
-    if not all([resource_id, row, column, footnote]):
+    if not all([resource_id, column, footnote]):
         log.error('Failed to create footnote. Missing required fields.')
         return
 
-    if not isinstance(row, datetime.datetime):
-        row = datetime.datetime.strptime(row, '%Y-%m-%d %H:%M:%S')
-
     if footnote_exists(
        resource_id=resource_id, row=row,
-       column=column.lower(), footnote=footnote):
+       column=column, footnote=footnote):
         log.info('Footnote already exists')
         return
 
@@ -66,7 +63,7 @@ def create_footnote(resource_id, row, column, footnote):
         id=_types.make_uuid(),
         resource_id=resource_id,
         row=row,
-        column=column.lower(),
+        column=column,
         footnote=footnote
     )
 
@@ -74,18 +71,13 @@ def create_footnote(resource_id, row, column, footnote):
     log.info('Added footnote to resource_footnotes table')
 
 
-def delete_footnote(footnote_id=None, resource_id=None, row=None, column=None):
+def delete_footnote(footnote_id=None):
     table = get_table('resource_footnotes')
 
     try:
         if footnote_id:
             query = table.delete().where(
                 table.c.id == footnote_id
-            )
-        elif resource_id and row:
-            query = table.delete().where(
-                (table.c.resource_id == resource_id) &
-                (table.c.row == row)
             )
         else:
             raise Exception(
@@ -109,16 +101,16 @@ def footnote_exists(footnote_id=None, resource_id=None, row=None, column=None, f
     try:
         if footnote_id:
             query = table.select(table.c.id == footnote_id)
-        elif resource_id and row:
+        elif resource_id and (row is not None):
             query = table.select(
                 (table.c.resource_id == resource_id) &
                 (table.c.row == row) &
                 (table.c.footnote == footnote)
             )
-        elif row and column and footnote:
+        elif (row is not None) and column and footnote:
             query = table.select(
                 (table.c.row == row) &
-                (table.c.column == column.lower()) &
+                (table.c.column == column) &
                 (table.c.footnote == footnote)
             )
         else:
@@ -131,12 +123,15 @@ def footnote_exists(footnote_id=None, resource_id=None, row=None, column=None, f
             )
 
         result = model.meta.engine.execute(query)
-        result = [dict(row) for row in result]
+        result = [dict(res_row) for res_row in result]
 
-        if result:
-            return True
-        else:
-            return False
+        for res_row in result:
+            if res_row['resource_id'] == resource_id and res_row['row'] == row and res_row['column'] == column and res_row['footnote'] == footnote:
+                return True
+            else:
+                return False
+
+        return False
     except Exception as e:
         log.error('Error checking if footnote exists: {}'.format(e))
 
@@ -148,24 +143,19 @@ def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, f
         log.error('Update failed: no footnote provided')
         return
 
-    if row:
-        try:
-            row = datetime.datetime.strptime(row, '%Y-%m-%d %H:%M:%S')
-        except:
-            pass
-
     if footnote_exists(
        footnote_id=footnote_id, resource_id=resource_id,
-       row=row, column=column.lower(), footnote=footnote):
+       row=row, column=column, footnote=footnote):
         log.info('Footnote already exists')
         return
 
     try:
         if footnote_id:
-            # Update only if the footnote has changed
             query = table.update().where(
                 table.c.id == footnote_id
             ).values(
+                row=row,
+                column=column,
                 footnote=footnote
             )
         elif resource_id and row:
@@ -207,10 +197,9 @@ def remove_footnotes_table():
             Column('id', types.UnicodeText,
                 primary_key=True, default=_types.make_uuid,
                 nullable=False, unique=True),
-            Column('row', types.DateTime, nullable=False),
+            Column('row', types.UnicodeText, nullable=True),
             Column('column', types.UnicodeText, nullable=False),
             Column('footnote_text', types.UnicodeText, nullable=False),
-            Column('footnote_type', types.UnicodeText, default=''),
         )
 
         metadata.drop_all(model.meta.engine)
