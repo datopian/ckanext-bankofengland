@@ -53,12 +53,6 @@ def create_footnote(resource_id, row, column, footnote):
         log.error('Failed to create footnote. Missing required fields.')
         return
 
-    if footnote_exists(
-       resource_id=resource_id, row=row,
-       column=column, footnote=footnote):
-        log.info('Footnote already exists')
-        return
-
     query = table.insert().values(
         id=_types.make_uuid(),
         resource_id=resource_id,
@@ -82,10 +76,7 @@ def delete_footnote(footnote_id=None):
         else:
             raise Exception(
                 'Failed to delete footnote from resource_footnotes table.\n'
-                'You must provide one of the following:\n'
-                '- footnote_id\n'
-                '- resource_id and row\n'
-                '- row and column'
+                'You must provide footnote_id'
             )
 
         model.meta.engine.execute(query)
@@ -139,16 +130,6 @@ def footnote_exists(footnote_id=None, resource_id=None, row=None, column=None, f
 def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, footnote=None):
     table = get_table('resource_footnotes')
 
-    if not footnote:
-        log.error('Update failed: no footnote provided')
-        return
-
-    if footnote_exists(
-       footnote_id=footnote_id, resource_id=resource_id,
-       row=row, column=column, footnote=footnote):
-        log.info('Footnote already exists')
-        return
-
     try:
         if footnote_id:
             query = table.update().where(
@@ -158,20 +139,10 @@ def update_footnote(footnote_id=None, resource_id=None, row=None, column=None, f
                 column=column,
                 footnote=footnote
             )
-        elif resource_id and row:
-            query = table.update().where(
-                (table.c.resource_id == resource_id) &
-                (table.c.row == row)
-            ).values(
-                footnote=footnote
-            )
         else:
             raise Exception(
                 'Failed to update footnote in resource_footnotes table.\n'
-                'You must provide one of the following:\n'
-                '- footnote_id\n'
-                '- resource_id and row\n'
-                '- row and column'
+                'You must provide footnote_id'
             )
 
         model.meta.engine.execute(query)

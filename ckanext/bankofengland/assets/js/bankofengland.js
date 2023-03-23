@@ -1,11 +1,6 @@
 
 $(document).ready(function() {
     alternateTableRowColors();
-    disableRows();
-});
-
-$('#footnote-table').change(function() {
-    disableRows();
 });
 
 $('#save-footnotes').click(function(e) {
@@ -121,7 +116,6 @@ $('#add-footnote').click(function() {
 
     $('table > tbody').prepend(newRow);
 
-    disableRows();
     alternateTableRowColors();
 });
 
@@ -187,24 +181,6 @@ function deleteRow(row) {
 
     $('#footnote-row-' + rowID).parent().parent().remove();
     alternateTableRowColors();
-}
-
-function disableRows() {
-    var selectedRows = [];
-
-    $('.footnote-row').each(function() {
-        selectedRows.push($(this).find('option:selected').text());
-    });
-
-    $('.footnote-row').each(function() {
-        $(this).find('option').each(function() {
-            if (selectedRows.includes($(this).text()) && !$(this).is(':selected')) {
-                $(this).prop('disabled', true);
-            } else {
-                $(this).prop('disabled', false);
-            }
-        });
-    });
 }
 
 function alternateTableRowColors() {
