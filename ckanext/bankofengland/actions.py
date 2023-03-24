@@ -447,6 +447,9 @@ def get_related_datasets(context, data_dict):
         for item in items:
             names.append(item['name'])
 
+        if not names:
+            return query
+
         query += '{}{}:({})'.format(
             or_text, key, ' OR '.join(names)
         )
@@ -472,6 +475,7 @@ def get_related_datasets(context, data_dict):
         else:
             query += '{}{}:"{}"'.format(or_text, key, value)
 
+    log.error(query)
     results = toolkit.get_action('package_search')(
         context, {'q': query, 'rows': rows}
     )
