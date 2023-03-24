@@ -475,7 +475,6 @@ def get_related_datasets(context, data_dict):
         else:
             query += '{}{}:"{}"'.format(or_text, key, value)
 
-    log.error(query)
     results = toolkit.get_action('package_search')(
         context, {'q': query, 'rows': rows}
     )
@@ -515,7 +514,7 @@ def get_related_datasets(context, data_dict):
                         result, key, value
                     )
             else:
-                if value == result[key]:
+                if value == result.get(key):
                     metadata_matches += 1
 
         dataset_metadata_count = \
