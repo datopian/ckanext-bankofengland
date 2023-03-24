@@ -404,6 +404,14 @@ def delete_footnote(context, data_dict):
 
 @toolkit.side_effect_free
 def get_related_datasets(context, data_dict):
+    dataset_id = data_dict.get('id')
+
+    if not dataset_id:
+        raise toolkit.ValidationError(
+            'No dataset id provided. Please provide an id '
+            'using the following format "?id=<DATASET_ID>"'
+        )
+
     rows = data_dict.get('rows', 10)
     percent = data_dict.get('percent', 0.8)
 
@@ -413,7 +421,7 @@ def get_related_datasets(context, data_dict):
     if not isinstance(percent, float):
         percent = float(percent)
 
-    dataset = toolkit.get_action('package_show')(context, data_dict)
+    dataset = toolkit.get_action('package_show')(context, {'id': dataset_id})
 
     metadata_fields = [
         'boe_dim_counterparty_sector_of_reporter',
