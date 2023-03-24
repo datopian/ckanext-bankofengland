@@ -51,6 +51,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['featured'] = plugins.toolkit._('Featured')
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
@@ -65,6 +66,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['featured'] = plugins.toolkit._('Featured')
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
@@ -79,6 +81,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
         facets_dict['boe_dim_counterparty_sector_of_reporter'] = plugins.toolkit._('boe_dim:Counterparty sector of reporter')
         facets_dict['eba_dim_cps_counterparty_sector'] = plugins.toolkit._('eba_dim:CPS (Counterparty sector)')
         facets_dict['eba_dim_rcp_residence_of_counterparty'] = plugins.toolkit._('eba_dim:RCP (Residence of counterparty)')
+        facets_dict['featured'] = plugins.toolkit._('Featured')
         return facets_dict
 
     # IConfigurable

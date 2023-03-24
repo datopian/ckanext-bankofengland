@@ -476,7 +476,6 @@ def get_related_datasets(context, data_dict):
             query += '{}{}:"{}"'.format(or_text, key, value)
 
     log.error(query)
-
     results = toolkit.get_action('package_search')(
         context, {'q': query, 'rows': rows}
     )

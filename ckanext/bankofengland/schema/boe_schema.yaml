@@ -259,6 +259,16 @@ dataset_fields:
       label: eba_GA:x0
   validators: ignore_missing
 
+- field_name: featured
+  label: Featured
+  preset: select
+  choices:
+    - value: true
+      label: Yes
+    - value: false
+      label: No
+  validators: ignore_missing
+
 resource_fields:
 
 - field_name: url
