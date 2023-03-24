@@ -11,6 +11,7 @@ import ckan.logic as logic
 import ckan.model as model
 import ckan.lib.dictization.model_dictize as model_dictize
 import pytz
+import ckan.model as model
 
 import ckanext.bankofengland.helpers as boe_helpers
 import ckanext.bankofengland.model as boe_model
@@ -399,3 +400,118 @@ def delete_footnote(context, data_dict):
     return boe_model.delete_footnote(
         footnote_id=footnote_id
     )
+
+
+@toolkit.side_effect_free
+def get_related_datasets(context, data_dict):
+    rows = data_dict.get('rows', 10)
+    percent = data_dict.get('percent', 0.8)
+
+    if not isinstance(rows, int):
+        rows = int(rows)
+
+    if not isinstance(percent, float):
+        percent = float(percent)
+
+    dataset = toolkit.get_action('package_show')(context, data_dict)
+
+    metadata_fields = [
+        'boe_dim_counterparty_sector_of_reporter',
+        'child',
+        'eba_dim_bas_base',
+        'eba_dim_cps_counterparty_sector',
+        'eba_dim_cud_currency_of_denomination_of_the_reported_position',
+        'eba_dim_mcb_instrument',
+        'eba_dim_mcy_main_category',
+        'eba_dim_rcp_residence_of_counterparty',
+        'eba_dim_tri_type_of_risk',
+        'granularity',
+        'market_value_by',
+        'metrics',
+        'owner_org',
+        'tags',
+        'groups'
+    ]
+
+    def _iterate_sub_dict_query(items, query):
+        names = []
+
+        for item in items:
+            names.append(item['name'])
+
+        query += '{}{}:({})'.format(
+            or_text, key, ' OR '.join(names)
+        )
+
+        return query
+
+    query = ''
+
+    for key, value in dataset.items():
+        if key not in metadata_fields:
+            continue
+
+        if query == '':
+            or_text = ''
+        else:
+            or_text = ' OR '
+
+        if isinstance(value, list):
+            if key == 'tags':
+                query = _iterate_sub_dict_query(value, query)
+            elif key == 'groups':
+                query = _iterate_sub_dict_query(value, query)
+        else:
+            query += '{}{}:"{}"'.format(or_text, key, value)
+
+    results = toolkit.get_action('package_search')(
+        context, {'q': query, 'rows': rows}
+    )
+
+    def _iterate_sub_dict(result, key, value):
+        current_items = [item['name'] for item in value]
+        result_items = [item['name'] for item in result[key]]
+
+        increase = sum([
+            1 for item in current_items if item in result_items
+        ])
+
+        return increase
+
+    matches = list(results['results'])
+
+    for result in matches:
+        if result['id'] == dataset['id']:
+            results['results'].remove(result)
+            continue
+
+        metadata_matches = 0
+        num_of_tags = len(dataset.get('tags', []))
+        num_of_groups = len(dataset.get('groups', []))
+
+        for key, value in dataset.items():
+            if key not in metadata_fields:
+                continue
+
+            if isinstance(value, list):
+                if key == 'tags':
+                    metadata_matches += _iterate_sub_dict(
+                        result, key, value
+                    )
+                elif key == 'groups':
+                    metadata_matches += _iterate_sub_dict(
+                        result, key, value
+                    )
+            else:
+                if value == result[key]:
+                    metadata_matches += 1
+
+        dataset_metadata_count = \
+            len(metadata_fields) + num_of_tags + num_of_groups
+
+        if metadata_matches < (dataset_metadata_count * percent):
+            results['results'].remove(result)
+
+    results['count'] = len(results['results'])
+
+    return results

@@ -119,6 +119,7 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'create_footnote': actions.create_footnote,
             'update_footnote': actions.update_footnote,
             'delete_footnote': actions.delete_footnote,
+            'get_related_datasets': actions.get_related_datasets,
         }
 
     # ITemplateHelpers
