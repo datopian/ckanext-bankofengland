@@ -21,10 +21,16 @@
     <table id="footnote-table" name="footnote-table" class="table table-bordered footnote-table">
       <thead>
         <tr>
-          <th>Row</th>
-          <th>Column</th>
-          <th>Footnote Text</th>
-          <th style="width: 100px;">Delete</th>
+          <th style="vertical-align: top;">Row</th>
+          <th style="vertical-align: top;">Column</th>
+          <th style="vertical-align: top;">
+            {% set classes = (classes|list) %}
+            {% do classes.append('control-full') %}
+            Footnote Text
+            {% set markdown_tooltip = "<pre><p>__Bold text__ or _italic text_</p><p># title<br>## secondary title<br>### etc</p><p>* list<br>* of<br>* items</p><p>[example hyperlink](http://example.net/)</p></pre><p><b><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Full markdown syntax</a></b></p><p class='text-muted'><b>Please note:</b> HTML tags are stripped out for security reasons</p>" %}
+            <p style="font-size: 11px;">{% trans %}Supports <a href="#markdown" title="Markdown quick reference" data-target="popover" data-content="{{ markdown_tooltip }}" data-html="true">markdown formatting</a>{% endtrans %}</p>
+          </th>
+          <th style="width: 100px; vertical-align: top;">Delete</th>
         </tr>
       </thead>
 
@@ -44,7 +50,7 @@
               </select>
             </td>
             <td><input class="footnote-column" name="footnote-column-{{ row_id }}" id="footnote-column-{{ row_id }}" type="text" value="{{ footnote.column }}" style="max-width: 100%; border: 1px solid #ccc;"></td>
-            <td><textarea class="footnote-text" name="footnote-text-{{ row_id }}" id="footnote-text-{{ row_id }}" rows="2" style="width: 100%; border: 1px solid #ccc;">{{ footnote.footnote }}</textarea></td>
+            <td><textarea class="footnote-text" name="footnote-text-{{ row_id }}" id="footnote-text-{{ row_id }}" rows="2" style="width: 100%; border: 1px solid #ccc;">{{ footnote.footnote | empty_and_escape }}</textarea></td>
             {% set deleted_footnote = h.to_json({'row_id': row_id, 'column': footnote.column, 'footnote': footnote.footnote, 'footnote_id': footnote.id }) %}
             <td><button class="btn btn-danger delete-footnote-row" type="button" id="delete-footnote-row-{{ row_id }}" data="{{ deleted_footnote }}">Delete</button></td>
           </tr>
