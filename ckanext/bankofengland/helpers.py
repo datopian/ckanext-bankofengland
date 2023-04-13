@@ -98,6 +98,9 @@ def add_group_names_to_dropdown(group_dropdown):
     groups = {group['id']: group['name'] for group in groups}
 
     for group in group_dropdown:
-        updated_group_dropdown.append(group + [groups[group[0]]])
+        group_name = groups.get(group[0])
+
+        if group_name:
+            updated_group_dropdown.append(group + [group_name])
 
     return updated_group_dropdown
