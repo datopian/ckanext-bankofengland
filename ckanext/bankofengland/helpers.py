@@ -94,8 +94,10 @@ def to_json(data):
 
 def add_group_names_to_dropdown(group_dropdown):
     updated_group_dropdown = []
+    groups = logic.get_action('group_list')({}, {'all_fields': True})
+    groups = {group['id']: group['name'] for group in groups}
+
     for group in group_dropdown:
-        group_dict = logic.get_action('group_show')({}, {'id': group[0]})
-        updated_group_dropdown.append((group + [group_dict['name']]))
+        updated_group_dropdown.append(group + [groups[group[0]]])
 
     return updated_group_dropdown
