@@ -90,3 +90,12 @@ def to_json(data):
         data['row'] = data['row'].strftime('%Y-%m-%d %H:%M:%S')
 
     return json.dumps(data)
+
+
+def add_group_names_to_dropdown(group_dropdown):
+    updated_group_dropdown = []
+    for group in group_dropdown:
+        group_dict = logic.get_action('group_show')({}, {'id': group[0]})
+        updated_group_dropdown.append((group + [group_dict['name']]))
+
+    return updated_group_dropdown

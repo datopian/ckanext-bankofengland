@@ -134,4 +134,5 @@ class BankofenglandPlugin(plugins.SingletonPlugin):
             'get_footnote_rows': helpers.get_footnote_rows,
             'generate_uuid': helpers.generate_uuid,
             'to_json': helpers.to_json,
+            'add_group_names_to_dropdown': helpers.add_group_names_to_dropdown,
         }
