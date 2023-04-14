@@ -6,6 +6,7 @@ import uuid
 
 import ckan.plugins.toolkit as toolkit
 import ckan.logic as logic
+import json
 
 
 log = logging.getLogger(__name__)
@@ -92,15 +93,35 @@ def to_json(data):
     return json.dumps(data)
 
 
-def add_group_names_to_dropdown(group_dropdown):
-    updated_group_dropdown = []
-    groups = logic.get_action('group_list')({}, {'all_fields': True})
-    groups = {group['id']: group['name'] for group in groups}
+def add_group_names_to_dropdown():
+    #Traverse tree
+    groups = logic.get_action('group_tree')({}, {})
+    group_paths = [traverse(group) for group in groups]
+    #Flatten tree(There is usually more than one root node)
+    group_paths = [item for sublist in group_paths for item in sublist]
+    #Convert into the correct format
+    group_paths = [convert_to_path_string(group) for group in group_paths]
+    return group_paths
 
-    for group in group_dropdown:
-        group_name = groups.get(group[0])
+def convert_to_path_string(group_path):
+    group_id = group_path[-1]["id"]
+    group_name = group_path[-1]["name"]
+    group_title = group_path[-1]["title"]
+    group_string_path = group_path[:-1] + [group_title]
+    return { "id": group_id, "name": group_name, "path": (" > ").join(group_string_path)}
+    
 
-        if group_name:
-            updated_group_dropdown.append(group + [group_name])
+def traverse(data, prefix=[], lst=None):
+    if lst is None:
+        lst = []
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key == 'title':
+                lst.append(
+                    prefix + [{"title": str(value), "name": data["name"], "id": data["id"]}])
+            traverse(value, prefix=prefix + [data['title']], lst=lst)
+    elif isinstance(data, list):
+        for item in data:
+            traverse(item, prefix=prefix, lst=lst)
+    return lst
 
-    return updated_group_dropdown
